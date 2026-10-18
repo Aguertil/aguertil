@@ -1,0 +1,215 @@
+{
+  "thinkTanks": [
+    {
+      "id": "tt1",
+      "name": "Institut Montaigne",
+      "type": "thinkTank",
+      "orientation": "Centre-droit / Libéral",
+      "description": "Think tank français créé en 2000, spécialisé dans les politiques publiques. Proche du monde de l'entreprise.",
+      "keyFigures": ["Laurent Bigorgne (Directeur)", "Henri de Castries (Président)"],
+      "fundedBy": ["b1", "b2", "b5"],
+      "mediaPresence": ["m1", "m2", "m3", "m7"]
+    },
+    {
+      "id": "tt2",
+      "name": "Fondation Jean-Jaurès",
+      "type": "thinkTank",
+      "orientation": "Centre-gauche / Social-démocrate",
+      "description": "Think tank historiquement lié au Parti socialiste, créé en 1992. Promeut les valeurs de la gauche réformiste.",
+      "keyFigures": ["Gilles Finchelstein (Directeur)", "Claudine Ripert-Landler (Présidente)"],
+      "fundedBy": ["b7"],
+      "mediaPresence": ["m2", "m4", "m5", "m8"]
+    },
+    {
+      "id": "tt3",
+      "name": "Fondapol",
+      "type": "thinkTank",
+      "orientation": "Centre-droit / Libéral-conservateur",
+      "description": "Fondation pour l'innovation politique, créée en 2004. Liée historiquement à l'UMP/LR.",
+      "keyFigures": ["Dominique Reynié (Directeur)", "Nicolas Bazire (Président)"],
+      "fundedBy": ["b1", "b3"],
+      "mediaPresence": ["m1", "m2", "m3"]
+    },
+    {
+      "id": "tt4",
+      "name": "Terra Nova",
+      "type": "thinkTank",
+      "orientation": "Centre-gauche / Progressiste",
+      "description": "Think tank créé en 2008, proche de la gauche social-libérale et de La République En Marche.",
+      "keyFigures": ["Thierry Pech (Directeur)", "Laurence Parisot (Présidente d'honneur)"],
+      "fundedBy": ["b5", "b6"],
+      "mediaPresence": ["m2", "m4", "m7", "m8"]
+    },
+    {
+      "id": "tt5",
+      "name": "Institut Molinari",
+      "type": "thinkTank",
+      "orientation": "Libéral / Libertarien",
+      "description": "Think tank libéral franco-belge créé en 2003, défendant le libre marché et la limitation de l'État.",
+      "keyFigures": ["Cécile Philippe (Présidente)", "Nicolas Lecaussin (Directeur)"],
+      "fundedBy": ["b2"],
+      "mediaPresence": ["m1", "m6"]
+    },
+    {
+      "id": "tt6",
+      "name": "Institut de l'Entreprise",
+      "type": "thinkTank",
+      "orientation": "Pro-business / Libéral",
+      "description": "Association créée en 1975 regroupant de grandes entreprises françaises. Promotion de l'économie de marché.",
+      "keyFigures": ["Frédéric Monlouis-Félicité (Délégué général)", "Sophie Bellon (Présidente)"],
+      "fundedBy": ["b1", "b2", "b3", "b4"],
+      "mediaPresence": ["m1", "m3", "m7"]
+    },
+    {
+      "id": "tt7",
+      "name": "Fondation Nicolas Hulot",
+      "type": "thinkTank",
+      "orientation": "Écologie / Transpartisan",
+      "description": "Fondation environnementale créée en 1990, devenue influente dans le débat écologique français.",
+      "keyFigures": ["Nicolas Hulot (Fondateur)", "Audrey Pulvar (Administratrice)"],
+      "fundedBy": ["b6", "b7"],
+      "mediaPresence": ["m2", "m4", "m5", "m8"]
+    },
+    {
+      "id": "tt8",
+      "name": "Génération Libre",
+      "type": "thinkTank",
+      "orientation": "Libéral",
+      "description": "Think tank libéral créé en 2013, prônant les réformes structurelles et la liberté individuelle.",
+      "keyFigures": ["Gaspard Koenig (Fondateur)", "Marc Simoncini (Membre)"],
+      "fundedBy": ["b5"],
+      "mediaPresence": ["m2", "m7", "m6"]
+    }
+  ],
+  "billionaires": [
+    {
+      "id": "b1",
+      "name": "Bernard Arnault",
+      "type": "billionaire",
+      "fortune": "~200 milliards €",
+      "sector": "Luxe (LVMH)",
+      "mediaOwned": ["m1", "m7"],
+      "description": "Première fortune française et mondiale. PDG de LVMH, propriétaire du groupe Les Échos - Le Parisien."
+    },
+    {
+      "id": "b2",
+      "name": "François Pinault",
+      "type": "billionaire",
+      "fortune": "~40 milliards €",
+      "sector": "Luxe (Kering)",
+      "mediaOwned": ["m3"],
+      "description": "Fondateur du groupe Kering (Gucci, YSL). Contrôle le groupe Artémis, actionnaire du Point."
+    },
+    {
+      "id": "b3",
+      "name": "Vincent Bolloré",
+      "type": "billionaire",
+      "fortune": "~8 milliards €",
+      "sector": "Médias, Transport, Énergie",
+      "mediaOwned": ["m8", "m6"],
+      "description": "Industriel et homme d'affaires, contrôle le groupe Vivendi (CNews, Canal+, Europe 1)."
+    },
+    {
+      "id": "b4",
+      "name": "Rodolphe Saadé",
+      "type": "billionaire",
+      "fortune": "~15 milliards €",
+      "sector": "Transport maritime (CMA CGM)",
+      "mediaOwned": ["m5"],
+      "description": "PDG de CMA CGM. A racheté La Provence et La Tribune en 2020."
+    },
+    {
+      "id": "b5",
+      "name": "Xavier Niel",
+      "type": "billionaire",
+      "fortune": "~10 milliards €",
+      "sector": "Télécoms (Free), Tech",
+      "mediaOwned": ["m2"],
+      "description": "Fondateur de Free. Actionnaire du Monde et de L'Obs via sa holding NJJ."
+    },
+    {
+      "id": "b6",
+      "name": "Patrick Drahi",
+      "type": "billionaire",
+      "fortune": "~6 milliards €",
+      "sector": "Télécoms (Altice)",
+      "mediaOwned": ["m4"],
+      "description": "Fondateur d'Altice. Propriétaire de Libération, L'Express, BFM TV via NextRadioTV."
+    },
+    {
+      "id": "b7",
+      "name": "Pierre Bergé (Fondations)",
+      "type": "billionaire",
+      "fortune": "Legacy / Fondations",
+      "sector": "Culture, Édition",
+      "mediaOwned": [],
+      "description": "Cofondateur de la maison Yves Saint Laurent, mécène. Soutiens historiques à la gauche et à la culture."
+    }
+  ],
+  "media": [
+    {
+      "id": "m1",
+      "name": "Les Échos / Le Parisien",
+      "type": "media",
+      "category": "Presse économique et généraliste",
+      "ownedBy": ["b1"],
+      "description": "Quotidien économique de référence et quotidien populaire, propriété du groupe LVMH."
+    },
+    {
+      "id": "m2",
+      "name": "Le Monde",
+      "type": "media",
+      "category": "Presse quotidienne nationale",
+      "ownedBy": ["b5"],
+      "description": "Quotidien de référence, actionnariat partagé entre Xavier Niel, Matthieu Pigasse, et Pierre Bergé (historique)."
+    },
+    {
+      "id": "m3",
+      "name": "Le Point",
+      "type": "media",
+      "category": "Hebdomadaire d'actualité",
+      "ownedBy": ["b2"],
+      "description": "Magazine hebdomadaire, contrôlé par la famille Pinault via Artémis."
+    },
+    {
+      "id": "m4",
+      "name": "Libération / L'Express / BFM TV",
+      "type": "media",
+      "category": "Presse et TV d'information",
+      "ownedBy": ["b6"],
+      "description": "Groupe de médias appartenant à Patrick Drahi (Altice)."
+    },
+    {
+      "id": "m5",
+      "name": "La Tribune / La Provence",
+      "type": "media",
+      "category": "Presse économique et régionale",
+      "ownedBy": ["b4"],
+      "description": "Titres de presse contrôlés par la famille Saadé (CMA CGM)."
+    },
+    {
+      "id": "m6",
+      "name": "Europe 1",
+      "type": "media",
+      "category": "Radio généraliste",
+      "ownedBy": ["b3"],
+      "description": "Radio d'information propriété du groupe Vivendi (Bolloré)."
+    },
+    {
+      "id": "m7",
+      "name": "Radio Classique",
+      "type": "media",
+      "category": "Radio culturelle",
+      "ownedBy": ["b1"],
+      "description": "Radio musicale et culturelle, propriété du groupe LVMH."
+    },
+    {
+      "id": "m8",
+      "name": "CNews / Canal+",
+      "type": "media",
+      "category": "Chaînes de télévision",
+      "ownedBy": ["b3"],
+      "description": "Chaînes d'information et de divertissement, contrôle du groupe Vivendi (Bolloré)."
+    }
+  ]
+}
