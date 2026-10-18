@@ -4,81 +4,204 @@
       "id": "tt1",
       "name": "Institut Montaigne",
       "type": "thinkTank",
-      "orientation": "Centre-droit / Libéral",
-      "description": "Think tank français créé en 2000, spécialisé dans les politiques publiques. Proche du monde de l'entreprise.",
-      "keyFigures": ["Laurent Bigorgne (Directeur)", "Henri de Castries (Président)"],
-      "fundedBy": ["b1", "b2", "b5"],
-      "mediaPresence": ["m1", "m2", "m3", "m7"]
+      "orientation": "Centre-droit / Pro-business",
+      "budget": "~6,5 millions €/an",
+      "description": "Think tank créé en 2000 par Claude Bébéar (AXA). Très influent auprès des gouvernements. Promeut les réformes libérales.",
+      "keyFigures": [
+        "Laurent Bigorgne (Directeur général)",
+        "Henri de Castries (Président, ex-PDG AXA)",
+        "Emmanuelle Mignon (Vice-présidente, ex-conseillère Sarkozy)"
+      ],
+      "fundedBy": ["b1", "b2", "b3", "b5", "b6"],
+      "mediaPresence": ["m1", "m2", "m3", "m7", "m9"],
+      "politicalLinks": [
+        "Ancien cabinet de Nicolas Sarkozy (Emmanuelle Mignon)",
+        "Proches d'Emmanuel Macron (plusieurs conseillers issus de l'Institut)",
+        "Bernard Mourad (ex-associé-gérant de la Banque Rothschild, cofondateur)"
+      ],
+      "controversies": [
+        "Opacité du financement (entreprises non détaillées publiquement)",
+        "Lobbying intense sur les réformes des retraites",
+        "Proximité avec les assureurs (AXA, fondateur)"
+      ]
     },
     {
       "id": "tt2",
       "name": "Fondation Jean-Jaurès",
       "type": "thinkTank",
-      "orientation": "Centre-gauche / Social-démocrate",
-      "description": "Think tank historiquement lié au Parti socialiste, créé en 1992. Promeut les valeurs de la gauche réformiste.",
-      "keyFigures": ["Gilles Finchelstein (Directeur)", "Claudine Ripert-Landler (Présidente)"],
-      "fundedBy": ["b7"],
-      "mediaPresence": ["m2", "m4", "m5", "m8"]
+      "orientation": "Social-démocrate / Centre-gauche",
+      "budget": "~3 millions €/an",
+      "description": "Think tank historiquement lié au Parti socialiste, proche de la social-démocratie européenne.",
+      "keyFigures": [
+        "Gilles Finchelstein (Directeur général)",
+        "Claudine Ripert-Landler (Présidente)",
+        "Manuel Valls (Président d'honneur)"
+      ],
+      "fundedBy": ["b7", "b8"],
+      "mediaPresence": ["m2", "m4", "m5", "m8"],
+      "politicalLinks": [
+        "Parti Socialiste (lien historique)",
+        "Proches de Manuel Valls, François Hollande"
+      ],
+      "controversies": [
+        "Critiqué pour sa ligne 'social-libérale'",
+        "Éloignement de la gauche radicale"
+      ]
     },
     {
       "id": "tt3",
       "name": "Fondapol",
       "type": "thinkTank",
       "orientation": "Centre-droit / Libéral-conservateur",
-      "description": "Fondation pour l'innovation politique, créée en 2004. Liée historiquement à l'UMP/LR.",
-      "keyFigures": ["Dominique Reynié (Directeur)", "Nicolas Bazire (Président)"],
+      "budget": "~2,5 millions €/an",
+      "description": "Fondation pour l'innovation politique, créée en 2004. Proche de la droite républicaine (ex-LR).",
+      "keyFigures": [
+        "Dominique Reynié (Directeur général)",
+        "Nicolas Bazire (Président du conseil de surveillance, ex-DG LVMH)"
+      ],
       "fundedBy": ["b1", "b3"],
-      "mediaPresence": ["m1", "m2", "m3"]
+      "mediaPresence": ["m1", "m2", "m3", "m6"],
+      "politicalLinks": [
+        "Nicolas Bazire (ancien directeur de cabinet de Balladur, bras droit de Bernard Arnault)",
+        "Proche de Nicolas Sarkozy, François Fillon"
+      ],
+      "controversies": [
+        "Nicolas Bazire cumulant Fondapol et LVMH",
+        "Financement opaque"
+      ]
     },
     {
       "id": "tt4",
       "name": "Terra Nova",
       "type": "thinkTank",
       "orientation": "Centre-gauche / Progressiste",
-      "description": "Think tank créé en 2008, proche de la gauche social-libérale et de La République En Marche.",
-      "keyFigures": ["Thierry Pech (Directeur)", "Laurence Parisot (Présidente d'honneur)"],
-      "fundedBy": ["b5", "b6"],
-      "mediaPresence": ["m2", "m4", "m7", "m8"]
+      "budget": "~1,5 millions €/an",
+      "description": "Think tank progressiste créé en 2008, proche de la gauche réformiste et du macronisme.",
+      "keyFigures": [
+        "Thierry Pech (Directeur général)",
+        "Olivier Ferrand (Fondateur, décédé 2012)"
+      ],
+      "fundedBy": ["b5", "b6", "b9"],
+      "mediaPresence": ["m2", "m4", "m7", "m8"],
+      "politicalLinks": [
+        "Proche d'Emmanuel Macron (plusieurs membres dans son premier gouvernement)",
+        "Ex-PS rénovateurs (Valls, Royal)"
+      ],
+      "controversies": [
+        "Note 2011 'Gauche sans les ouvriers' très critiquée",
+        "Virage macroniste assumé"
+      ]
     },
     {
       "id": "tt5",
       "name": "Institut Molinari",
       "type": "thinkTank",
       "orientation": "Libéral / Libertarien",
+      "budget": "Non communiqué (estimation <500k €)",
       "description": "Think tank libéral franco-belge créé en 2003, défendant le libre marché et la limitation de l'État.",
-      "keyFigures": ["Cécile Philippe (Présidente)", "Nicolas Lecaussin (Directeur)"],
-      "fundedBy": ["b2"],
-      "mediaPresence": ["m1", "m6"]
+      "keyFigures": [
+        "Cécile Philippe (Présidente, économiste)",
+        "Nicolas Lecaussin (Directeur du développement)"
+      ],
+      "fundedBy": ["b2", "b10"],
+      "mediaPresence": ["m1", "m6", "m9"],
+      "politicalLinks": [
+        "Très influent dans la droite économique",
+        "Références fréquentes par Éric Zemmour, Marion Maréchal"
+      ],
+      "controversies": [
+        "Climatoscepticisme assumé",
+        "Lobbying anti-régulation fiscale"
+      ]
     },
     {
       "id": "tt6",
       "name": "Institut de l'Entreprise",
       "type": "thinkTank",
-      "orientation": "Pro-business / Libéral",
-      "description": "Association créée en 1975 regroupant de grandes entreprises françaises. Promotion de l'économie de marché.",
-      "keyFigures": ["Frédéric Monlouis-Félicité (Délégué général)", "Sophie Bellon (Présidente)"],
-      "fundedBy": ["b1", "b2", "b3", "b4"],
-      "mediaPresence": ["m1", "m3", "m7"]
+      "orientation": "Pro-business / Patronal",
+      "budget": "~5 millions €/an",
+      "description": "Association créée en 1975 regroupant 140 grandes entreprises françaises. Lobby patronal de référence.",
+      "keyFigures": [
+        "Frédéric Monlouis-Félicité (Délégué général)",
+        "Sophie Bellon (Présidente, PDG Sodexo)"
+      ],
+      "fundedBy": ["b1", "b2", "b3", "b4", "b5"],
+      "mediaPresence": ["m1", "m3", "m7", "m9"],
+      "politicalLinks": [
+        "Lien organique avec le MEDEF",
+        "Influence directe sur les réformes économiques"
+      ],
+      "controversies": [
+        "Lobby patronal pur",
+        "Opposition systématique aux hausses d'impôts"
+      ]
     },
     {
       "id": "tt7",
-      "name": "Fondation Nicolas Hulot",
+      "name": "iFRAP (Fondation pour la Recherche sur les Administrations et les Politiques Publiques)",
       "type": "thinkTank",
-      "orientation": "Écologie / Transpartisan",
-      "description": "Fondation environnementale créée en 1990, devenue influente dans le débat écologique français.",
-      "keyFigures": ["Nicolas Hulot (Fondateur)", "Audrey Pulvar (Administratrice)"],
-      "fundedBy": ["b6", "b7"],
-      "mediaPresence": ["m2", "m4", "m5", "m8"]
+      "orientation": "Libéral / Anti-dépenses publiques",
+      "budget": "~1,2 millions €/an",
+      "description": "Think tank créé en 1985, militant pour la réduction des dépenses publiques et la baisse des impôts.",
+      "keyFigures": [
+        "Agnès Verdier-Molinié (Directrice)",
+        "Bernard Zimmern (Fondateur, décédé 2020)"
+      ],
+      "fundedBy": ["b2", "b10"],
+      "mediaPresence": ["m1", "m3", "m6", "m9"],
+      "politicalLinks": [
+        "Très présente dans les médias conservateurs",
+        "Influence sur la droite et l'extrême-droite"
+      ],
+      "controversies": [
+        "Chiffres souvent contestés par économistes",
+        "Idéologie ultra-libérale assumée"
+      ]
     },
     {
       "id": "tt8",
       "name": "Génération Libre",
       "type": "thinkTank",
-      "orientation": "Libéral",
-      "description": "Think tank libéral créé en 2013, prônant les réformes structurelles et la liberté individuelle.",
-      "keyFigures": ["Gaspard Koenig (Fondateur)", "Marc Simoncini (Membre)"],
-      "fundedBy": ["b5"],
-      "mediaPresence": ["m2", "m7", "m6"]
+      "orientation": "Libéral / Libertarien",
+      "budget": "~500k €/an",
+      "description": "Think tank libéral créé en 2013 par Gaspard Koenig. Prône le revenu universel et les libertés individuelles.",
+      "keyFigures": [
+        "Gaspard Koenig (Fondateur, essayiste)",
+        "Marc Simoncini (Mécène, fondateur de Meetic)"
+      ],
+      "fundedBy": ["b5", "b9"],
+      "mediaPresence": ["m2", "m7", "m6", "m9"],
+      "politicalLinks": [
+        "Influence intellectuelle sur le macronisme",
+        "Proches de députés LREM"
+      ],
+      "controversies": [
+        "Financement par la tech (Simoncini, Niel)",
+        "Position ambiguë entre progressisme et libéralisme"
+      ]
+    },
+    {
+      "id": "tt9",
+      "name": "Club des Vigilants",
+      "type": "thinkTank",
+      "orientation": "Droite souverainiste",
+      "budget": "Non communiqué",
+      "description": "Club d'influence créé en 2016, opposé à l'euro et à l'UE. Très discrète mais influente à l'extrême-droite.",
+      "keyFigures": [
+        "Yvan Blot (Cofondateur)",
+        "Philippe Murer (Économiste)",
+        "Sophie de Menthon (Entrepreneure)"
+      ],
+      "fundedBy": ["b3"],
+      "mediaPresence": ["m6", "m8"],
+      "politicalLinks": [
+        "Liens avec le RN (Marine Le Pen, Marion Maréchal)",
+        "Opposants à l'euro"
+      ],
+      "controversies": [
+        "Opacité totale du financement",
+        "Ligne souverainiste radicale"
+      ]
     }
   ],
   "billionaires": [
@@ -86,64 +209,189 @@
       "id": "b1",
       "name": "Bernard Arnault",
       "type": "billionaire",
-      "fortune": "~200 milliards €",
+      "fortune": "~211 milliards USD (1ère fortune mondiale)",
       "sector": "Luxe (LVMH)",
       "mediaOwned": ["m1", "m7"],
-      "description": "Première fortune française et mondiale. PDG de LVMH, propriétaire du groupe Les Échos - Le Parisien."
+      "companies": ["LVMH", "Christian Dior", "Financière Agache"],
+      "description": "Homme le plus riche du monde. Empire du luxe (Louis Vuitton, Dior, Hennessy). Propriétaire des Échos et du Parisien. Influence politique majeure.",
+      "politicalLinks": [
+        "Soutien historique à la droite (Sarkozy, Fillon)",
+        "Proche d'Emmanuel Macron",
+        "Nicolas Bazire (ex-DG LVMH) préside Fondapol"
+      ],
+      "thinkTankLinks": [
+        "Institut Montaigne (financeur majeur)",
+        "Fondapol (via Nicolas Bazire)",
+        "Institut de l'Entreprise (membre)"
+      ]
     },
     {
       "id": "b2",
       "name": "François Pinault",
       "type": "billionaire",
-      "fortune": "~40 milliards €",
-      "sector": "Luxe (Kering)",
+      "fortune": "~40 milliards USD",
+      "sector": "Luxe (Kering) et Médias",
       "mediaOwned": ["m3"],
-      "description": "Fondateur du groupe Kering (Gucci, YSL). Contrôle le groupe Artémis, actionnaire du Point."
+      "companies": ["Kering", "Groupe Artémis", "Christie's"],
+      "description": "Fondateur de Kering (Gucci, YSL, Balenciaga). Contrôle le groupe Artémis, actionnaire du Point.",
+      "politicalLinks": [
+        "Ancien socialiste, devenu libéral",
+        "Proche de Jacques Chirac (historique)"
+      ],
+      "thinkTankLinks": [
+        "Institut Montaigne (financeur)",
+        "Institut Molinari (via Artémis)",
+        "iFRAP (soutien indirect)"
+      ]
     },
     {
       "id": "b3",
       "name": "Vincent Bolloré",
       "type": "billionaire",
-      "fortune": "~8 milliards €",
+      "fortune": "~8 milliards USD",
       "sector": "Médias, Transport, Énergie",
       "mediaOwned": ["m8", "m6"],
-      "description": "Industriel et homme d'affaires, contrôle le groupe Vivendi (CNews, Canal+, Europe 1)."
+      "companies": ["Vivendi", "Bolloré SE", "Havas"],
+      "description": "Industriel controversé. Contrôle Vivendi (CNews, Canal+, Europe 1). Ligne éditoriale ultra-conservatrice.",
+      "politicalLinks": [
+        "Soutien affiché de l'extrême-droite (Éric Zemmour)",
+        "CNews = plateforme du RN",
+        "Influence directe sur la ligne éditoriale"
+      ],
+      "thinkTankLinks": [
+        "Fondapol (financement)",
+        "Club des Vigilants (liens familiaux)",
+        "Institut Montaigne (ancien mécène)"
+      ],
+      "familyLinks": [
+        "Emmanuelle Mignon (Vice-présidente Institut Montaigne) = épouse de son neveu Yannick Bolloré"
+      ]
     },
     {
       "id": "b4",
       "name": "Rodolphe Saadé",
       "type": "billionaire",
-      "fortune": "~15 milliards €",
+      "fortune": "~41 milliards USD",
       "sector": "Transport maritime (CMA CGM)",
       "mediaOwned": ["m5"],
-      "description": "PDG de CMA CGM. A racheté La Provence et La Tribune en 2020."
+      "companies": ["CMA CGM", "La Provence", "La Tribune"],
+      "description": "PDG de CMA CGM, 4ème armateur mondial. A racheté La Provence et La Tribune en 2020.",
+      "politicalLinks": [
+        "Discret politiquement",
+        "Proches de Macron (industrie stratégique)"
+      ],
+      "thinkTankLinks": [
+        "Institut de l'Entreprise (membre)"
+      ]
     },
     {
       "id": "b5",
       "name": "Xavier Niel",
       "type": "billionaire",
-      "fortune": "~10 milliards €",
+      "fortune": "~10 milliards USD",
       "sector": "Télécoms (Free), Tech",
       "mediaOwned": ["m2"],
-      "description": "Fondateur de Free. Actionnaire du Monde et de L'Obs via sa holding NJJ."
+      "companies": ["Iliad/Free", "Kima Ventures", "Station F"],
+      "description": "Fondateur de Free. Actionnaire du Monde via NJJ. Investisseur dans la tech. Image de 'disruption'.",
+      "politicalLinks": [
+        "Proche d'Emmanuel Macron",
+        "Financeur de La République En Marche",
+        "Influence sur la French Tech"
+      ],
+      "thinkTankLinks": [
+        "Institut Montaigne (financeur)",
+        "Terra Nova (soutien)",
+        "Génération Libre (via Simoncini)"
+      ]
     },
     {
       "id": "b6",
       "name": "Patrick Drahi",
       "type": "billionaire",
-      "fortune": "~6 milliards €",
+      "fortune": "~6 milliards USD",
       "sector": "Télécoms (Altice)",
       "mediaOwned": ["m4"],
-      "description": "Fondateur d'Altice. Propriétaire de Libération, L'Express, BFM TV via NextRadioTV."
+      "companies": ["Altice", "SFR", "NextRadioTV"],
+      "description": "Fondateur d'Altice. Propriétaire de Libération, L'Express, BFM TV. Dette colossale de ses groupes.",
+      "politicalLinks": [
+        "Discret mais influent",
+        "BFM = média du pouvoir économique"
+      ],
+      "thinkTankLinks": [
+        "Institut Montaigne (financeur)",
+        "Terra Nova (via BFM)"
+      ]
     },
     {
       "id": "b7",
       "name": "Pierre Bergé (Fondations)",
       "type": "billionaire",
-      "fortune": "Legacy / Fondations",
-      "sector": "Culture, Édition",
+      "fortune": "~500 millions € (décédé 2017, héritage et fondations)",
+      "sector": "Mode, Culture, Presse",
       "mediaOwned": [],
-      "description": "Cofondateur de la maison Yves Saint Laurent, mécène. Soutiens historiques à la gauche et à la culture."
+      "companies": ["Yves Saint Laurent (historique)", "Fondations culturelles"],
+      "description": "Cofondateur YSL, mécène culturel de gauche. Actionnaire historique du Monde (via NJJ). Soutien financier du PS.",
+      "politicalLinks": [
+        "Ami de François Mitterrand",
+        "Financeur historique du Parti Socialiste"
+      ],
+      "thinkTankLinks": [
+        "Fondation Jean-Jaurès (soutien majeur)"
+      ]
+    },
+    {
+      "id": "b8",
+      "name": "Martin Bouygues",
+      "type": "billionaire",
+      "fortune": "~2 milliards USD",
+      "sector": "BTP, Télécoms, Médias",
+      "mediaOwned": ["m10"],
+      "companies": ["Bouygues", "TF1", "Bouygues Telecom"],
+      "description": "Héritier et PDG du groupe Bouygues. Propriétaire de TF1 (1ère chaîne française).",
+      "politicalLinks": [
+        "Proche de tous les gouvernements",
+        "BTP = contrats publics majeurs"
+      ],
+      "thinkTankLinks": [
+        "Institut de l'Entreprise (membre fondateur)",
+        "Fondation Jean-Jaurès (financement)"
+      ]
+    },
+    {
+      "id": "b9",
+      "name": "Marc Simoncini",
+      "type": "billionaire",
+      "fortune": "~1 milliard USD",
+      "sector": "Tech (Meetic, startups)",
+      "mediaOwned": [],
+      "companies": ["Meetic (vendu)", "Jaïna Capital", "Investments divers"],
+      "description": "Fondateur de Meetic. Investisseur tech. Mécène de Génération Libre et Terra Nova.",
+      "politicalLinks": [
+        "Proche du macronisme",
+        "Défenseur de la French Tech"
+      ],
+      "thinkTankLinks": [
+        "Génération Libre (mécène principal)",
+        "Terra Nova (financeur)"
+      ]
+    },
+    {
+      "id": "b10",
+      "name": "Charles Gave",
+      "type": "billionaire",
+      "fortune": "~500 millions € (estimation)",
+      "sector": "Finance (Gavekal)",
+      "mediaOwned": [],
+      "companies": ["Gavekal Research", "Institut des Libertés"],
+      "description": "Financier ultralibéral. Fondateur de l'Institut des Libertés. Figure de la droite souverainiste.",
+      "politicalLinks": [
+        "Opposant virulent à l'euro et à l'UE",
+        "Influence sur le RN et les souverainistes"
+      ],
+      "thinkTankLinks": [
+        "Institut Molinari (financeur)",
+        "iFRAP (soutien)"
+      ]
     }
   ],
   "media": [
@@ -152,64 +400,100 @@
       "name": "Les Échos / Le Parisien",
       "type": "media",
       "category": "Presse économique et généraliste",
+      "audience": "Les Échos: 1M lecteurs, Le Parisien: 2M",
       "ownedBy": ["b1"],
-      "description": "Quotidien économique de référence et quotidien populaire, propriété du groupe LVMH."
+      "description": "Les Échos (quotidien économique de référence) et Le Parisien (populaire). Propriété LVMH depuis 2007.",
+      "editorialLine": "Centre-droit, pro-business"
     },
     {
       "id": "m2",
       "name": "Le Monde",
       "type": "media",
       "category": "Presse quotidienne nationale",
-      "ownedBy": ["b5"],
-      "description": "Quotidien de référence, actionnariat partagé entre Xavier Niel, Matthieu Pigasse, et Pierre Bergé (historique)."
+      "audience": "~2,5M lecteurs",
+      "ownedBy": ["b5", "b7"],
+      "description": "Quotidien de référence. Actionnariat: Xavier Niel, Matthieu Pigasse, Pierre Bergé (†). Statut de 'journal de référence'.",
+      "editorialLine": "Centre-gauche, européiste, libéral culturel"
     },
     {
       "id": "m3",
       "name": "Le Point",
       "type": "media",
       "category": "Hebdomadaire d'actualité",
+      "audience": "~1,5M lecteurs",
       "ownedBy": ["b2"],
-      "description": "Magazine hebdomadaire, contrôlé par la famille Pinault via Artémis."
+      "description": "Magazine hebdomadaire. Contrôlé par la famille Pinault via Artémis. Ligne éditoriale droite classique.",
+      "editorialLine": "Centre-droit, conservateur"
     },
     {
       "id": "m4",
       "name": "Libération / L'Express / BFM TV",
       "type": "media",
       "category": "Presse et TV d'information",
+      "audience": "BFM TV: 1ère chaîne d'info en continu",
       "ownedBy": ["b6"],
-      "description": "Groupe de médias appartenant à Patrick Drahi (Altice)."
+      "description": "Groupe de médias Altice. BFM TV = référence info économique. Libération (gauche historique, virage centre). L'Express (centre-droit).",
+      "editorialLine": "BFM: pro-business, Libé: centre-gauche"
     },
     {
       "id": "m5",
       "name": "La Tribune / La Provence",
       "type": "media",
       "category": "Presse économique et régionale",
+      "audience": "La Tribune: 500k, La Provence: 1,2M",
       "ownedBy": ["b4"],
-      "description": "Titres de presse contrôlés par la famille Saadé (CMA CGM)."
+      "description": "La Tribune (économique) et La Provence (régional). Rachetés par Rodolphe Saadé en 2020.",
+      "editorialLine": "Pro-business, régionaliste"
     },
     {
       "id": "m6",
       "name": "Europe 1",
       "type": "media",
       "category": "Radio généraliste",
+      "audience": "~4M auditeurs",
       "ownedBy": ["b3"],
-      "description": "Radio d'information propriété du groupe Vivendi (Bolloré)."
+      "description": "Radio historique. Propriété Vivendi/Bolloré. Virage ultra-conservateur depuis 2020.",
+      "editorialLine": "Droite conservatrice, plateforme RN/Zemmour"
     },
     {
       "id": "m7",
       "name": "Radio Classique",
       "type": "media",
       "category": "Radio culturelle",
+      "audience": "~1,2M auditeurs",
       "ownedBy": ["b1"],
-      "description": "Radio musicale et culturelle, propriété du groupe LVMH."
+      "description": "Radio musicale et culturelle. Propriété LVMH. Ligne éditoriale soft, chroniques économiques pro-business.",
+      "editorialLine": "Centre-droit soft, culturel"
     },
     {
       "id": "m8",
       "name": "CNews / Canal+",
       "type": "media",
       "category": "Chaînes de télévision",
+      "audience": "CNews: 3ème chaîne d'info, Canal+: 9M abonnés",
       "ownedBy": ["b3"],
-      "description": "Chaînes d'information et de divertissement, contrôle du groupe Vivendi (Bolloré)."
+      "description": "CNews = Fox News française. Plateforme de l'extrême-droite. Canal+ (cinéma/séries) plus neutre.",
+      "editorialLine": "CNews: Extrême-droite, Canal+: Divertissement"
+    },
+    {
+      "id": "m9",
+      "name": "Challenges / Capital",
+      "type": "media",
+      "category": "Presse économique",
+      "audience": "Challenges: 800k, Capital: 1,2M",
+      "ownedBy": [],
+      "description": "Magazines économiques (Groupe Lagardère). Ligne éditoriale pro-business assumée.",
+      "editorialLine": "Libéral, pro-business"
+    },
+    {
+      "id": "m10",
+      "name": "TF1 / LCI",
+      "type": "media",
+      "category": "Télévision généraliste et info",
+      "audience": "TF1: 1ère chaîne (20% PdA), LCI: 3M téléspectateurs",
+      "ownedBy": ["b8"],
+      "description": "TF1 = 1ère chaîne française. LCI = chaîne d'info en continu. Groupe Bouygues.",
+      "editorialLine": "Généraliste, consensuel, pro-pouvoir en place"
     }
   ]
 }
