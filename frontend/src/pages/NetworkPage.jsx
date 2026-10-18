@@ -29,8 +29,16 @@ export default function NetworkPage() {
               <h3 className="font-bold text-gray-900 mb-2 text-lg">💡 Le saviez-vous ?</h3>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">
+                  <span className="text-orange-500 font-bold">🔥</span>
+                  <span><strong>Marie-Pierre de Bailliencourt</strong>, Directrice générale de l'Institut Montaigne depuis 2022, est l'<strong>épouse d'Emmanuel de Bailliencourt</strong>, Vice-président et Directeur Financier du groupe Bolloré (CNews, Europe 1, Canal+)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-orange-500 font-bold">🔥</span>
+                  <span><strong>Emmanuelle Mignon</strong>, Vice-présidente du même Institut Montaigne, est mariée à <strong>Yannick Bolloré</strong>, neveu de Vincent Bolloré</span>
+                </li>
+                <li className="flex items-start gap-2">
                   <span className="text-orange-500 font-bold">•</span>
-                  <span><strong>Emmanuelle Mignon</strong>, vice-présidente de l'Institut Montaigne, est mariée à Yannick Bolloré, neveu de Vincent Bolloré (propriétaire de CNews, Europe 1, Canal+)</span>
+                  <span>Résultat : <strong>L'Institut Montaigne</strong> (think tank le plus influent de France) est dirigé par <strong>deux femmes mariées à des cadres dirigeants de Bolloré</strong></span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-orange-500 font-bold">•</span>
@@ -38,11 +46,7 @@ export default function NetworkPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-orange-500 font-bold">•</span>
-                  <span><strong>9 milliardaires</strong> contrôlent directement ou indirectement la quasi-totalité des grands médias français</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-orange-500 font-bold">•</span>
-                  <span>Les think tanks pro-business reçoivent des <strong>millions d'euros par an</strong> des grandes entreprises, souvent sans transparence complète sur les montants</span>
+                  <span><strong>11 milliardaires</strong> contrôlent directement ou indirectement la quasi-totalité des grands médias français et financent les principaux think tanks</span>
                 </li>
               </ul>
             </div>

@@ -8,9 +8,10 @@
       "budget": "~6,5 millions €/an",
       "description": "Think tank créé en 2000 par Claude Bébéar (AXA). Très influent auprès des gouvernements. Promeut les réformes libérales.",
       "keyFigures": [
-        "Laurent Bigorgne (Directeur général)",
+        "Marie-Pierre de Bailliencourt (Directrice générale depuis 2022)",
         "Henri de Castries (Président, ex-PDG AXA)",
-        "Emmanuelle Mignon (Vice-présidente, ex-conseillère Sarkozy)"
+        "Emmanuelle Mignon (Vice-présidente, ex-conseillère Sarkozy)",
+        "Laurent Bigorgne (ancien Directeur général jusqu'en 2022)"
       ],
       "fundedBy": ["b1", "b2", "b3", "b5", "b6"],
       "mediaPresence": ["m1", "m2", "m3", "m7", "m9"],
@@ -19,10 +20,16 @@
         "Proches d'Emmanuel Macron (plusieurs conseillers issus de l'Institut)",
         "Bernard Mourad (ex-associé-gérant de la Banque Rothschild, cofondateur)"
       ],
+      "familyLinks": [
+        "Marie-Pierre de Bailliencourt (DG) = épouse d'Emmanuel de Bailliencourt, Vice-président et Directeur Financier du groupe Bolloré",
+        "Emmanuelle Mignon (VP) = épouse de Yannick Bolloré, neveu de Vincent Bolloré"
+      ],
       "controversies": [
         "Opacité du financement (entreprises non détaillées publiquement)",
         "Lobbying intense sur les réformes des retraites",
-        "Proximité avec les assureurs (AXA, fondateur)"
+        "Proximité avec les assureurs (AXA, fondateur)",
+        "Direction confiée en 2022 à l'épouse d'un cadre dirigeant de Bolloré",
+        "Double lien familial avec le groupe Bolloré (DG + VP)"
       ]
     },
     {
@@ -264,7 +271,9 @@
         "Institut Montaigne (ancien mécène)"
       ],
       "familyLinks": [
-        "Emmanuelle Mignon (Vice-présidente Institut Montaigne) = épouse de son neveu Yannick Bolloré"
+        "Emmanuelle Mignon (Vice-présidente Institut Montaigne) = épouse de Yannick Bolloré (neveu)",
+        "Marie-Pierre de Bailliencourt (Directrice générale Institut Montaigne depuis 2022) = épouse d'Emmanuel de Bailliencourt (VP et Dir. Financier du groupe Bolloré)",
+        "L'Institut Montaigne est ainsi dirigé par deux femmes mariées à des cadres du groupe Bolloré"
       ]
     },
     {
