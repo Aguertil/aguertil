@@ -104,7 +104,7 @@
         "Nicolas Lecaussin (Directeur du développement)"
       ],
       "fundedBy": ["b2", "b10"],
-      "mediaPresence": ["m1", "m6", "m9"],
+      "mediaPresence": ["m1", "m6", "m9", "m11"],
       "politicalLinks": [
         "Très influent dans la droite économique",
         "Références fréquentes par Éric Zemmour, Marion Maréchal"
@@ -148,7 +148,7 @@
         "Bernard Zimmern (Fondateur, décédé 2020)"
       ],
       "fundedBy": ["b2", "b10"],
-      "mediaPresence": ["m1", "m3", "m6", "m9"],
+      "mediaPresence": ["m1", "m3", "m6", "m9", "m11"],
       "politicalLinks": [
         "Très présente dans les médias conservateurs",
         "Influence sur la droite et l'extrême-droite"
@@ -193,7 +193,7 @@
         "Sophie de Menthon (Entrepreneure)"
       ],
       "fundedBy": ["b3"],
-      "mediaPresence": ["m6", "m8"],
+      "mediaPresence": ["m6", "m8", "m11"],
       "politicalLinks": [
         "Liens avec le RN (Marine Le Pen, Marion Maréchal)",
         "Opposants à l'euro"
@@ -392,6 +392,31 @@
         "Institut Molinari (financeur)",
         "iFRAP (soutien)"
       ]
+    },
+    {
+      "id": "b11",
+      "name": "Pierre-Édouard Stérin",
+      "type": "billionaire",
+      "fortune": "~100 millions € (estimation)",
+      "sector": "Édition, Presse conservatrice",
+      "mediaOwned": ["m11"],
+      "companies": ["Causeur", "Éléments (anciennement)", "Éditions de la Table Ronde"],
+      "description": "Éditeur et fondateur du magazine Causeur en 2007. Figure de la droite intellectuelle conservatrice. Ancien directeur de Franc-Tireur.",
+      "politicalLinks": [
+        "Proche des intellectuels de droite et conservateurs",
+        "Ligne éditoriale critique du 'politiquement correct'",
+        "Soutiens ponctuels de figures de la droite radicale"
+      ],
+      "thinkTankLinks": [
+        "Proximité avec iFRAP (tribunes régulières)",
+        "Liens avec Club des Vigilants",
+        "Relais des idées de l'Institut Molinari"
+      ],
+      "controversies": [
+        "Accusations de complaisance envers l'extrême-droite",
+        "Tribunes controversées d'Éric Zemmour avant sa candidature",
+        "Critiqué pour sa ligne anti-immigration"
+      ]
     }
   ],
   "media": [
@@ -494,6 +519,16 @@
       "ownedBy": ["b8"],
       "description": "TF1 = 1ère chaîne française. LCI = chaîne d'info en continu. Groupe Bouygues.",
       "editorialLine": "Généraliste, consensuel, pro-pouvoir en place"
+    },
+    {
+      "id": "m11",
+      "name": "Causeur",
+      "type": "media",
+      "category": "Magazine mensuel d'opinion",
+      "audience": "~50k exemplaires/mois, audience web 500k visiteurs/mois",
+      "ownedBy": ["b11"],
+      "description": "Magazine mensuel fondé en 2007 par Élisabeth Lévy et Pierre-Édouard Stérin. Ligne éditoriale conservatrice, critique du politiquement correct et du progressisme. Tribune régulière d'intellectuels de droite.",
+      "editorialLine": "Droite conservatrice, souverainiste, anti-woke, critique de l'immigration"
     }
   ]
 }

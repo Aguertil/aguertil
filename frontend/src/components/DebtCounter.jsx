@@ -1,9 +1,22 @@
 import { useState, useEffect } from 'react';
 
 export default function DebtCounter({ initialDebt, debtPerSecond }) {
-  const [debt, setDebt] = useState(initialDebt);
+  // Date de référence : 1er janvier 2024, 00:00:00 UTC
+  // Dette officielle à cette date : 3 100 000 000 000 €
+  const REFERENCE_DATE = new Date('2024-01-01T00:00:00Z');
+  const REFERENCE_DEBT = 3100000000000;
+  
+  // Calculer la dette actuelle basée sur le temps écoulé depuis la date de référence
+  const calculateCurrentDebt = () => {
+    const now = new Date();
+    const secondsElapsed = Math.floor((now - REFERENCE_DATE) / 1000);
+    return REFERENCE_DEBT + (secondsElapsed * debtPerSecond);
+  };
+  
+  const [debt, setDebt] = useState(calculateCurrentDebt());
   
   useEffect(() => {
+    // Mettre à jour la dette chaque seconde
     const interval = setInterval(() => {
       setDebt(prevDebt => prevDebt + debtPerSecond);
     }, 1000);
