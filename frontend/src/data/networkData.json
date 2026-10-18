@@ -273,15 +273,17 @@
       "type": "billionaire",
       "fortune": "~41 milliards USD",
       "sector": "Transport maritime (CMA CGM)",
-      "mediaOwned": ["m5"],
-      "companies": ["CMA CGM", "La Provence", "La Tribune"],
-      "description": "PDG de CMA CGM, 4ème armateur mondial. A racheté La Provence et La Tribune en 2020.",
+      "mediaOwned": ["m5", "m4"],
+      "companies": ["CMA CGM", "La Provence", "La Tribune", "Libération", "L'Express", "BFM TV"],
+      "description": "PDG de CMA CGM, 4ème armateur mondial. A racheté La Provence et La Tribune en 2020, puis Libération, L'Express et BFM TV à Patrick Drahi en 2024. Devient un poids lourd des médias français.",
       "politicalLinks": [
-        "Discret politiquement",
-        "Proches de Macron (industrie stratégique)"
+        "Montée en puissance médiatique depuis 2020",
+        "Proche d'Emmanuel Macron (industrie stratégique)",
+        "BFM TV = influence majeure sur l'opinion"
       ],
       "thinkTankLinks": [
-        "Institut de l'Entreprise (membre)"
+        "Institut de l'Entreprise (membre)",
+        "Institut Montaigne (nouveau financeur potentiel)"
       ]
     },
     {
@@ -308,18 +310,22 @@
       "id": "b6",
       "name": "Patrick Drahi",
       "type": "billionaire",
-      "fortune": "~6 milliards USD",
+      "fortune": "~6 milliards USD (en baisse)",
       "sector": "Télécoms (Altice)",
-      "mediaOwned": ["m4"],
-      "companies": ["Altice", "SFR", "NextRadioTV"],
-      "description": "Fondateur d'Altice. Propriétaire de Libération, L'Express, BFM TV. Dette colossale de ses groupes.",
+      "mediaOwned": [],
+      "companies": ["Altice", "SFR"],
+      "description": "Fondateur d'Altice. A vendu Libération, L'Express et BFM TV à Rodolphe Saadé en 2024 pour réduire sa dette colossale. Se recentre sur les télécoms.",
       "politicalLinks": [
-        "Discret mais influent",
-        "BFM = média du pouvoir économique"
+        "Perte d'influence médiatique majeure après la vente",
+        "Dette de ses groupes l'a forcé à vendre"
       ],
       "thinkTankLinks": [
-        "Institut Montaigne (financeur)",
-        "Terra Nova (via BFM)"
+        "Institut Montaigne (ancien financeur)",
+        "Terra Nova (liens coupés)"
+      ],
+      "controversies": [
+        "Dette colossale d'Altice (60 milliards USD)",
+        "Vente forcée de ses médias pour survivre financièrement"
       ]
     },
     {
@@ -456,8 +462,8 @@
       "type": "media",
       "category": "Presse et TV d'information",
       "audience": "BFM TV: 1ère chaîne d'info en continu",
-      "ownedBy": ["b6"],
-      "description": "Groupe de médias Altice. BFM TV = référence info économique. Libération (gauche historique, virage centre). L'Express (centre-droit).",
+      "ownedBy": ["b4"],
+      "description": "Groupe de médias racheté par Rodolphe Saadé (CMA CGM) en 2024 à Patrick Drahi. BFM TV = 1ère chaîne d'info en continu. Libération (gauche historique, virage centre). L'Express (centre-droit).",
       "editorialLine": "BFM: pro-business, Libé: centre-gauche"
     },
     {
