@@ -6,7 +6,7 @@ import NetworkPage from './pages/NetworkPage';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
         <Navigation />
         <Routes>
           <Route path="/" element={<DebtPage />} />

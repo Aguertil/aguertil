@@ -7,39 +7,41 @@ export default function Navigation() {
   const isActive = (path) => location.pathname === path;
   
   return (
-    <nav className="bg-white shadow-md border-b border-gray-200">
+    <nav className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-xl shadow-2xl border-b border-blue-500/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2 text-xl font-bold text-blue-600">
-              <span className="text-2xl">🇫🇷</span>
-              <span>Observatoire Citoyen</span>
+            <Link to="/" className="group flex items-center space-x-3 text-xl font-bold">
+              <span className="text-3xl transform group-hover:scale-110 transition-transform duration-300">🇫🇷</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 group-hover:from-pink-400 group-hover:via-purple-400 group-hover:to-blue-400 transition-all duration-500">
+                Observatoire Citoyen
+              </span>
             </Link>
           </div>
           
-          <div className="flex space-x-1">
+          <div className="flex space-x-2">
             <Link
               to="/"
-              className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
+              className={`group flex items-center space-x-2 px-6 py-3 rounded-xl transition-all duration-300 ${
                 isActive('/') 
-                  ? 'bg-blue-600 text-white' 
-                  : 'text-gray-700 hover:bg-gray-100'
+                  ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg shadow-blue-500/50' 
+                  : 'text-blue-300 hover:bg-white/10 hover:text-white'
               }`}
             >
-              <TrendingDown size={20} />
-              <span className="font-medium">Dette Publique</span>
+              <TrendingDown size={20} className={`transition-transform duration-300 ${isActive('/') ? '' : 'group-hover:rotate-12'}`} />
+              <span className="font-semibold">Dette Publique</span>
             </Link>
             
             <Link
               to="/network"
-              className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
+              className={`group flex items-center space-x-2 px-6 py-3 rounded-xl transition-all duration-300 ${
                 isActive('/network') 
-                  ? 'bg-blue-600 text-white' 
-                  : 'text-gray-700 hover:bg-gray-100'
+                  ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/50' 
+                  : 'text-purple-300 hover:bg-white/10 hover:text-white'
               }`}
             >
-              <Network size={20} />
-              <span className="font-medium">Cartographie des Influences</span>
+              <Network size={20} className={`transition-transform duration-300 ${isActive('/network') ? '' : 'group-hover:rotate-12'}`} />
+              <span className="font-semibold">Cartographie des Influences</span>
             </Link>
           </div>
         </div>
