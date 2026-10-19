@@ -150,23 +150,39 @@ app.get('/api/debt/projections', (req, res) => {
 app.get('/api/presidents', (req, res) => {
   const sortBy = req.query.sortBy || 'startYear';
   const order = req.query.order || 'asc';
+  const adjusted = req.query.adjusted === 'true';
   
   let presidents = [...presidentsData.presidents];
   
   presidents.sort((a, b) => {
-    const aVal = a[sortBy];
-    const bVal = b[sortBy];
+    let aVal = a[sortBy];
+    let bVal = b[sortBy];
+    
+    // Si on demande les valeurs ajustées
+    if (adjusted) {
+      const adjustedField = sortBy + 'Adjusted';
+      if (a[adjustedField] !== undefined) {
+        aVal = a[adjustedField];
+        bVal = b[adjustedField];
+      }
+    }
+    
     return order === 'desc' ? bVal - aVal : aVal - bVal;
   });
   
+  const debtField = adjusted ? 'debtIncreaseAdjusted' : 'debtIncrease';
+  const debtPerYearField = adjusted ? 'debtPerYearAdjusted' : 'debtPerYear';
+  
   res.json({
     count: presidents.length,
+    adjusted,
     presidents,
     summary: {
-      totalDebtAccumulated: presidents.reduce((sum, p) => sum + p.debtIncrease, 0),
-      averageDebtPerYear: presidents.reduce((sum, p) => sum + p.debtPerYear, 0) / presidents.length,
+      totalDebtAccumulated: presidents.reduce((sum, p) => sum + (p[debtField] || p.debtIncrease), 0),
+      averageDebtPerYear: presidents.reduce((sum, p) => sum + (p[debtPerYearField] || p.debtPerYear), 0) / presidents.length,
       periodCovered: `${presidents[0].startYear}-${presidents[presidents.length - 1].endYear}`
-    }
+    },
+    note: presidentsData.inflationNote
   });
 });
 
@@ -184,6 +200,7 @@ app.get('/api/presidents/:id', (req, res) => {
 // Classement des présidents par critère
 app.get('/api/presidents/ranking/:field', (req, res) => {
   const { field } = req.params;
+  const adjusted = req.query.adjusted === 'true';
   const validFields = ['debtIncrease', 'debtPerYear', 'gdpRatioEnd', 'years'];
   
   if (!validFields.includes(field)) {
@@ -193,19 +210,35 @@ app.get('/api/presidents/ranking/:field', (req, res) => {
     });
   }
   
+  let sortField = field;
+  
+  // Si on demande les valeurs ajustées
+  if (adjusted) {
+    const adjustedField = field + 'Adjusted';
+    // Vérifier si le champ ajusté existe pour le premier président
+    if (presidentsData.presidents[0][adjustedField] !== undefined) {
+      sortField = adjustedField;
+    }
+  }
+  
   const ranking = [...presidentsData.presidents]
-    .sort((a, b) => b[field] - a[field])
+    .sort((a, b) => (b[sortField] || b[field]) - (a[sortField] || a[field]))
     .map((p, index) => ({
       rank: index + 1,
       name: p.name,
       period: p.period,
-      value: p[field],
+      value: p[sortField] || p[field],
+      valueNominal: p[field],
+      valueAdjusted: p[sortField] !== field ? p[sortField] : undefined,
+      inflationCoefficient: p.inflationCoefficient,
       party: p.party
     }));
   
   res.json({
     field,
-    ranking
+    adjusted,
+    ranking,
+    note: adjusted ? presidentsData.inflationNote : undefined
   });
 });
 

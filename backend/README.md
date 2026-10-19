@@ -132,17 +132,19 @@ Projections de la dette pour les années futures.
 
 ## 👑 Présidents
 
-### `GET /api/presidents?sortBy=debtIncrease&order=desc`
+### `GET /api/presidents?sortBy=debtIncrease&order=desc&adjusted=true`
 Liste de tous les présidents depuis 1947.
 
 **Paramètres :**
 - `sortBy` (optionnel) - Critère de tri : `startYear`, `debtIncrease`, `debtPerYear`, `years`
 - `order` (optionnel) - Ordre : `asc` ou `desc`
+- `adjusted` (optionnel) - `true` pour utiliser les valeurs ajustées à l'inflation (euros constants 2024), `false` par défaut
 
 **Réponse :**
 ```json
 {
   "count": 10,
+  "adjusted": false,
   "presidents": [
     {
       "id": 10,
@@ -154,6 +156,9 @@ Liste de tous les présidents depuis 1947.
       "debtEnd": 3342000000000,
       "debtIncrease": 1082000000000,
       "debtPerYear": 115106382979,
+      "inflationCoefficient": 1.02,
+      "debtIncreaseAdjusted": 1103640000000,
+      "debtPerYearAdjusted": 117408510638,
       "gdpRatioStart": 98,
       "gdpRatioEnd": 116,
       "context": "COVID-19, crise énergétique, inflation",
@@ -165,7 +170,8 @@ Liste de tous les présidents depuis 1947.
     "totalDebtAccumulated": 3082000000000,
     "averageDebtPerYear": 44571428571,
     "periodCovered": "1947-2026"
-  }
+  },
+  "note": "Dette ajustée à l'inflation en euros constants 2024..."
 }
 ```
 
@@ -193,7 +199,7 @@ Détails d'un président spécifique.
 }
 ```
 
-### `GET /api/presidents/ranking/:field`
+### `GET /api/presidents/ranking/:field?adjusted=true`
 Classement des présidents selon un critère.
 
 **Critères valides :**
@@ -202,7 +208,10 @@ Classement des présidents selon un critère.
 - `gdpRatioEnd` - Ratio dette/PIB final
 - `years` - Durée du mandat
 
-**Exemple :** `/api/presidents/ranking/debtIncrease`
+**Paramètres :**
+- `adjusted` (optionnel) - `true` pour utiliser les valeurs ajustées à l'inflation
+
+**Exemple :** `/api/presidents/ranking/debtIncrease?adjusted=true`
 
 **Réponse :**
 ```json

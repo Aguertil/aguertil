@@ -5,6 +5,7 @@ import presidentsData from '../data/presidentsData.json';
 export default function PresidentsPage() {
   const [sortBy, setSortBy] = useState('debtIncrease');
   const [sortOrder, setSortOrder] = useState('desc');
+  const [useAdjustedValues, setUseAdjustedValues] = useState(false);
   const [selectedPresident, setSelectedPresident] = useState(null);
   const [isVisible, setIsVisible] = useState({});
 
@@ -35,8 +36,18 @@ export default function PresidentsPage() {
   };
 
   const sortedPresidents = [...presidentsData.presidents].sort((a, b) => {
-    const aValue = a[sortBy];
-    const bValue = b[sortBy];
+    let aValue = a[sortBy];
+    let bValue = b[sortBy];
+    
+    // Si on utilise les valeurs ajustées et qu'il existe un champ ajusté
+    if (useAdjustedValues) {
+      const adjustedField = sortBy + 'Adjusted';
+      if (a[adjustedField] !== undefined) {
+        aValue = a[adjustedField];
+        bValue = b[adjustedField];
+      }
+    }
+    
     return sortOrder === 'desc' ? bValue - aValue : aValue - bValue;
   });
 
@@ -172,12 +183,38 @@ export default function PresidentsPage() {
             transition: 'all 0.8s ease-out'
           }}
         >
-          <div className="flex flex-wrap gap-3 items-center">
-            <span className="text-blue-300 font-semibold">Trier par :</span>
-            <SortButton field="debtIncrease" label="Dette totale" />
-            <SortButton field="debtPerYear" label="Dette par an" />
-            <SortButton field="gdpRatioEnd" label="Ratio dette/PIB" />
-            <SortButton field="years" label="Durée mandat" />
+          <div className="space-y-4">
+            <div className="flex flex-wrap gap-3 items-center">
+              <span className="text-blue-300 font-semibold">Trier par :</span>
+              <SortButton field="debtIncrease" label="Dette totale" />
+              <SortButton field="debtPerYear" label="Dette par an" />
+              <SortButton field="gdpRatioEnd" label="Ratio dette/PIB" />
+              <SortButton field="years" label="Durée mandat" />
+            </div>
+            
+            <div className="flex items-center gap-3 pt-3 border-t border-white/10">
+              <span className="text-blue-300 font-semibold">💡 Ajustement inflation :</span>
+              <button
+                onClick={() => setUseAdjustedValues(!useAdjustedValues)}
+                className={`relative inline-flex h-8 w-16 items-center rounded-full transition-all duration-300 ${
+                  useAdjustedValues ? 'bg-green-600' : 'bg-gray-600'
+                }`}
+              >
+                <span
+                  className={`inline-block h-6 w-6 transform rounded-full bg-white transition-transform duration-300 ${
+                    useAdjustedValues ? 'translate-x-9' : 'translate-x-1'
+                  }`}
+                />
+              </button>
+              <span className="text-sm text-blue-200">
+                {useAdjustedValues ? 'Euros constants 2024 (ajusté)' : 'Euros nominaux (non ajusté)'}
+              </span>
+              {useAdjustedValues && (
+                <span className="text-xs text-green-300 italic">
+                  ✓ Valeurs ajustées à l'inflation pour une comparaison équitable
+                </span>
+              )}
+            </div>
           </div>
         </div>
 
@@ -228,13 +265,24 @@ export default function PresidentsPage() {
                     {/* Stats Grid */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                       <div className="bg-white/5 backdrop-blur-sm rounded-lg p-3 border border-white/10">
-                        <div className="text-xs text-blue-300 mb-1 font-semibold">Dette accumulée</div>
-                        <div className="text-lg font-black text-white">{formatNumber(president.debtIncrease)}</div>
+                        <div className="text-xs text-blue-300 mb-1 font-semibold">
+                          Dette accumulée {useAdjustedValues && '(ajustée)'}
+                        </div>
+                        <div className="text-lg font-black text-white">
+                          {formatNumber(useAdjustedValues ? president.debtIncreaseAdjusted : president.debtIncrease)}
+                        </div>
+                        {useAdjustedValues && president.inflationCoefficient && (
+                          <div className="text-xs text-green-300 mt-1">×{president.inflationCoefficient}</div>
+                        )}
                       </div>
                       
                       <div className="bg-white/5 backdrop-blur-sm rounded-lg p-3 border border-white/10">
-                        <div className="text-xs text-purple-300 mb-1 font-semibold">Par an</div>
-                        <div className="text-lg font-black text-white">{formatNumber(president.debtPerYear)}</div>
+                        <div className="text-xs text-purple-300 mb-1 font-semibold">
+                          Par an {useAdjustedValues && '(ajusté)'}
+                        </div>
+                        <div className="text-lg font-black text-white">
+                          {formatNumber(useAdjustedValues ? president.debtPerYearAdjusted : president.debtPerYear)}
+                        </div>
                       </div>
                       
                       <div className="bg-white/5 backdrop-blur-sm rounded-lg p-3 border border-white/10">
@@ -290,7 +338,16 @@ export default function PresidentsPage() {
             <AlertCircle className="w-6 h-6 text-blue-400" />
             Méthodologie et sources
           </h3>
-          <div className="space-y-2 text-blue-200 text-sm">
+          <div className="space-y-3 text-blue-200 text-sm">
+            <div className="p-3 bg-green-500/10 rounded-lg border border-green-400/30">
+              <p className="font-semibold text-green-300 mb-2">💡 Ajustement à l'inflation :</p>
+              <p>
+                Pour une comparaison équitable entre les présidents, les valeurs peuvent être ajustées à l'inflation en euros constants 2024. 
+                Par exemple, 1 milliard d'euros en 1950 équivaut à environ 25 milliards d'euros en 2024. 
+                Cet ajustement permet de comparer le "poids réel" de la dette indépendamment de l'érosion monétaire.
+              </p>
+            </div>
+            
             <p>
               <span className="font-semibold text-blue-300">Sources : </span>
               INSEE, Banque de France, Ministère de l'Économie, Eurostat
