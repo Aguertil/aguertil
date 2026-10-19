@@ -1,0 +1,18 @@
+{
+  "name": "observatoire-citoyen-api",
+  "version": "1.0.0",
+  "description": "API REST pour l'Observatoire Citoyen - Dette publique et influences politiques",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["api", "dette", "politique", "france"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
+}
