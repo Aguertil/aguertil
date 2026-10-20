@@ -3,6 +3,7 @@ import Navigation from './components/Navigation';
 import DebtPage from './pages/DebtPage';
 import NetworkPage from './pages/NetworkPage';
 import PresidentsPage from './pages/PresidentsPage';
+import PromisesPage from './pages/PromisesPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<DebtPage />} />
           <Route path="/network" element={<NetworkPage />} />
           <Route path="/presidents" element={<PresidentsPage />} />
+          <Route path="/promises" element={<PromisesPage />} />
         </Routes>
       </div>
     </Router>

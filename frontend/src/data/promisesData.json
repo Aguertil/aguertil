@@ -1,0 +1,282 @@
+{
+  "note": "Promesses de campagne vs réalité pour les présidents de la Ve République. Sources : programmes officiels, discours de campagne, rapports gouvernementaux.",
+  "presidents": [
+    {
+      "id": "sarkozy",
+      "name": "Nicolas Sarkozy",
+      "period": "2007-2012",
+      "party": "UMP",
+      "image": "🏛️",
+      "campaignYear": 2007,
+      "promises": {
+        "deficit": {
+          "promise": "Réduire le déficit à zéro d'ici la fin du quinquennat",
+          "promiseValue": 0,
+          "reality": "Déficit passé de 2.5% à 4.8% du PIB",
+          "realityValue": 4.8,
+          "fulfilled": false,
+          "difference": "+4.8 points"
+        },
+        "debt": {
+          "promise": "Stabiliser la dette publique autour de 60% du PIB",
+          "promiseValue": 60,
+          "reality": "Dette passée de 64% à 90% du PIB",
+          "realityValue": 90,
+          "fulfilled": false,
+          "difference": "+26 points"
+        },
+        "keyPromises": [
+          {
+            "title": "Réduire la dette publique",
+            "status": "non_tenu",
+            "detail": "Dette augmentée de 600 milliards € (de 1250 à 1850 Mds€)"
+          },
+          {
+            "title": "Retour à l'équilibre budgétaire",
+            "status": "non_tenu",
+            "detail": "Déficit moyen de 5.1% sur le quinquennat (cible : 0%)"
+          },
+          {
+            "title": "Maîtrise des dépenses publiques",
+            "status": "partiellement_tenu",
+            "detail": "Croissance des dépenses ralentie mais non stabilisée"
+          }
+        ]
+      },
+      "context": "Crise financière de 2008, plan de relance massif, récession économique",
+      "quote": "Je veux être le président du pouvoir d'achat et de la valeur travail",
+      "sources": [
+        "Programme UMP 2007",
+        "Rapport Cour des Comptes 2012",
+        "INSEE - Comptes nationaux"
+      ]
+    },
+    {
+      "id": "hollande",
+      "name": "François Hollande",
+      "period": "2012-2017",
+      "party": "PS",
+      "image": "🌹",
+      "campaignYear": 2012,
+      "promises": {
+        "deficit": {
+          "promise": "Ramener le déficit à 3% du PIB dès 2013",
+          "promiseValue": 3.0,
+          "reality": "Objectif atteint seulement en 2017 (2.7%)",
+          "realityValue": 2.7,
+          "fulfilled": "partiellement",
+          "difference": "Atteint avec 4 ans de retard"
+        },
+        "debt": {
+          "promise": "Inverser la courbe de la dette avant la fin du quinquennat",
+          "promiseValue": 90,
+          "reality": "Dette passée de 90% à 98% du PIB",
+          "realityValue": 98,
+          "fulfilled": false,
+          "difference": "+8 points"
+        },
+        "keyPromises": [
+          {
+            "title": "Inverser la courbe de la dette",
+            "status": "non_tenu",
+            "detail": "Dette augmentée de 410 milliards € (de 1850 à 2260 Mds€)"
+          },
+          {
+            "title": "Réduire le déficit à 3% en 2013",
+            "status": "non_tenu",
+            "detail": "Objectif atteint seulement en 2017 (4 ans de retard)"
+          },
+          {
+            "title": "Rétablir les comptes publics",
+            "status": "partiellement_tenu",
+            "detail": "Déficit réduit mais dette toujours en hausse"
+          }
+        ]
+      },
+      "context": "Crise de la zone euro, austérité européenne, croissance faible",
+      "quote": "Mon véritable adversaire, c'est le monde de la finance",
+      "sources": [
+        "Programme PS 2012 - 60 engagements",
+        "Rapport économique 2017",
+        "Eurostat"
+      ]
+    },
+    {
+      "id": "macron",
+      "name": "Emmanuel Macron",
+      "period": "2017-2026 (en cours)",
+      "party": "LREM puis RE",
+      "image": "⚡",
+      "campaignYear": 2017,
+      "promises": {
+        "deficit": {
+          "promise": "Ramener le déficit sous les 3% dès 2017 et tendre vers l'équilibre",
+          "promiseValue": 2.0,
+          "reality": "Déficit : 2.6% (2017-19), puis explosion COVID : 9% (2020), 4.7% (2024)",
+          "realityValue": 4.7,
+          "fulfilled": "partiellement",
+          "difference": "+2.7 points vs objectif"
+        },
+        "debt": {
+          "promise": "Réduire la dette à 95% du PIB d'ici 2022",
+          "promiseValue": 95,
+          "reality": "Dette à 116% du PIB en 2026 (vs 98% en 2017)",
+          "realityValue": 116,
+          "fulfilled": false,
+          "difference": "+21 points vs objectif"
+        },
+        "keyPromises": [
+          {
+            "title": "Réduire la dette de 5 points en 5 ans",
+            "status": "non_tenu",
+            "detail": "Dette augmentée de 1082 milliards € (de 2260 à 3342 Mds€)"
+          },
+          {
+            "title": "60 milliards d'économies sur 5 ans",
+            "status": "non_tenu",
+            "detail": "Dépenses publiques augmentées (COVID, crise énergétique)"
+          },
+          {
+            "title": "Retour sous les 3% de déficit",
+            "status": "partiellement_tenu",
+            "detail": "Objectif atteint 2017-19, mais perdu avec COVID puis inflation"
+          }
+        ]
+      },
+      "context": "COVID-19 (plans massifs 400 Mds€), crise énergétique, guerre Ukraine, inflation",
+      "quote": "Nous réduirons nos dépenses publiques de 60 milliards d'euros en 5 ans",
+      "campaignYear2": 2022,
+      "promises2": {
+        "deficit": {
+          "promise": "Ramener le déficit sous 3% d'ici 2027",
+          "promiseValue": 3.0,
+          "reality": "Déficit encore à 4.7% en 2024, objectif repoussé à 2029",
+          "realityValue": 4.7,
+          "fulfilled": false,
+          "difference": "Non atteint, 2 ans de retard minimum"
+        },
+        "debt": {
+          "promise": "Stabiliser puis réduire le ratio dette/PIB",
+          "promiseValue": 110,
+          "reality": "Dette à 116% en 2026, toujours en hausse",
+          "realityValue": 116,
+          "fulfilled": false,
+          "difference": "+6 points vs objectif"
+        }
+      },
+      "sources": [
+        "Programme En Marche 2017",
+        "Programme Renaissance 2022",
+        "Projet de loi de finances 2024",
+        "Banque de France"
+      ]
+    },
+    {
+      "id": "chirac",
+      "name": "Jacques Chirac",
+      "period": "1995-2007",
+      "party": "RPR puis UMP",
+      "image": "🏛️",
+      "campaignYear": 1995,
+      "promises": {
+        "deficit": {
+          "promise": "Résorber la fracture sociale sans creuser les déficits",
+          "promiseValue": 3.0,
+          "reality": "Déficit oscillant entre 2% et 4% selon les années",
+          "realityValue": 3.5,
+          "fulfilled": "partiellement",
+          "difference": "Maîtrise relative"
+        },
+        "debt": {
+          "promise": "Stabiliser la dette publique autour de 60% (critère Maastricht)",
+          "promiseValue": 60,
+          "reality": "Dette passée de 55% à 64% du PIB",
+          "realityValue": 64,
+          "fulfilled": false,
+          "difference": "+9 points"
+        },
+        "keyPromises": [
+          {
+            "title": "Résorber la fracture sociale",
+            "status": "partiellement_tenu",
+            "detail": "Politiques sociales mais dette augmentée de 480 Mds€"
+          },
+          {
+            "title": "Respecter les critères de Maastricht",
+            "status": "non_tenu",
+            "detail": "Dépassement du seuil de 60% de dette/PIB"
+          },
+          {
+            "title": "Réforme de l'État",
+            "status": "partiellement_tenu",
+            "detail": "Quelques réformes mais dépenses publiques toujours élevées"
+          }
+        ]
+      },
+      "context": "Passage à l'euro, 35 heures (gouvernement Jospin), croissance modérée",
+      "quote": "Notre maison brûle et nous regardons ailleurs",
+      "sources": [
+        "Programme RPR 1995",
+        "Rapport Conseil d'analyse économique",
+        "Comptes de la Nation INSEE"
+      ]
+    },
+    {
+      "id": "mitterrand",
+      "name": "François Mitterrand",
+      "period": "1981-1995",
+      "party": "PS",
+      "image": "🌹",
+      "campaignYear": 1981,
+      "promises": {
+        "deficit": {
+          "promise": "Relance économique keynésienne sans dérives budgétaires",
+          "promiseValue": 2.0,
+          "reality": "Déficits élevés dans les années 80, puis tournant rigueur",
+          "realityValue": 5.0,
+          "fulfilled": false,
+          "difference": "Déficits importants puis rigueur"
+        },
+        "debt": {
+          "promise": "Financer les réformes tout en maîtrisant l'endettement",
+          "promiseValue": 40,
+          "reality": "Dette passée de 38% à 55% du PIB",
+          "realityValue": 55,
+          "fulfilled": false,
+          "difference": "+17 points"
+        },
+        "keyPromises": [
+          {
+            "title": "110 propositions pour la France",
+            "status": "partiellement_tenu",
+            "detail": "Nombreuses réformes mais tournant de la rigueur en 1983"
+          },
+          {
+            "title": "Nationalisations sans dérive budgétaire",
+            "status": "non_tenu",
+            "detail": "Dette augmentée de 414 Mds€ (1449 Mds€ en euros 2024)"
+          },
+          {
+            "title": "Réduction du chômage",
+            "status": "non_tenu",
+            "detail": "Chômage passé de 7% à 12% malgré politiques de relance"
+          }
+        ]
+      },
+      "context": "Chocs pétroliers, inflation élevée, tournant de la rigueur (1983), construction européenne",
+      "quote": "Changer la vie",
+      "sources": [
+        "110 propositions pour la France (1981)",
+        "Archives INA",
+        "Études économiques rétrospectives"
+      ]
+    }
+  ],
+  "statistics": {
+    "totalPromises": 25,
+    "fulfilled": 2,
+    "partiallyFulfilled": 8,
+    "notFulfilled": 15,
+    "averageDebtIncrease": 26.8
+  }
+}

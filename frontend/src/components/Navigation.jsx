@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { TrendingDown, Network, Crown } from 'lucide-react';
+import { TrendingDown, Network, Crown, Target } from 'lucide-react';
 
 export default function Navigation() {
   const location = useLocation();
@@ -22,40 +22,50 @@ export default function Navigation() {
           <div className="flex space-x-2">
             <Link
               to="/"
-              className={`group flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-300 ${
+              className={`group flex items-center space-x-2 px-3 py-3 rounded-xl transition-all duration-300 ${
                 isActive('/') 
                   ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg shadow-blue-500/50' 
                   : 'text-blue-300 hover:bg-white/10 hover:text-white'
               }`}
             >
               <TrendingDown size={20} className={`transition-transform duration-300 ${isActive('/') ? '' : 'group-hover:rotate-12'}`} />
-              <span className="font-semibold hidden lg:inline">Dette Publique</span>
-              <span className="font-semibold lg:hidden">Dette</span>
+              <span className="font-semibold hidden xl:inline">Dette</span>
             </Link>
             
             <Link
               to="/presidents"
-              className={`group flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-300 ${
+              className={`group flex items-center space-x-2 px-3 py-3 rounded-xl transition-all duration-300 ${
                 isActive('/presidents') 
                   ? 'bg-gradient-to-r from-orange-600 to-red-600 text-white shadow-lg shadow-orange-500/50' 
                   : 'text-orange-300 hover:bg-white/10 hover:text-white'
               }`}
             >
               <Crown size={20} className={`transition-transform duration-300 ${isActive('/presidents') ? '' : 'group-hover:rotate-12'}`} />
-              <span className="font-semibold">Présidents</span>
+              <span className="font-semibold hidden xl:inline">Présidents</span>
+            </Link>
+            
+            <Link
+              to="/promises"
+              className={`group flex items-center space-x-2 px-3 py-3 rounded-xl transition-all duration-300 ${
+                isActive('/promises') 
+                  ? 'bg-gradient-to-r from-pink-600 to-purple-600 text-white shadow-lg shadow-pink-500/50' 
+                  : 'text-pink-300 hover:bg-white/10 hover:text-white'
+              }`}
+            >
+              <Target size={20} className={`transition-transform duration-300 ${isActive('/promises') ? '' : 'group-hover:rotate-12'}`} />
+              <span className="font-semibold hidden xl:inline">Promesses</span>
             </Link>
             
             <Link
               to="/network"
-              className={`group flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-300 ${
+              className={`group flex items-center space-x-2 px-3 py-3 rounded-xl transition-all duration-300 ${
                 isActive('/network') 
-                  ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/50' 
+                  ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg shadow-purple-500/50' 
                   : 'text-purple-300 hover:bg-white/10 hover:text-white'
               }`}
             >
               <Network size={20} className={`transition-transform duration-300 ${isActive('/network') ? '' : 'group-hover:rotate-12'}`} />
-              <span className="font-semibold hidden lg:inline">Influences</span>
-              <span className="font-semibold lg:hidden">Réseau</span>
+              <span className="font-semibold hidden xl:inline">Influences</span>
             </Link>
           </div>
         </div>

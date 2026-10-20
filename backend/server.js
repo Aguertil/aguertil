@@ -23,6 +23,7 @@ const loadJSON = (filename) => {
 const debtData = loadJSON('debtData.json');
 const presidentsData = loadJSON('presidentsData.json');
 const networkData = loadJSON('networkData.json');
+const promisesData = loadJSON('promisesData.json');
 
 // Configuration de la dette en temps réel
 const REFERENCE_DATE = new Date('2024-01-01T00:00:00Z');
@@ -54,6 +55,11 @@ app.get('/', (req, res) => {
         '/api/presidents': 'Liste de tous les présidents',
         '/api/presidents/:id': 'Détails d\'un président',
         '/api/presidents/ranking/:field': 'Classement par critère'
+      },
+      promises: {
+        '/api/promises': 'Liste de tous les présidents avec leurs promesses',
+        '/api/promises/:id': 'Détails des promesses d\'un président',
+        '/api/promises/stats/global': 'Statistiques globales des promesses'
       },
       network: {
         '/api/network': 'Données complètes du réseau d\'influence',
@@ -239,6 +245,44 @@ app.get('/api/presidents/ranking/:field', (req, res) => {
     adjusted,
     ranking,
     note: adjusted ? presidentsData.inflationNote : undefined
+  });
+});
+
+// ==================== PROMESSES DE CAMPAGNE ====================
+
+// Liste de tous les présidents avec leurs promesses
+app.get('/api/promises', (req, res) => {
+  res.json({
+    count: promisesData.presidents.length,
+    presidents: promisesData.presidents,
+    statistics: promisesData.statistics,
+    note: promisesData.note
+  });
+});
+
+// Détails d'un président avec ses promesses
+app.get('/api/promises/:id', (req, res) => {
+  const president = promisesData.presidents.find(p => p.id === req.params.id);
+  
+  if (!president) {
+    return res.status(404).json({ error: 'Président non trouvé' });
+  }
+  
+  res.json(president);
+});
+
+// Statistiques globales des promesses
+app.get('/api/promises/stats/global', (req, res) => {
+  const stats = promisesData.statistics;
+  const totalRate = ((stats.fulfilled + stats.partiallyFulfilled * 0.5) / stats.totalPromises * 100).toFixed(1);
+  
+  res.json({
+    total: stats.totalPromises,
+    fulfilled: stats.fulfilled,
+    partiallyFulfilled: stats.partiallyFulfilled,
+    notFulfilled: stats.notFulfilled,
+    fulfillmentRate: totalRate + '%',
+    averageDebtIncrease: stats.averageDebtIncrease + ' points de PIB'
   });
 });
 
