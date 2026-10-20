@@ -63,11 +63,12 @@ app.get('/', (req, res) => {
         '/api/promises/stats/global': 'Statistiques globales des promesses'
       },
       politicalLinks: {
-        '/api/political-links': 'Toutes les données des liens politiques',
+        '/api/political-links': 'Toutes les données des liens politiques (avec types de liens)',
         '/api/political-links/politicians': 'Liste des politiciens',
         '/api/political-links/billionaires': 'Liste des milliardaires',
         '/api/political-links/pollsters': 'Liste des instituts de sondage',
-        '/api/political-links/:type/:id': 'Détails d\'une entité'
+        '/api/political-links/media': 'Liste des groupes médias et entreprises',
+        '/api/political-links/:type/:id': 'Détails d\'une entité (type: politician, billionaire, pollster, media, business)'
       },
       network: {
         '/api/network': 'Données complètes du réseau d\'influence',
@@ -302,10 +303,13 @@ app.get('/api/political-links', (req, res) => {
     politicians: politicalLinksData.politicians,
     billionaires: politicalLinksData.billionaires,
     pollsters: politicalLinksData.pollsters,
+    mediaGroups: politicalLinksData.mediaGroups || [],
+    linkTypes: politicalLinksData.linkTypes || {},
     summary: {
       totalPoliticians: politicalLinksData.politicians.length,
       totalBillionaires: politicalLinksData.billionaires.length,
-      totalPollsters: politicalLinksData.pollsters.length
+      totalPollsters: politicalLinksData.pollsters.length,
+      totalMediaGroups: (politicalLinksData.mediaGroups || []).length
     },
     note: politicalLinksData.note
   });
@@ -335,6 +339,14 @@ app.get('/api/political-links/pollsters', (req, res) => {
   });
 });
 
+// Liste des groupes médias et entreprises
+app.get('/api/political-links/media', (req, res) => {
+  res.json({
+    count: (politicalLinksData.mediaGroups || []).length,
+    mediaGroups: politicalLinksData.mediaGroups || []
+  });
+});
+
 // Détails d'une entité
 app.get('/api/political-links/:type/:id', (req, res) => {
   const { type, id } = req.params;
@@ -346,6 +358,10 @@ app.get('/api/political-links/:type/:id', (req, res) => {
       break;
     case 'billionaire':
       entity = politicalLinksData.billionaires.find(b => b.id === id);
+      break;
+    case 'media':
+    case 'business':
+      entity = (politicalLinksData.mediaGroups || []).find(m => m.id === id);
       break;
     case 'pollster':
       entity = politicalLinksData.pollsters.find(p => p.id === id);

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search, User, DollarSign, BarChart3, X } from 'lucide-react';
+import { Search, User, DollarSign, BarChart3, X, Tv, Briefcase } from 'lucide-react';
 import politicalLinksData from '../data/politicalLinksData.json';
 
 export default function PoliticalLinksPage() {
@@ -10,7 +10,8 @@ export default function PoliticalLinksPage() {
   const allEntities = [
     ...politicalLinksData.politicians,
     ...politicalLinksData.billionaires,
-    ...politicalLinksData.pollsters
+    ...politicalLinksData.pollsters,
+    ...(politicalLinksData.mediaGroups || [])
   ];
 
   const filteredEntities = allEntities.filter(entity => {
@@ -33,6 +34,8 @@ export default function PoliticalLinksPage() {
       case 'politician': return 'from-blue-500/20 to-cyan-500/20 border-blue-400/40';
       case 'billionaire': return 'from-orange-500/20 to-red-500/20 border-orange-400/40';
       case 'pollster': return 'from-purple-500/20 to-pink-500/20 border-purple-400/40';
+      case 'media': return 'from-green-500/20 to-emerald-500/20 border-green-400/40';
+      case 'business': return 'from-yellow-500/20 to-amber-500/20 border-yellow-400/40';
       default: return 'from-gray-500/20 to-gray-600/20 border-gray-400/40';
     }
   };
@@ -42,6 +45,8 @@ export default function PoliticalLinksPage() {
       case 'politician': return <User className="w-5 h-5" />;
       case 'billionaire': return <DollarSign className="w-5 h-5" />;
       case 'pollster': return <BarChart3 className="w-5 h-5" />;
+      case 'media': return <Tv className="w-5 h-5" />;
+      case 'business': return <Briefcase className="w-5 h-5" />;
       default: return null;
     }
   };
@@ -51,8 +56,15 @@ export default function PoliticalLinksPage() {
       case 'politician': return 'Politique';
       case 'billionaire': return 'Milliardaire';
       case 'pollster': return 'Institut de sondage';
+      case 'media': return 'Groupe média';
+      case 'business': return 'Entreprise';
       default: return type;
     }
+  };
+
+  const getLinkTypeIcon = (linkType) => {
+    const types = politicalLinksData.linkTypes || {};
+    return types[linkType] || linkType;
   };
 
   return (
@@ -80,11 +92,12 @@ export default function PoliticalLinksPage() {
             <div className="flex items-start gap-4">
               <div className="text-4xl">🔥</div>
               <div className="flex-1 text-left">
-                <h3 className="text-xl font-bold text-white mb-2">Révélations</h3>
+                <h3 className="text-xl font-bold text-white mb-2">Liens Directs Documentés</h3>
                 <p className="text-blue-200 text-sm md:text-base">
-                  <span className="font-bold text-red-300">Macron</span> connecté à 6 milliardaires et instituts • 
-                  <span className="font-bold text-orange-300"> Bolloré</span> lié à 3 ministres • 
-                  <span className="font-bold text-yellow-300"> IFOP</span> financé par avocat fiscaliste pro-Fillon
+                  <span className="font-bold text-red-300">Macron</span> : employé Rothschild 2.9M€ • 
+                  <span className="font-bold text-orange-300"> Bouygues</span> : financement Sarkozy + marchés IdF (Pécresse) • 
+                  <span className="font-bold text-yellow-300"> IFOP</span> : propriété avocat fiscaliste pro-Fillon •
+                  <span className="font-bold text-green-300"> Elabe</span> : contrat exclusif BFMTV (Saadé/Macron)
                 </p>
               </div>
             </div>
@@ -102,12 +115,14 @@ export default function PoliticalLinksPage() {
                   { value: 'all', label: 'Tous', count: allEntities.length },
                   { value: 'politician', label: 'Politiques', count: politicalLinksData.politicians.length },
                   { value: 'billionaire', label: 'Milliardaires', count: politicalLinksData.billionaires.length },
-                  { value: 'pollster', label: 'Sondages', count: politicalLinksData.pollsters.length }
+                  { value: 'pollster', label: 'Sondages', count: politicalLinksData.pollsters.length },
+                  { value: 'media', label: 'Médias', count: (politicalLinksData.mediaGroups || []).filter(m => m.type === 'media').length },
+                  { value: 'business', label: 'Entreprises', count: (politicalLinksData.mediaGroups || []).filter(m => m.type === 'business').length }
                 ].map(cat => (
                   <button
                     key={cat.value}
                     onClick={() => setSelectedCategory(cat.value)}
-                    className={`px-4 py-2 rounded-xl font-semibold transition-all duration-300 ${
+                    className={`px-4 py-2 rounded-xl font-semibold transition-all duration-300 text-sm ${
                       selectedCategory === cat.value
                         ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg'
                         : 'bg-white/10 text-blue-300 hover:bg-white/20'
@@ -308,26 +323,44 @@ export default function PoliticalLinksPage() {
                       </div>
                     )}
 
-                    {/* Connections */}
-                    {selectedEntity.connections && selectedEntity.connections.length > 0 && (
-                      <div className="p-4 bg-blue-500/10 rounded-lg border border-blue-400/30">
-                        <div className="text-sm font-semibold text-blue-300 mb-3">
-                          Connexions ({selectedEntity.connections.length})
+                    {/* Direct Links */}
+                    {selectedEntity.details.directLinks && selectedEntity.details.directLinks.length > 0 && (
+                      <div className="p-4 bg-green-500/10 rounded-lg border border-green-400/30">
+                        <div className="text-sm font-semibold text-green-300 mb-3 flex items-center gap-2">
+                          🔗 Liens Directs Documentés ({selectedEntity.details.directLinks.length})
                         </div>
-                        <div className="space-y-3">
-                          {getConnectedEntities(selectedEntity).map(conn => (
-                            <div key={conn.id} className="flex items-start gap-3 p-3 bg-white/5 rounded-lg">
-                              <div className="p-2 bg-white/10 rounded-lg">
-                                {getTypeIcon(conn.type)}
-                              </div>
-                              <div className="flex-1">
-                                <div className="font-semibold text-white">{conn.name}</div>
-                                <div className="text-xs text-blue-300">{getTypeLabel(conn.type)}</div>
-                                {selectedEntity.details.links && selectedEntity.details.links[conn.id] && (
-                                  <div className="text-sm text-blue-200 mt-1">
-                                    → {selectedEntity.details.links[conn.id]}
+                        <div className="space-y-4">
+                          {selectedEntity.details.directLinks.map((link, idx) => (
+                            <div key={idx} className="p-4 bg-white/5 rounded-lg border border-white/10">
+                              <div className="flex items-start gap-3 mb-2">
+                                <div className="text-2xl">{getLinkTypeIcon(link.type)}</div>
+                                <div className="flex-1">
+                                  <div className="text-xs text-green-300 font-semibold uppercase mb-1">
+                                    {getLinkTypeIcon(link.type)}
                                   </div>
-                                )}
+                                  <div className="text-sm text-white font-semibold mb-2">
+                                    {link.description}
+                                  </div>
+                                  <div className="grid grid-cols-2 gap-2 text-xs">
+                                    {link.amount && (
+                                      <div>
+                                        <span className="text-blue-300">Montant: </span>
+                                        <span className="text-white font-bold">{link.amount}</span>
+                                      </div>
+                                    )}
+                                    {link.year && (
+                                      <div>
+                                        <span className="text-blue-300">Année: </span>
+                                        <span className="text-white">{link.year}</span>
+                                      </div>
+                                    )}
+                                  </div>
+                                  {link.source && (
+                                    <div className="text-xs text-blue-200 mt-2 italic">
+                                      Source: {link.source}
+                                    </div>
+                                  )}
+                                </div>
                               </div>
                             </div>
                           ))}

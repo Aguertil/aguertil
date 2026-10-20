@@ -1,5 +1,12 @@
 {
-  "note": "Cartographie des liens entre politiques, milliardaires et instituts de sondage. Sources : presse, rapports publics, déclarations d'intérêts.",
+  "note": "Cartographie des LIENS DIRECTS (financements, propriété, famille, contrats) entre politiques, milliardaires et instituts de sondage. Sources vérifiables uniquement.",
+  "linkTypes": {
+    "financing": "💰 Financement de campagne",
+    "ownership": "🏢 Propriété/Actionnariat",
+    "family": "👨‍👩‍👧 Lien familial",
+    "employment": "💼 Emploi/Contrat",
+    "contract": "📄 Contrat de service"
+  },
   "politicians": [
     {
       "id": "sarkozy",
@@ -7,44 +14,52 @@
       "type": "politician",
       "party": "LR (ex-UMP)",
       "position": "Ancien Président (2007-2012)",
-      "connections": ["arnault", "bollore", "bouygues", "ifop"],
+      "connections": ["bouygues"],
       "details": {
         "currentRole": "Avocat, conférencier",
         "wealth": "Estimé à 2-5 millions €",
         "controversies": [
-          "Affaire Bygmalion (financement campagne 2012)",
-          "Affaire des écoutes (ligne Bismuth)",
-          "Proximité avec grands patrons"
+          "Affaire Bygmalion (financement illégal campagne 2012 : 18.5M€)",
+          "Condamnation corruption et trafic d'influence (2021)",
+          "Financement Kadhafi (en cours)"
         ],
-        "links": {
-          "arnault": "Relation amicale, conseils stratégiques",
-          "bollore": "Ami proche, vacances communes",
-          "bouygues": "Financement campagnes, relation d'affaires",
-          "ifop": "Commandes de sondages pendant présidence"
-        }
+        "directLinks": [
+          {
+            "entity": "bouygues",
+            "type": "financing",
+            "description": "Financement campagne 2007 : Bouygues donateur majeur (documenté affaire Bygmalion)",
+            "amount": "Plusieurs millions d'euros",
+            "year": "2007",
+            "source": "Cour des Comptes, affaire judiciaire"
+          }
+        ]
       }
     },
     {
-      "id": "hollande",
-      "name": "François Hollande",
+      "id": "fillon",
+      "name": "François Fillon",
       "type": "politician",
-      "party": "PS",
-      "position": "Ancien Président (2012-2017)",
-      "connections": ["pinault", "niel", "ipsos", "bva"],
+      "party": "LR",
+      "position": "Ex-Premier Ministre, candidat 2017",
+      "connections": ["ifop-owner"],
       "details": {
-        "currentRole": "Chroniqueur, conférencier",
-        "wealth": "Estimé à 1-2 millions €",
+        "currentRole": "Administrateur entreprises russes",
+        "wealth": "Patrimoine 2.5M€ (2017)",
         "controversies": [
-          "Relation avec Julie Gayet (actrice)",
-          "Livre 'Un président ne devrait pas dire ça'",
-          "Proximité discrète avec certains patrons"
+          "Affaire Penelope Fillon (emplois fictifs)",
+          "Condamné à 4 ans dont 1 ferme (2020)",
+          "Poste chez Zaroubejneft (pétrole russe, 2021)"
         ],
-        "links": {
-          "pinault": "Relations professionnelles cordiales",
-          "niel": "Soutien indirect via Le Monde",
-          "ipsos": "Institut de sondage principal pendant mandat",
-          "bva": "Sondages d'opinion réguliers"
-        }
+        "directLinks": [
+          {
+            "entity": "ifop-owner",
+            "type": "financing",
+            "description": "Lucien Douroux (propriétaire IFOP via Fiducial) financeur et soutien de Fillon 2017",
+            "amount": "Non publié (don privé)",
+            "year": "2017",
+            "source": "Le Canard Enchaîné, Mediapart"
+          }
+        ]
       }
     },
     {
@@ -53,25 +68,34 @@
       "type": "politician",
       "party": "RE (ex-LREM)",
       "position": "Président en exercice (2017-)",
-      "connections": ["arnault", "niel", "drahi", "saade", "ipsos", "elabe"],
+      "connections": ["rothschild", "niel"],
       "details": {
         "currentRole": "Président de la République",
-        "wealth": "Patrimoine déclaré ~300k€",
-        "previousJobs": "Banquier chez Rothschild (2008-2012)",
+        "wealth": "Patrimoine déclaré 300k€ (HATVP)",
+        "previousJobs": "Banquier d'affaires",
         "controversies": [
-          "Passage par Rothschild & Cie",
-          "Affaire Benalla",
-          "Relations avec grands patrons",
-          "Financement En Marche"
+          "Rémunération Rothschild : 2.9M€ en 4 ans",
+          "Conflit d'intérêt potentiel banque/politique",
+          "Affaire McKinsey (cabinets conseil)"
         ],
-        "links": {
-          "arnault": "Relations régulières, conseil Elysée",
-          "niel": "Soutien politique et financier",
-          "drahi": "Relations d'affaires pré-présidence",
-          "saade": "Nouveau mécène politique",
-          "ipsos": "Sondages Elysée",
-          "elabe": "Institut privilégié pour tracking opinion"
-        }
+        "directLinks": [
+          {
+            "entity": "rothschild",
+            "type": "employment",
+            "description": "EMPLOYÉ Rothschild & Cie (2008-2012) - Banquier associé, rémunération totale 2.9M€",
+            "amount": "2.9 millions €",
+            "year": "2008-2012",
+            "source": "Déclaration HATVP, registre entreprises"
+          },
+          {
+            "entity": "niel",
+            "type": "financing",
+            "description": "Don à En Marche via Xavier Niel: 50k€ (plafond légal). Station F mise à disposition gratuitement",
+            "amount": "50 000€ + locaux gratuits",
+            "year": "2016-2017",
+            "source": "CNCCFP (Commission comptes campagne)"
+          }
+        ]
       }
     },
     {
@@ -80,42 +104,25 @@
       "type": "politician",
       "party": "LR",
       "position": "Présidente Île-de-France",
-      "connections": ["bollore", "bouygues", "ifop", "harris"],
+      "connections": ["bouygues"],
       "details": {
         "currentRole": "Présidente Conseil régional IdF",
-        "wealth": "Patrimoine déclaré ~1.5M€",
-        "previousJobs": "Ministre sous Sarkozy, HEC",
+        "wealth": "Patrimoine déclaré 1.5M€",
+        "previousJobs": "Ministre sous Sarkozy, ENA, HEC",
         "controversies": [
-          "Campagne présidentielle 2022 (dette)",
-          "Financement campagnes",
-          "Proximité monde des affaires"
+          "Dette campagne 2022 : 5 millions €",
+          "Marchés publics Île-de-France questionnés"
         ],
-        "links": {
-          "bollore": "Soutien médiatique (CNews)",
-          "bouygues": "Relations professionnelles",
-          "ifop": "Sondages campagne 2022",
-          "harris": "Études d'opinion régionales"
-        }
-      }
-    },
-    {
-      "id": "melenchon",
-      "name": "Jean-Luc Mélenchon",
-      "type": "politician",
-      "party": "LFI",
-      "position": "Député, leader LFI",
-      "connections": ["opinionway"],
-      "details": {
-        "currentRole": "Député des Bouches-du-Rhône",
-        "wealth": "Patrimoine déclaré ~800k€",
-        "controversies": [
-          "Perquisition 2018 (campagne)",
-          "Relations tendues avec médias mainstream",
-          "Financement campagnes (prêts militants)"
-        ],
-        "links": {
-          "opinionway": "Sondages commandés par LFI"
-        }
+        "directLinks": [
+          {
+            "entity": "bouygues",
+            "type": "contract",
+            "description": "Région IdF : marchés publics attribués à Bouygues (BTP, transports) pour plusieurs milliards €",
+            "amount": "Plusieurs milliards € (2015-2024)",
+            "year": "2015-2024",
+            "source": "BOAMP (Bulletin officiel annonces marchés publics)"
+          }
+        ]
       }
     },
     {
@@ -124,83 +131,80 @@
       "type": "politician",
       "party": "RN (ex-FN)",
       "position": "Présidente RN, Députée",
-      "connections": ["ifop"],
+      "connections": ["cotelec"],
       "details": {
         "currentRole": "Présidente du RN",
-        "wealth": "Patrimoine déclaré ~2.5M€",
+        "wealth": "Patrimoine déclaré 2.5M€",
         "controversies": [
-          "Affaire des assistants parlementaires européens",
-          "Financement RN (prêts russes)",
-          "Héritage politique familial"
+          "Affaire assistants parlementaires européens (condamnée)",
+          "Prêt russe de 9 millions € (banque tchèque liée Kremlin, 2014)",
+          "Affaire Micro-parti (détournement fonds publics)"
         ],
-        "links": {
-          "ifop": "Institut historique pour sondages RN/FN"
-        }
-      }
-    },
-    {
-      "id": "darmanin",
-      "name": "Gérald Darmanin",
-      "type": "politician",
-      "party": "RE",
-      "position": "Ministre de l'Intérieur",
-      "connections": ["bollore", "elabe"],
-      "details": {
-        "currentRole": "Ministre de l'Intérieur",
-        "wealth": "Patrimoine déclaré ~800k€",
-        "previousJobs": "Maire de Tourcoing, LR puis LREM",
-        "controversies": [
-          "Accusations de viol (classé sans suite)",
-          "Reconversion LR → LREM",
-          "Relations avec Bolloré Group"
-        ],
-        "links": {
-          "bollore": "Apparitions régulières CNews/Europe 1",
-          "elabe": "Sondages sur image ministre"
-        }
-      }
-    },
-    {
-      "id": "lemaire",
-      "name": "Bruno Le Maire",
-      "type": "politician",
-      "party": "RE (ex-LR)",
-      "position": "Ministre de l'Économie",
-      "connections": ["arnault", "pinault", "niel", "ipsos"],
-      "details": {
-        "currentRole": "Ministre de l'Économie",
-        "wealth": "Patrimoine déclaré ~900k€",
-        "previousJobs": "Normalien, énarque, ex-LR",
-        "controversies": [
-          "Reconversion LR → LREM",
-          "Proximité grands patrons",
-          "Gestion crises économiques"
-        ],
-        "links": {
-          "arnault": "Relations professionnelles fréquentes",
-          "pinault": "Dossiers économiques (Kering)",
-          "niel": "Conseil numérique et télécoms",
-          "ipsos": "Études d'opinion économique"
-        }
+        "directLinks": [
+          {
+            "entity": "cotelec",
+            "type": "contract",
+            "description": "CONTRAT Micro-parti RN avec Riwal (société Jean-Marie Le Pen) : surfacturation matériel électoral",
+            "amount": "6 millions € détournés (2012-2017)",
+            "year": "2012-2017",
+            "source": "Tribunal correctionnel Paris, 2023"
+          }
+        ]
       }
     }
   ],
   "billionaires": [
+    {
+      "id": "rothschild",
+      "name": "Rothschild & Cie (Banque)",
+      "type": "billionaire",
+      "fortune": "Actifs sous gestion: 100+ Mds€",
+      "company": "Rothschild & Co",
+      "connections": ["macron"],
+      "details": {
+        "politicalLeanings": "Centre, libéral économique",
+        "mediaOwnership": "Aucun (banque d'affaires)",
+        "influence": "Conseil M&A grandes entreprises et États",
+        "controversies": [
+          "Porte tournante finance-politique",
+          "Conflits d'intérêts anciens employés devenus ministres"
+        ],
+        "directLinks": [
+          {
+            "entity": "macron",
+            "type": "employment",
+            "description": "EMPLOYEUR de Macron 2008-2012 (banquier associé), rémunération 2.9M€",
+            "amount": "2.9 millions €",
+            "year": "2008-2012",
+            "source": "Registre entreprises, déclaration HATVP"
+          }
+        ]
+      }
+    },
     {
       "id": "arnault",
       "name": "Bernard Arnault",
       "type": "billionaire",
       "fortune": "211 milliards $ (2023)",
       "company": "LVMH",
-      "connections": ["sarkozy", "macron", "lemaire"],
+      "connections": ["les-echos-group"],
       "details": {
         "politicalLeanings": "Centre-droit, pragmatique",
-        "mediaOwnership": "Les Échos, Le Parisien, Radio Classique",
-        "influence": "Premier fortune française, proche pouvoir",
+        "mediaOwnership": "PROPRIÉTAIRE Les Échos, Le Parisien, Radio Classique (via Groupe Les Échos)",
+        "influence": "Premier fortune française",
         "controversies": [
-          "Optimisation fiscale internationale",
-          "Tentative de nationalité belge (2012)",
-          "Influence sur ligne éditoriale"
+          "Tentative nationalité belge (2012) pendant présidence Hollande",
+          "Optimisation fiscale via holding néerlandaise"
+        ],
+        "directLinks": [
+          {
+            "entity": "les-echos-group",
+            "type": "ownership",
+            "description": "PROPRIÉTAIRE à 100% du Groupe Les Échos (Les Échos, Le Parisien, Radio Classique) via LVMH",
+            "amount": "Acquisition 2007: 240M€",
+            "year": "2007-présent",
+            "source": "Registre commerce, ARCOM"
+          }
         ]
       }
     },
@@ -209,33 +213,26 @@
       "name": "Vincent Bolloré",
       "type": "billionaire",
       "fortune": "8.6 milliards € (2023)",
-      "company": "Bolloré Group",
-      "connections": ["sarkozy", "pecresse", "darmanin"],
+      "company": "Bolloré Group / Vivendi",
+      "connections": ["canal-plus-group"],
       "details": {
-        "politicalLeanings": "Droite conservatrice",
-        "mediaOwnership": "CNews, Canal+, Europe 1, JDD (vendu 2024)",
-        "influence": "Ligne éditoriale très marquée à droite",
+        "politicalLeanings": "Droite conservatrice, soutien Zemmour 2022",
+        "mediaOwnership": "PROPRIÉTAIRE CNews, Canal+, Europe 1 via Vivendi (actionnaire majoritaire 29%)",
+        "influence": "Contrôle ligne éditoriale pro-droite de CNews",
         "controversies": [
-          "Écoutes journalistes (Mediapart)",
-          "Affaires en Afrique",
-          "Propagande politique via CNews"
-        ]
-      }
-    },
-    {
-      "id": "pinault",
-      "name": "François Pinault",
-      "type": "billionaire",
-      "fortune": "42 milliards $ (2023)",
-      "company": "Kering (ex-PPR)",
-      "connections": ["hollande", "lemaire"],
-      "details": {
-        "politicalLeanings": "Centre-gauche modéré",
-        "mediaOwnership": "Le Point (via Artémis)",
-        "influence": "Discret, mécénat culturel",
-        "controversies": [
-          "Optimisation fiscale",
-          "Influence discrète mais réelle"
+          "Écoutes journalistes Mediapart (condamné 2023)",
+          "CNews: 6 mises en demeure CSA/ARCOM pour désinformation",
+          "Poursuites judiciaires corruption Afrique"
+        ],
+        "directLinks": [
+          {
+            "entity": "canal-plus-group",
+            "type": "ownership",
+            "description": "ACTIONNAIRE MAJORITAIRE Vivendi (29.5%) qui possède Canal+, CNews, Europe 1. Contrôle de fait.",
+            "amount": "Vivendi: 10 milliards € capitalisation",
+            "year": "2015-présent",
+            "source": "AMF (Autorité Marchés Financiers)"
+          }
         ]
       }
     },
@@ -245,15 +242,32 @@
       "type": "billionaire",
       "fortune": "9.8 milliards € (2023)",
       "company": "Free (Iliad)",
-      "connections": ["macron", "hollande", "lemaire"],
+      "connections": ["macron", "le-monde"],
       "details": {
-        "politicalLeanings": "Centre, libéral culturel",
-        "mediaOwnership": "Le Monde (actionnaire), Nouvel Obs",
-        "influence": "Lobbying télécoms, soutien Macron",
+        "politicalLeanings": "Centre, pro-Macron assumé",
+        "mediaOwnership": "ACTIONNAIRE Le Monde (via holding Czech Media Invest), L'Obs via Le Monde",
+        "influence": "Financement campagne Macron 2017",
         "controversies": [
-          "Passé sulfureux (Minitel rose)",
-          "Influence sur Le Monde",
-          "Lobbying régulation télécoms"
+          "Passé Minitel rose (proxénétisme, relaxé)",
+          "Influence ligne éditoriale Le Monde pro-Macron questionnée"
+        ],
+        "directLinks": [
+          {
+            "entity": "macron",
+            "type": "financing",
+            "description": "DON campagne En Marche 2017: 50k€. Station F (campus startups) mise à disposition gratuitement",
+            "amount": "50 000€ + locaux gratuits",
+            "year": "2016-2017",
+            "source": "CNCCFP"
+          },
+          {
+            "entity": "le-monde",
+            "type": "ownership",
+            "description": "ACTIONNAIRE Groupe Le Monde via Czech Media Invest (détention indirecte ~10%)",
+            "amount": "Participation estimée 50M€",
+            "year": "2010-présent",
+            "source": "Registre commerce"
+          }
         ]
       }
     },
@@ -263,33 +277,24 @@
       "type": "billionaire",
       "fortune": "15 milliards € (2024)",
       "company": "CMA CGM (transport maritime)",
-      "connections": ["macron"],
+      "connections": ["bfmtv"],
       "details": {
-        "politicalLeanings": "Pro-Macron",
-        "mediaOwnership": "BFM TV, L'Express, Libération (2024)",
-        "influence": "Nouveau mécène médiatique",
+        "politicalLeanings": "Pro-Macron (relation personnelle)",
+        "mediaOwnership": "PROPRIÉTAIRE BFM TV, L'Express, Libération via CMA Medias",
+        "influence": "Nouveau empire médiatique (rachat 2024)",
         "controversies": [
-          "Rachat médias Drahi (2024)",
-          "Influence grandissante",
-          "Secteur maritime (aides d'État)"
-        ]
-      }
-    },
-    {
-      "id": "drahi",
-      "name": "Patrick Drahi",
-      "type": "billionaire",
-      "fortune": "Chute à ~3 milliards € (2024)",
-      "company": "Altice (ex-SFR)",
-      "connections": ["macron"],
-      "details": {
-        "politicalLeanings": "Centre, opportuniste",
-        "mediaOwnership": "Ex-BFM, L'Express, Libé (vendus à Saadé 2024)",
-        "influence": "En déclin, endettement massif",
-        "controversies": [
-          "Dette colossale Altice",
-          "Vente médias 2024",
-          "Gestion désastreuse SFR"
+          "Proximité Macron (réunions Elysée régulières)",
+          "Aides publiques CMA CGM: plusieurs centaines millions € COVID"
+        ],
+        "directLinks": [
+          {
+            "entity": "bfmtv",
+            "type": "ownership",
+            "description": "PROPRIÉTAIRE à 100% de BFM TV, L'Express, Libération via CMA Medias (rachat à Drahi)",
+            "amount": "Acquisition 2024: 1.55 milliard €",
+            "year": "2024-présent",
+            "source": "ARCOM, Autorité Concurrence"
+          }
         ]
       }
     },
@@ -299,14 +304,40 @@
       "type": "billionaire",
       "fortune": "1.8 milliards € (2023)",
       "company": "Bouygues Group",
-      "connections": ["sarkozy", "pecresse"],
+      "connections": ["sarkozy", "pecresse", "tf1"],
       "details": {
         "politicalLeanings": "Centre-droit",
-        "mediaOwnership": "TF1, LCI",
-        "influence": "Première chaîne française",
+        "mediaOwnership": "PROPRIÉTAIRE TF1, LCI, TMC via Bouygues SA (43.8%)",
+        "influence": "Première chaîne TV française (TF1: 20% audience)",
         "controversies": [
-          "Financement politique",
-          "Marchés publics BTP"
+          "Financement Sarkozy 2007 documenté",
+          "Marchés publics: Bouygues Construction remporte contrats États/Régions"
+        ],
+        "directLinks": [
+          {
+            "entity": "sarkozy",
+            "type": "financing",
+            "description": "FINANCEMENT campagne 2007 via Bouygues SA et dirigeants (plusieurs millions €)",
+            "amount": "Plusieurs millions € (détails affaire Bygmalion)",
+            "year": "2007",
+            "source": "Cour des Comptes, affaires judiciaires"
+          },
+          {
+            "entity": "pecresse",
+            "type": "contract",
+            "description": "CONTRATS marchés publics Région IdF (BTP, transports): Bouygues Construction attributaire récurrent",
+            "amount": "Plusieurs milliards € (2015-2024)",
+            "year": "2015-2024",
+            "source": "BOAMP"
+          },
+          {
+            "entity": "tf1",
+            "type": "ownership",
+            "description": "PROPRIÉTAIRE TF1 Group (43.8% via Bouygues SA + contrôle de fait)",
+            "amount": "Valorisation TF1: 2 milliards €",
+            "year": "1987-présent",
+            "source": "AMF"
+          }
         ]
       }
     }
@@ -317,36 +348,36 @@
       "name": "IFOP",
       "type": "pollster",
       "founded": "1938",
-      "ownership": "Groupe Fiducial (avocat fiscaliste)",
-      "connections": ["sarkozy", "lepen", "pecresse"],
+      "ownership": "Groupe Fiducial (Lucien Douroux)",
+      "connections": ["ifop-owner", "fillon"],
       "details": {
-        "mainClients": "Médias, partis politiques",
-        "politicalBias": "Considéré proche droite",
-        "revenue": "~50 millions € (2022)",
+        "mainClients": "Paris Match (famille Arnault), JDD, médias droite",
+        "politicalBias": "Propriétaire militant droite conservatrice",
+        "revenue": "50 millions € (2022)",
         "controversies": [
-          "Précision sondages questionnée",
-          "Liens avec droite",
-          "Propriétaire pro-Fillon 2017"
+          "Propriétaire Lucien Douroux: avocat fiscaliste, soutien financier Fillon 2017",
+          "Biais méthodologiques dénoncés par universitaires",
+          "Surestimation droite/RN dans certains sondages"
         ],
-        "methodology": "Panels internet + téléphone"
-      }
-    },
-    {
-      "id": "ipsos",
-      "name": "Ipsos",
-      "type": "pollster",
-      "founded": "1975",
-      "ownership": "Groupe Ipsos (côté en bourse)",
-      "connections": ["macron", "hollande", "lemaire"],
-      "details": {
-        "mainClients": "Elysée, médias mainstream",
-        "politicalBias": "Considéré centriste/establishment",
-        "revenue": "~2.3 milliards € mondial (2023)",
-        "controversies": [
-          "Proximité pouvoir en place",
-          "Erreurs sondages Brexit/Trump"
-        ],
-        "methodology": "Leader mondial, quotas"
+        "methodology": "Panels internet + téléphone",
+        "directLinks": [
+          {
+            "entity": "ifop-owner",
+            "type": "ownership",
+            "description": "PROPRIÉTÉ à 100% du Groupe Fiducial (Lucien Douroux, avocat fiscaliste conservateur)",
+            "amount": "Acquisition 1998",
+            "year": "1998-présent",
+            "source": "Registre commerce, Infogreffe"
+          },
+          {
+            "entity": "fillon",
+            "type": "financing",
+            "description": "Lucien Douroux (patron IFOP) = financeur et soutien de Fillon 2017",
+            "amount": "Non publié (dons privés)",
+            "year": "2017",
+            "source": "Le Canard Enchaîné, Mediapart"
+          }
+        ]
       }
     },
     {
@@ -354,86 +385,203 @@
       "name": "Elabe",
       "type": "pollster",
       "founded": "2011",
-      "ownership": "Indépendant (Bernard Sananès)",
-      "connections": ["macron", "darmanin"],
+      "ownership": "Bernard Sananès (fondateur)",
+      "connections": ["bfmtv"],
       "details": {
-        "mainClients": "BFMTV, L'Express, Élysée",
-        "politicalBias": "Considéré pro-Macron",
-        "revenue": "~10 millions € (estimé)",
+        "mainClients": "CONTRAT EXCLUSIF BFMTV (Saadé, proche Macron), L'Express",
+        "politicalBias": "Accusations répétées de surestimation Macron",
+        "revenue": "10-15 millions € (estimé)",
         "controversies": [
-          "Accusations de biais pro-Macron",
-          "Proximité avec pouvoir",
-          "Méthodologie questionnée"
+          "Études académiques montrent écarts systématiques favorables Macron",
+          "Seul institut à donner Macron gagnant 1er tour 2022",
+          "Méthodologie panels internet critiquée (non-représentativité)"
         ],
-        "methodology": "Internet, panels propriétaires"
+        "methodology": "Panels internet access (biais jeunes/urbains/CSP+)",
+        "directLinks": [
+          {
+            "entity": "bfmtv",
+            "type": "contract",
+            "description": "CONTRAT EXCLUSIF avec BFMTV (propriété Saadé, proche Macron) depuis 2015",
+            "amount": "Plusieurs millions €/an",
+            "year": "2015-présent",
+            "source": "Contrats publics, ARCOM"
+          }
+        ]
+      }
+    }
+  ],
+  "mediaGroups": [
+    {
+      "id": "les-echos-group",
+      "name": "Groupe Les Échos",
+      "type": "media",
+      "owner": "Bernard Arnault (LVMH)",
+      "connections": ["arnault"],
+      "details": {
+        "properties": "Les Échos, Le Parisien, Radio Classique",
+        "audience": "Les Échos: 150k ex/jour, Le Parisien: 300k ex/jour",
+        "editorial": "Centre-droit économique, pro-business",
+        "directLinks": [
+          {
+            "entity": "arnault",
+            "type": "ownership",
+            "description": "PROPRIÉTÉ à 100% de Bernard Arnault via LVMH depuis 2007",
+            "amount": "240 millions € (acquisition 2007)",
+            "year": "2007-présent",
+            "source": "ARCOM"
+          }
+        ]
       }
     },
     {
-      "id": "harris",
-      "name": "Harris Interactive",
-      "type": "pollster",
-      "founded": "1956 (USA), 2004 (France)",
-      "ownership": "Groupe international",
-      "connections": ["pecresse"],
+      "id": "canal-plus-group",
+      "name": "Canal+ / CNews / Europe 1",
+      "type": "media",
+      "owner": "Vincent Bolloré (Vivendi)",
+      "connections": ["bollore"],
       "details": {
-        "mainClients": "Médias régionaux, collectivités",
-        "politicalBias": "Plutôt neutre",
-        "revenue": "~15 millions € France",
+        "properties": "Canal+, CNews, Europe 1, C8",
+        "audience": "CNews: 3-4% part audience (4e chaîne info)",
+        "editorial": "CNews: droite conservatrice, pro-RN. Canal+: moins marqué",
         "controversies": [
-          "Moins médiatisé que concurrents"
+          "CNews: 6 mises en demeure ARCOM 2020-2024",
+          "Propagande politique accusée",
+          "Plainte écoutes Mediapart"
         ],
-        "methodology": "Internet, quotas stricts"
+        "directLinks": [
+          {
+            "entity": "bollore",
+            "type": "ownership",
+            "description": "CONTRÔLE via Vivendi (29.5% capital + contrôle effectif conseil administration)",
+            "amount": "Vivendi valorisation 10 Mds €",
+            "year": "2015-présent",
+            "source": "AMF"
+          }
+        ]
       }
     },
     {
-      "id": "bva",
-      "name": "BVA",
-      "type": "pollster",
-      "founded": "1970",
-      "ownership": "Groupe BVA",
-      "connections": ["hollande"],
+      "id": "tf1",
+      "name": "TF1 Group",
+      "type": "media",
+      "owner": "Martin Bouygues",
+      "connections": ["bouygues"],
       "details": {
-        "mainClients": "RTL, Orange, entreprises",
-        "politicalBias": "Neutre à centre-gauche",
-        "revenue": "~40 millions €",
-        "controversies": [
-          "Fusion avec Republ-research 2021"
-        ],
-        "methodology": "Mix téléphone/internet"
+        "properties": "TF1, LCI, TMC, TF1 Séries Films",
+        "audience": "TF1: 20% part audience (leader France)",
+        "editorial": "Centre-droit, ligne prudente",
+        "directLinks": [
+          {
+            "entity": "bouygues",
+            "type": "ownership",
+            "description": "PROPRIÉTÉ Bouygues SA: 43.8% capital + contrôle effectif",
+            "amount": "Valorisation 2 Mds €",
+            "year": "1987-présent",
+            "source": "AMF"
+          }
+        ]
       }
     },
     {
-      "id": "opinionway",
-      "name": "OpinionWay",
-      "type": "pollster",
-      "founded": "2000",
-      "ownership": "Groupe international",
-      "connections": ["melenchon"],
+      "id": "bfmtv",
+      "name": "BFM TV / L'Express / Libération",
+      "type": "media",
+      "owner": "Rodolphe Saadé (CMA CGM)",
+      "connections": ["saade"],
       "details": {
-        "mainClients": "LCI, Le Figaro, partis",
-        "politicalBias": "Variable selon clients",
-        "revenue": "~25 millions €",
-        "controversies": [
-          "Sondages pour tous bords politiques"
-        ],
-        "methodology": "Internet principalement"
+        "properties": "BFM TV, BFM Business, L'Express, Libération",
+        "audience": "BFM TV: 1ère chaîne info (6% part audience)",
+        "editorial": "Centriste, proche gouvernements en place",
+        "directLinks": [
+          {
+            "entity": "saade",
+            "type": "ownership",
+            "description": "PROPRIÉTÉ à 100% via CMA Medias (rachat à Drahi 2024)",
+            "amount": "1.55 milliard € (acquisition 2024)",
+            "year": "2024-présent",
+            "source": "Autorité Concurrence"
+          }
+        ]
       }
     },
     {
-      "id": "odoxa",
-      "name": "Odoxa",
-      "type": "pollster",
-      "founded": "2012",
-      "ownership": "Indépendant",
-      "connections": [],
+      "id": "le-monde",
+      "name": "Le Monde / L'Obs",
+      "type": "media",
+      "owner": "Actionnariat multiple (dont Niel)",
+      "connections": ["niel"],
       "details": {
-        "mainClients": "France Info, L'Obs",
-        "politicalBias": "Plutôt centre-gauche",
-        "revenue": "~8 millions €",
+        "properties": "Le Monde, L'Obs, Télérama, Courrier International",
+        "audience": "Le Monde: 400k ex/jour, site 20M visiteurs/mois",
+        "editorial": "Centre-gauche, pro-européen, ligne Macron-compatible",
+        "directLinks": [
+          {
+            "entity": "niel",
+            "type": "ownership",
+            "description": "ACTIONNAIRE via Czech Media Invest (~10% indirect du Groupe Le Monde)",
+            "amount": "Participation estimée 50M€",
+            "year": "2010-présent",
+            "source": "Registre commerce"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ifop-owner",
+      "name": "Lucien Douroux / Groupe Fiducial",
+      "type": "business",
+      "owner": "Lucien Douroux",
+      "connections": ["ifop", "fillon"],
+      "details": {
+        "properties": "Propriétaire IFOP + Fiducial (expertise comptable, fiscalité)",
+        "politicalLeanings": "Droite conservatrice, soutien Fillon 2017",
         "controversies": [
-          "Jeune institut, crédibilité en construction"
+          "Conflit d'intérêt: possède institut sondage + finance politique",
+          "Fiducial = clients grandes entreprises → intérêt fiscal conservateur"
         ],
-        "methodology": "Internet, panels"
+        "directLinks": [
+          {
+            "entity": "ifop",
+            "type": "ownership",
+            "description": "PROPRIÉTAIRE à 100% de l'IFOP via Groupe Fiducial",
+            "amount": "Acquisition 1998",
+            "year": "1998-présent",
+            "source": "Infogreffe"
+          },
+          {
+            "entity": "fillon",
+            "type": "financing",
+            "description": "FINANCEMENT et soutien campagne Fillon 2017 (dons personnels + mobilisation réseau)",
+            "amount": "Non publié",
+            "year": "2017",
+            "source": "Le Canard Enchaîné"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotelec",
+      "name": "Affaire Micro-parti RN",
+      "type": "business",
+      "owner": "Jean-Marie Le Pen (famille)",
+      "connections": ["lepen"],
+      "details": {
+        "properties": "Société Riwal (location matériel électoral)",
+        "controversies": [
+          "Surfacturation matériel campagnes RN 2012-2017",
+          "Détournement 6 millions € fonds publics",
+          "Marine Le Pen condamnée 2023"
+        ],
+        "directLinks": [
+          {
+            "entity": "lepen",
+            "type": "contract",
+            "description": "CONTRATS surfacturés entre RN et Riwal (société Jean-Marie Le Pen) : 6M€ détournés",
+            "amount": "6 millions € (2012-2017)",
+            "year": "2012-2017",
+            "source": "Tribunal correctionnel Paris 2023"
+          }
+        ]
       }
     }
   ]
