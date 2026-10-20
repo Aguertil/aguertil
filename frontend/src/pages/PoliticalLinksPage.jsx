@@ -90,14 +90,14 @@ export default function PoliticalLinksPage() {
           {/* Explosive Banner */}
           <div className="card bg-gradient-to-r from-red-500/20 to-orange-500/20 backdrop-blur-xl border-2 border-red-400/40 mb-8">
             <div className="flex items-start gap-4">
-              <div className="text-4xl">🔥</div>
+              <div className="text-4xl">🚨</div>
               <div className="flex-1 text-left">
-                <h3 className="text-xl font-bold text-white mb-2">Liens Directs Documentés</h3>
+                <h3 className="text-xl font-bold text-white mb-2">Conflit d'Intérêts Majeurs Documentés</h3>
                 <p className="text-blue-200 text-sm md:text-base">
-                  <span className="font-bold text-red-300">Macron</span> : employé Rothschild 2.9M€ • 
-                  <span className="font-bold text-orange-300"> Bouygues</span> : financement Sarkozy + marchés IdF (Pécresse) • 
+                  <span className="font-bold text-red-300">🔥 Bolloré</span> : possède CNews/Europe 1 ET l'institut CSA (via Havas) → fabrique ET diffuse ses sondages • 
+                  <span className="font-bold text-orange-300"> Macron</span> : employé Rothschild 2.9M€ • 
                   <span className="font-bold text-yellow-300"> IFOP</span> : propriété avocat fiscaliste pro-Fillon •
-                  <span className="font-bold text-green-300"> Elabe</span> : contrat exclusif BFMTV (Saadé/Macron)
+                  <span className="font-bold text-green-300"> Elabe</span> : contrat exclusif BFMTV (Saadé proche Macron)
                 </p>
               </div>
             </div>
