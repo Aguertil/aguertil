@@ -5,6 +5,7 @@ import NetworkPage from './pages/NetworkPage';
 import PresidentsPage from './pages/PresidentsPage';
 import PromisesPage from './pages/PromisesPage';
 import PoliticalLinksPage from './pages/PoliticalLinksPage';
+import BlogPage from './pages/BlogPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/presidents" element={<PresidentsPage />} />
           <Route path="/promises" element={<PromisesPage />} />
           <Route path="/political-links" element={<PoliticalLinksPage />} />
+          <Route path="/blog" element={<BlogPage />} />
         </Routes>
       </div>
     </Router>

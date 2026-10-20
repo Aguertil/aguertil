@@ -25,6 +25,7 @@ const presidentsData = loadJSON('presidentsData.json');
 const networkData = loadJSON('networkData.json');
 const promisesData = loadJSON('promisesData.json');
 const politicalLinksData = loadJSON('politicalLinksData.json');
+const blogData = loadJSON('blogData.json');
 
 // Configuration de la dette en temps réel
 const REFERENCE_DATE = new Date('2024-01-01T00:00:00Z');
@@ -76,6 +77,13 @@ app.get('/', (req, res) => {
         '/api/network/billionaires': 'Liste des milliardaires',
         '/api/network/media': 'Liste des médias',
         '/api/network/entity/:id': 'Détails d\'une entité'
+      },
+      blog: {
+        '/api/blog/articles': 'Liste des articles publiés (query: category, tag, limit, offset)',
+        '/api/blog/articles/:slug': 'Détails d\'un article par slug',
+        '/api/blog/categories': 'Liste des catégories avec compteurs',
+        '/api/blog/tags': 'Liste des tags populaires',
+        '/api/blog/stats': 'Statistiques globales du blog (published, scheduled, drafts)'
       }
     }
   });
@@ -441,6 +449,162 @@ app.get('/api/network/entity/:id', (req, res) => {
   res.json({
     type,
     entity
+  });
+});
+
+// ========================================
+// 8. ENDPOINTS BLOG
+// ========================================
+
+// Liste des articles publiés (filtrés par date de publication)
+app.get('/api/blog/articles', (req, res) => {
+  const now = new Date();
+  const { category, tag, limit, offset = 0 } = req.query;
+  
+  // Filtrer les articles publiés (status: "published" OU publishDate <= maintenant)
+  let publishedArticles = blogData.articles.filter(article => {
+    const publishDate = new Date(article.publishDate);
+    return article.status === 'published' || (article.status === 'scheduled' && publishDate <= now);
+  });
+  
+  // Filtrer par catégorie si spécifiée
+  if (category) {
+    publishedArticles = publishedArticles.filter(a => 
+      a.category.toLowerCase() === category.toLowerCase()
+    );
+  }
+  
+  // Filtrer par tag si spécifié
+  if (tag) {
+    publishedArticles = publishedArticles.filter(a => 
+      a.tags.some(t => t.toLowerCase() === tag.toLowerCase())
+    );
+  }
+  
+  // Trier par date de publication décroissante
+  publishedArticles.sort((a, b) => 
+    new Date(b.publishDate) - new Date(a.publishDate)
+  );
+  
+  // Pagination
+  const startIndex = parseInt(offset);
+  const endIndex = limit ? startIndex + parseInt(limit) : publishedArticles.length;
+  const paginatedArticles = publishedArticles.slice(startIndex, endIndex);
+  
+  res.json({
+    total: publishedArticles.length,
+    count: paginatedArticles.length,
+    offset: startIndex,
+    articles: paginatedArticles
+  });
+});
+
+// Détails d'un article par slug
+app.get('/api/blog/articles/:slug', (req, res) => {
+  const { slug } = req.params;
+  const now = new Date();
+  
+  const article = blogData.articles.find(a => a.slug === slug);
+  
+  if (!article) {
+    return res.status(404).json({ error: 'Article non trouvé' });
+  }
+  
+  // Vérifier si l'article est publié
+  const publishDate = new Date(article.publishDate);
+  const isPublished = article.status === 'published' || 
+                     (article.status === 'scheduled' && publishDate <= now);
+  
+  if (!isPublished) {
+    return res.status(403).json({ 
+      error: 'Article non publié',
+      message: `Cet article sera publié le ${publishDate.toLocaleDateString('fr-FR')}`
+    });
+  }
+  
+  res.json(article);
+});
+
+// Liste des catégories avec compteurs
+app.get('/api/blog/categories', (req, res) => {
+  const now = new Date();
+  
+  // Articles publiés
+  const publishedArticles = blogData.articles.filter(article => {
+    const publishDate = new Date(article.publishDate);
+    return article.status === 'published' || (article.status === 'scheduled' && publishDate <= now);
+  });
+  
+  // Compter articles par catégorie
+  const categoriesWithCounts = blogData.categories.map(cat => ({
+    ...cat,
+    articleCount: publishedArticles.filter(a => a.category === cat.name).length
+  }));
+  
+  res.json({
+    count: categoriesWithCounts.length,
+    categories: categoriesWithCounts
+  });
+});
+
+// Liste des tags populaires
+app.get('/api/blog/tags', (req, res) => {
+  const now = new Date();
+  
+  // Articles publiés
+  const publishedArticles = blogData.articles.filter(article => {
+    const publishDate = new Date(article.publishDate);
+    return article.status === 'published' || (article.status === 'scheduled' && publishDate <= now);
+  });
+  
+  // Compter occurrences de chaque tag
+  const tagCounts = {};
+  publishedArticles.forEach(article => {
+    article.tags.forEach(tag => {
+      tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+    });
+  });
+  
+  // Convertir en tableau et trier par popularité
+  const tags = Object.entries(tagCounts)
+    .map(([tag, count]) => ({ tag, count }))
+    .sort((a, b) => b.count - a.count);
+  
+  res.json({
+    count: tags.length,
+    tags
+  });
+});
+
+// Statistiques globales du blog
+app.get('/api/blog/stats', (req, res) => {
+  const now = new Date();
+  
+  const publishedArticles = blogData.articles.filter(article => {
+    const publishDate = new Date(article.publishDate);
+    return article.status === 'published' || (article.status === 'scheduled' && publishDate <= now);
+  });
+  
+  const scheduledArticles = blogData.articles.filter(article => {
+    const publishDate = new Date(article.publishDate);
+    return article.status === 'scheduled' && publishDate > now;
+  });
+  
+  const draftArticles = blogData.articles.filter(article => 
+    article.status === 'draft'
+  );
+  
+  res.json({
+    totalArticles: blogData.articles.length,
+    published: publishedArticles.length,
+    scheduled: scheduledArticles.length,
+    drafts: draftArticles.length,
+    categories: blogData.categories.length,
+    nextScheduled: scheduledArticles.length > 0 
+      ? scheduledArticles.sort((a, b) => 
+          new Date(a.publishDate) - new Date(b.publishDate)
+        )[0]
+      : null
   });
 });
 

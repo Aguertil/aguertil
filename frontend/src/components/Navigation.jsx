@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { TrendingDown, Network, Crown, Target, Users } from 'lucide-react';
+import { TrendingDown, Network, Crown, Target, Users, BookOpen } from 'lucide-react';
 
 export default function Navigation() {
   const location = useLocation();
@@ -78,6 +78,18 @@ export default function Navigation() {
             >
               <Network size={18} className={`transition-transform duration-300 ${isActive('/network') ? '' : 'group-hover:rotate-12'}`} />
               <span className="font-semibold hidden lg:inline text-sm">Médias</span>
+            </Link>
+            
+            <Link
+              to="/blog"
+              className={`group flex items-center space-x-1 md:space-x-2 px-2 md:px-3 py-3 rounded-xl transition-all duration-300 ${
+                isActive('/blog') 
+                  ? 'bg-gradient-to-r from-green-600 to-teal-600 text-white shadow-lg shadow-green-500/50' 
+                  : 'text-green-300 hover:bg-white/10 hover:text-white'
+              }`}
+            >
+              <BookOpen size={18} className={`transition-transform duration-300 ${isActive('/blog') ? '' : 'group-hover:rotate-12'}`} />
+              <span className="font-semibold hidden lg:inline text-sm">Blog</span>
             </Link>
           </div>
         </div>
