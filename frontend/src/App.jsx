@@ -4,6 +4,7 @@ import DebtPage from './pages/DebtPage';
 import NetworkPage from './pages/NetworkPage';
 import PresidentsPage from './pages/PresidentsPage';
 import PromisesPage from './pages/PromisesPage';
+import PoliticalLinksPage from './pages/PoliticalLinksPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/network" element={<NetworkPage />} />
           <Route path="/presidents" element={<PresidentsPage />} />
           <Route path="/promises" element={<PromisesPage />} />
+          <Route path="/political-links" element={<PoliticalLinksPage />} />
         </Routes>
       </div>
     </Router>

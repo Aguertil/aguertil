@@ -24,6 +24,7 @@ const debtData = loadJSON('debtData.json');
 const presidentsData = loadJSON('presidentsData.json');
 const networkData = loadJSON('networkData.json');
 const promisesData = loadJSON('promisesData.json');
+const politicalLinksData = loadJSON('politicalLinksData.json');
 
 // Configuration de la dette en temps réel
 const REFERENCE_DATE = new Date('2024-01-01T00:00:00Z');
@@ -60,6 +61,13 @@ app.get('/', (req, res) => {
         '/api/promises': 'Liste de tous les présidents avec leurs promesses',
         '/api/promises/:id': 'Détails des promesses d\'un président',
         '/api/promises/stats/global': 'Statistiques globales des promesses'
+      },
+      politicalLinks: {
+        '/api/political-links': 'Toutes les données des liens politiques',
+        '/api/political-links/politicians': 'Liste des politiciens',
+        '/api/political-links/billionaires': 'Liste des milliardaires',
+        '/api/political-links/pollsters': 'Liste des instituts de sondage',
+        '/api/political-links/:type/:id': 'Détails d\'une entité'
       },
       network: {
         '/api/network': 'Données complètes du réseau d\'influence',
@@ -284,6 +292,73 @@ app.get('/api/promises/stats/global', (req, res) => {
     fulfillmentRate: totalRate + '%',
     averageDebtIncrease: stats.averageDebtIncrease + ' points de PIB'
   });
+});
+
+// ==================== LIENS POLITIQUES ====================
+
+// Toutes les données des liens politiques
+app.get('/api/political-links', (req, res) => {
+  res.json({
+    politicians: politicalLinksData.politicians,
+    billionaires: politicalLinksData.billionaires,
+    pollsters: politicalLinksData.pollsters,
+    summary: {
+      totalPoliticians: politicalLinksData.politicians.length,
+      totalBillionaires: politicalLinksData.billionaires.length,
+      totalPollsters: politicalLinksData.pollsters.length
+    },
+    note: politicalLinksData.note
+  });
+});
+
+// Liste des politiciens
+app.get('/api/political-links/politicians', (req, res) => {
+  res.json({
+    count: politicalLinksData.politicians.length,
+    politicians: politicalLinksData.politicians
+  });
+});
+
+// Liste des milliardaires (contexte politique)
+app.get('/api/political-links/billionaires', (req, res) => {
+  res.json({
+    count: politicalLinksData.billionaires.length,
+    billionaires: politicalLinksData.billionaires
+  });
+});
+
+// Liste des instituts de sondage
+app.get('/api/political-links/pollsters', (req, res) => {
+  res.json({
+    count: politicalLinksData.pollsters.length,
+    pollsters: politicalLinksData.pollsters
+  });
+});
+
+// Détails d'une entité
+app.get('/api/political-links/:type/:id', (req, res) => {
+  const { type, id } = req.params;
+  
+  let entity;
+  switch(type) {
+    case 'politician':
+      entity = politicalLinksData.politicians.find(p => p.id === id);
+      break;
+    case 'billionaire':
+      entity = politicalLinksData.billionaires.find(b => b.id === id);
+      break;
+    case 'pollster':
+      entity = politicalLinksData.pollsters.find(p => p.id === id);
+      break;
+    default:
+      return res.status(400).json({ error: 'Type invalide' });
+  }
+  
+  if (!entity) {
+    return res.status(404).json({ error: 'Entité non trouvée' });
+  }
+  
+  res.json(entity);
 });
 
 // ==================== RÉSEAU D'INFLUENCE ====================

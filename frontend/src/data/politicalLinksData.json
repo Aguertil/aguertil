@@ -1,0 +1,440 @@
+{
+  "note": "Cartographie des liens entre politiques, milliardaires et instituts de sondage. Sources : presse, rapports publics, déclarations d'intérêts.",
+  "politicians": [
+    {
+      "id": "sarkozy",
+      "name": "Nicolas Sarkozy",
+      "type": "politician",
+      "party": "LR (ex-UMP)",
+      "position": "Ancien Président (2007-2012)",
+      "connections": ["arnault", "bollore", "bouygues", "ifop"],
+      "details": {
+        "currentRole": "Avocat, conférencier",
+        "wealth": "Estimé à 2-5 millions €",
+        "controversies": [
+          "Affaire Bygmalion (financement campagne 2012)",
+          "Affaire des écoutes (ligne Bismuth)",
+          "Proximité avec grands patrons"
+        ],
+        "links": {
+          "arnault": "Relation amicale, conseils stratégiques",
+          "bollore": "Ami proche, vacances communes",
+          "bouygues": "Financement campagnes, relation d'affaires",
+          "ifop": "Commandes de sondages pendant présidence"
+        }
+      }
+    },
+    {
+      "id": "hollande",
+      "name": "François Hollande",
+      "type": "politician",
+      "party": "PS",
+      "position": "Ancien Président (2012-2017)",
+      "connections": ["pinault", "niel", "ipsos", "bva"],
+      "details": {
+        "currentRole": "Chroniqueur, conférencier",
+        "wealth": "Estimé à 1-2 millions €",
+        "controversies": [
+          "Relation avec Julie Gayet (actrice)",
+          "Livre 'Un président ne devrait pas dire ça'",
+          "Proximité discrète avec certains patrons"
+        ],
+        "links": {
+          "pinault": "Relations professionnelles cordiales",
+          "niel": "Soutien indirect via Le Monde",
+          "ipsos": "Institut de sondage principal pendant mandat",
+          "bva": "Sondages d'opinion réguliers"
+        }
+      }
+    },
+    {
+      "id": "macron",
+      "name": "Emmanuel Macron",
+      "type": "politician",
+      "party": "RE (ex-LREM)",
+      "position": "Président en exercice (2017-)",
+      "connections": ["arnault", "niel", "drahi", "saade", "ipsos", "elabe"],
+      "details": {
+        "currentRole": "Président de la République",
+        "wealth": "Patrimoine déclaré ~300k€",
+        "previousJobs": "Banquier chez Rothschild (2008-2012)",
+        "controversies": [
+          "Passage par Rothschild & Cie",
+          "Affaire Benalla",
+          "Relations avec grands patrons",
+          "Financement En Marche"
+        ],
+        "links": {
+          "arnault": "Relations régulières, conseil Elysée",
+          "niel": "Soutien politique et financier",
+          "drahi": "Relations d'affaires pré-présidence",
+          "saade": "Nouveau mécène politique",
+          "ipsos": "Sondages Elysée",
+          "elabe": "Institut privilégié pour tracking opinion"
+        }
+      }
+    },
+    {
+      "id": "pecresse",
+      "name": "Valérie Pécresse",
+      "type": "politician",
+      "party": "LR",
+      "position": "Présidente Île-de-France",
+      "connections": ["bollore", "bouygues", "ifop", "harris"],
+      "details": {
+        "currentRole": "Présidente Conseil régional IdF",
+        "wealth": "Patrimoine déclaré ~1.5M€",
+        "previousJobs": "Ministre sous Sarkozy, HEC",
+        "controversies": [
+          "Campagne présidentielle 2022 (dette)",
+          "Financement campagnes",
+          "Proximité monde des affaires"
+        ],
+        "links": {
+          "bollore": "Soutien médiatique (CNews)",
+          "bouygues": "Relations professionnelles",
+          "ifop": "Sondages campagne 2022",
+          "harris": "Études d'opinion régionales"
+        }
+      }
+    },
+    {
+      "id": "melenchon",
+      "name": "Jean-Luc Mélenchon",
+      "type": "politician",
+      "party": "LFI",
+      "position": "Député, leader LFI",
+      "connections": ["opinionway"],
+      "details": {
+        "currentRole": "Député des Bouches-du-Rhône",
+        "wealth": "Patrimoine déclaré ~800k€",
+        "controversies": [
+          "Perquisition 2018 (campagne)",
+          "Relations tendues avec médias mainstream",
+          "Financement campagnes (prêts militants)"
+        ],
+        "links": {
+          "opinionway": "Sondages commandés par LFI"
+        }
+      }
+    },
+    {
+      "id": "lepen",
+      "name": "Marine Le Pen",
+      "type": "politician",
+      "party": "RN (ex-FN)",
+      "position": "Présidente RN, Députée",
+      "connections": ["ifop"],
+      "details": {
+        "currentRole": "Présidente du RN",
+        "wealth": "Patrimoine déclaré ~2.5M€",
+        "controversies": [
+          "Affaire des assistants parlementaires européens",
+          "Financement RN (prêts russes)",
+          "Héritage politique familial"
+        ],
+        "links": {
+          "ifop": "Institut historique pour sondages RN/FN"
+        }
+      }
+    },
+    {
+      "id": "darmanin",
+      "name": "Gérald Darmanin",
+      "type": "politician",
+      "party": "RE",
+      "position": "Ministre de l'Intérieur",
+      "connections": ["bollore", "elabe"],
+      "details": {
+        "currentRole": "Ministre de l'Intérieur",
+        "wealth": "Patrimoine déclaré ~800k€",
+        "previousJobs": "Maire de Tourcoing, LR puis LREM",
+        "controversies": [
+          "Accusations de viol (classé sans suite)",
+          "Reconversion LR → LREM",
+          "Relations avec Bolloré Group"
+        ],
+        "links": {
+          "bollore": "Apparitions régulières CNews/Europe 1",
+          "elabe": "Sondages sur image ministre"
+        }
+      }
+    },
+    {
+      "id": "lemaire",
+      "name": "Bruno Le Maire",
+      "type": "politician",
+      "party": "RE (ex-LR)",
+      "position": "Ministre de l'Économie",
+      "connections": ["arnault", "pinault", "niel", "ipsos"],
+      "details": {
+        "currentRole": "Ministre de l'Économie",
+        "wealth": "Patrimoine déclaré ~900k€",
+        "previousJobs": "Normalien, énarque, ex-LR",
+        "controversies": [
+          "Reconversion LR → LREM",
+          "Proximité grands patrons",
+          "Gestion crises économiques"
+        ],
+        "links": {
+          "arnault": "Relations professionnelles fréquentes",
+          "pinault": "Dossiers économiques (Kering)",
+          "niel": "Conseil numérique et télécoms",
+          "ipsos": "Études d'opinion économique"
+        }
+      }
+    }
+  ],
+  "billionaires": [
+    {
+      "id": "arnault",
+      "name": "Bernard Arnault",
+      "type": "billionaire",
+      "fortune": "211 milliards $ (2023)",
+      "company": "LVMH",
+      "connections": ["sarkozy", "macron", "lemaire"],
+      "details": {
+        "politicalLeanings": "Centre-droit, pragmatique",
+        "mediaOwnership": "Les Échos, Le Parisien, Radio Classique",
+        "influence": "Premier fortune française, proche pouvoir",
+        "controversies": [
+          "Optimisation fiscale internationale",
+          "Tentative de nationalité belge (2012)",
+          "Influence sur ligne éditoriale"
+        ]
+      }
+    },
+    {
+      "id": "bollore",
+      "name": "Vincent Bolloré",
+      "type": "billionaire",
+      "fortune": "8.6 milliards € (2023)",
+      "company": "Bolloré Group",
+      "connections": ["sarkozy", "pecresse", "darmanin"],
+      "details": {
+        "politicalLeanings": "Droite conservatrice",
+        "mediaOwnership": "CNews, Canal+, Europe 1, JDD (vendu 2024)",
+        "influence": "Ligne éditoriale très marquée à droite",
+        "controversies": [
+          "Écoutes journalistes (Mediapart)",
+          "Affaires en Afrique",
+          "Propagande politique via CNews"
+        ]
+      }
+    },
+    {
+      "id": "pinault",
+      "name": "François Pinault",
+      "type": "billionaire",
+      "fortune": "42 milliards $ (2023)",
+      "company": "Kering (ex-PPR)",
+      "connections": ["hollande", "lemaire"],
+      "details": {
+        "politicalLeanings": "Centre-gauche modéré",
+        "mediaOwnership": "Le Point (via Artémis)",
+        "influence": "Discret, mécénat culturel",
+        "controversies": [
+          "Optimisation fiscale",
+          "Influence discrète mais réelle"
+        ]
+      }
+    },
+    {
+      "id": "niel",
+      "name": "Xavier Niel",
+      "type": "billionaire",
+      "fortune": "9.8 milliards € (2023)",
+      "company": "Free (Iliad)",
+      "connections": ["macron", "hollande", "lemaire"],
+      "details": {
+        "politicalLeanings": "Centre, libéral culturel",
+        "mediaOwnership": "Le Monde (actionnaire), Nouvel Obs",
+        "influence": "Lobbying télécoms, soutien Macron",
+        "controversies": [
+          "Passé sulfureux (Minitel rose)",
+          "Influence sur Le Monde",
+          "Lobbying régulation télécoms"
+        ]
+      }
+    },
+    {
+      "id": "saade",
+      "name": "Rodolphe Saadé",
+      "type": "billionaire",
+      "fortune": "15 milliards € (2024)",
+      "company": "CMA CGM (transport maritime)",
+      "connections": ["macron"],
+      "details": {
+        "politicalLeanings": "Pro-Macron",
+        "mediaOwnership": "BFM TV, L'Express, Libération (2024)",
+        "influence": "Nouveau mécène médiatique",
+        "controversies": [
+          "Rachat médias Drahi (2024)",
+          "Influence grandissante",
+          "Secteur maritime (aides d'État)"
+        ]
+      }
+    },
+    {
+      "id": "drahi",
+      "name": "Patrick Drahi",
+      "type": "billionaire",
+      "fortune": "Chute à ~3 milliards € (2024)",
+      "company": "Altice (ex-SFR)",
+      "connections": ["macron"],
+      "details": {
+        "politicalLeanings": "Centre, opportuniste",
+        "mediaOwnership": "Ex-BFM, L'Express, Libé (vendus à Saadé 2024)",
+        "influence": "En déclin, endettement massif",
+        "controversies": [
+          "Dette colossale Altice",
+          "Vente médias 2024",
+          "Gestion désastreuse SFR"
+        ]
+      }
+    },
+    {
+      "id": "bouygues",
+      "name": "Martin Bouygues",
+      "type": "billionaire",
+      "fortune": "1.8 milliards € (2023)",
+      "company": "Bouygues Group",
+      "connections": ["sarkozy", "pecresse"],
+      "details": {
+        "politicalLeanings": "Centre-droit",
+        "mediaOwnership": "TF1, LCI",
+        "influence": "Première chaîne française",
+        "controversies": [
+          "Financement politique",
+          "Marchés publics BTP"
+        ]
+      }
+    }
+  ],
+  "pollsters": [
+    {
+      "id": "ifop",
+      "name": "IFOP",
+      "type": "pollster",
+      "founded": "1938",
+      "ownership": "Groupe Fiducial (avocat fiscaliste)",
+      "connections": ["sarkozy", "lepen", "pecresse"],
+      "details": {
+        "mainClients": "Médias, partis politiques",
+        "politicalBias": "Considéré proche droite",
+        "revenue": "~50 millions € (2022)",
+        "controversies": [
+          "Précision sondages questionnée",
+          "Liens avec droite",
+          "Propriétaire pro-Fillon 2017"
+        ],
+        "methodology": "Panels internet + téléphone"
+      }
+    },
+    {
+      "id": "ipsos",
+      "name": "Ipsos",
+      "type": "pollster",
+      "founded": "1975",
+      "ownership": "Groupe Ipsos (côté en bourse)",
+      "connections": ["macron", "hollande", "lemaire"],
+      "details": {
+        "mainClients": "Elysée, médias mainstream",
+        "politicalBias": "Considéré centriste/establishment",
+        "revenue": "~2.3 milliards € mondial (2023)",
+        "controversies": [
+          "Proximité pouvoir en place",
+          "Erreurs sondages Brexit/Trump"
+        ],
+        "methodology": "Leader mondial, quotas"
+      }
+    },
+    {
+      "id": "elabe",
+      "name": "Elabe",
+      "type": "pollster",
+      "founded": "2011",
+      "ownership": "Indépendant (Bernard Sananès)",
+      "connections": ["macron", "darmanin"],
+      "details": {
+        "mainClients": "BFMTV, L'Express, Élysée",
+        "politicalBias": "Considéré pro-Macron",
+        "revenue": "~10 millions € (estimé)",
+        "controversies": [
+          "Accusations de biais pro-Macron",
+          "Proximité avec pouvoir",
+          "Méthodologie questionnée"
+        ],
+        "methodology": "Internet, panels propriétaires"
+      }
+    },
+    {
+      "id": "harris",
+      "name": "Harris Interactive",
+      "type": "pollster",
+      "founded": "1956 (USA), 2004 (France)",
+      "ownership": "Groupe international",
+      "connections": ["pecresse"],
+      "details": {
+        "mainClients": "Médias régionaux, collectivités",
+        "politicalBias": "Plutôt neutre",
+        "revenue": "~15 millions € France",
+        "controversies": [
+          "Moins médiatisé que concurrents"
+        ],
+        "methodology": "Internet, quotas stricts"
+      }
+    },
+    {
+      "id": "bva",
+      "name": "BVA",
+      "type": "pollster",
+      "founded": "1970",
+      "ownership": "Groupe BVA",
+      "connections": ["hollande"],
+      "details": {
+        "mainClients": "RTL, Orange, entreprises",
+        "politicalBias": "Neutre à centre-gauche",
+        "revenue": "~40 millions €",
+        "controversies": [
+          "Fusion avec Republ-research 2021"
+        ],
+        "methodology": "Mix téléphone/internet"
+      }
+    },
+    {
+      "id": "opinionway",
+      "name": "OpinionWay",
+      "type": "pollster",
+      "founded": "2000",
+      "ownership": "Groupe international",
+      "connections": ["melenchon"],
+      "details": {
+        "mainClients": "LCI, Le Figaro, partis",
+        "politicalBias": "Variable selon clients",
+        "revenue": "~25 millions €",
+        "controversies": [
+          "Sondages pour tous bords politiques"
+        ],
+        "methodology": "Internet principalement"
+      }
+    },
+    {
+      "id": "odoxa",
+      "name": "Odoxa",
+      "type": "pollster",
+      "founded": "2012",
+      "ownership": "Indépendant",
+      "connections": [],
+      "details": {
+        "mainClients": "France Info, L'Obs",
+        "politicalBias": "Plutôt centre-gauche",
+        "revenue": "~8 millions €",
+        "controversies": [
+          "Jeune institut, crédibilité en construction"
+        ],
+        "methodology": "Internet, panels"
+      }
+    }
+  ]
+}
