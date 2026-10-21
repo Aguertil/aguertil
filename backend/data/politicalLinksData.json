@@ -1,0 +1,710 @@
+{
+  "note": "Cartographie des LIENS DIRECTS (financements, propriété, famille, contrats) entre politiques, milliardaires et instituts de sondage. Sources vérifiables uniquement.",
+  "linkTypes": {
+    "financing": "💰 Financement de campagne",
+    "ownership": "🏢 Propriété/Actionnariat",
+    "family": "👨‍👩‍👧 Lien familial",
+    "employment": "💼 Emploi/Contrat",
+    "contract": "📄 Contrat de service"
+  },
+  "politicians": [
+    {
+      "id": "sarkozy",
+      "name": "Nicolas Sarkozy",
+      "type": "politician",
+      "party": "LR (ex-UMP)",
+      "position": "Ancien Président (2007-2012)",
+      "connections": ["bouygues"],
+      "details": {
+        "currentRole": "Avocat, conférencier",
+        "wealth": "Estimé à 2-5 millions €",
+        "controversies": [
+          "Affaire Bygmalion (financement illégal campagne 2012 : 18.5M€)",
+          "Condamnation corruption et trafic d'influence (2021)",
+          "Financement Kadhafi (en cours)"
+        ],
+        "directLinks": [
+          {
+            "entity": "bouygues",
+            "type": "financing",
+            "description": "Financement campagne 2007 : Bouygues donateur majeur (documenté affaire Bygmalion)",
+            "amount": "Plusieurs millions d'euros",
+            "year": "2007",
+            "source": "Cour des Comptes, affaire judiciaire"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fillon",
+      "name": "François Fillon",
+      "type": "politician",
+      "party": "LR",
+      "position": "Ex-Premier Ministre, candidat 2017",
+      "connections": ["ifop-owner"],
+      "details": {
+        "currentRole": "Administrateur entreprises russes",
+        "wealth": "Patrimoine 2.5M€ (2017)",
+        "controversies": [
+          "Affaire Penelope Fillon (emplois fictifs)",
+          "Condamné à 4 ans dont 1 ferme (2020)",
+          "Poste chez Zaroubejneft (pétrole russe, 2021)"
+        ],
+        "directLinks": [
+          {
+            "entity": "ifop-owner",
+            "type": "financing",
+            "description": "Lucien Douroux (propriétaire IFOP via Fiducial) financeur et soutien de Fillon 2017",
+            "amount": "Non publié (don privé)",
+            "year": "2017",
+            "source": "Le Canard Enchaîné, Mediapart"
+          }
+        ]
+      }
+    },
+    {
+      "id": "macron",
+      "name": "Emmanuel Macron",
+      "type": "politician",
+      "party": "RE (ex-LREM)",
+      "position": "Président en exercice (2017-)",
+      "connections": ["rothschild", "niel"],
+      "details": {
+        "currentRole": "Président de la République",
+        "wealth": "Patrimoine déclaré 300k€ (HATVP)",
+        "previousJobs": "Banquier d'affaires",
+        "controversies": [
+          "Rémunération Rothschild : 2.9M€ en 4 ans",
+          "Conflit d'intérêt potentiel banque/politique",
+          "Affaire McKinsey (cabinets conseil)"
+        ],
+        "directLinks": [
+          {
+            "entity": "rothschild",
+            "type": "employment",
+            "description": "EMPLOYÉ Rothschild & Cie (2008-2012) - Banquier associé, rémunération totale 2.9M€",
+            "amount": "2.9 millions €",
+            "year": "2008-2012",
+            "source": "Déclaration HATVP, registre entreprises"
+          },
+          {
+            "entity": "niel",
+            "type": "financing",
+            "description": "Don à En Marche via Xavier Niel: 50k€ (plafond légal). Station F mise à disposition gratuitement",
+            "amount": "50 000€ + locaux gratuits",
+            "year": "2016-2017",
+            "source": "CNCCFP (Commission comptes campagne)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pecresse",
+      "name": "Valérie Pécresse",
+      "type": "politician",
+      "party": "LR",
+      "position": "Présidente Île-de-France",
+      "connections": ["bouygues"],
+      "details": {
+        "currentRole": "Présidente Conseil régional IdF",
+        "wealth": "Patrimoine déclaré 1.5M€",
+        "previousJobs": "Ministre sous Sarkozy, ENA, HEC",
+        "controversies": [
+          "Dette campagne 2022 : 5 millions €",
+          "Marchés publics Île-de-France questionnés"
+        ],
+        "directLinks": [
+          {
+            "entity": "bouygues",
+            "type": "contract",
+            "description": "Région IdF : marchés publics attribués à Bouygues (BTP, transports) pour plusieurs milliards €",
+            "amount": "Plusieurs milliards € (2015-2024)",
+            "year": "2015-2024",
+            "source": "BOAMP (Bulletin officiel annonces marchés publics)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lepen",
+      "name": "Marine Le Pen",
+      "type": "politician",
+      "party": "RN (ex-FN)",
+      "position": "Présidente RN, Députée",
+      "connections": ["cotelec"],
+      "details": {
+        "currentRole": "Présidente du RN",
+        "wealth": "Patrimoine déclaré 2.5M€",
+        "controversies": [
+          "Affaire assistants parlementaires européens (condamnée)",
+          "Prêt russe de 9 millions € (banque tchèque liée Kremlin, 2014)",
+          "Affaire Micro-parti (détournement fonds publics)"
+        ],
+        "directLinks": [
+          {
+            "entity": "cotelec",
+            "type": "contract",
+            "description": "CONTRAT Micro-parti RN avec Riwal (société Jean-Marie Le Pen) : surfacturation matériel électoral",
+            "amount": "6 millions € détournés (2012-2017)",
+            "year": "2012-2017",
+            "source": "Tribunal correctionnel Paris, 2023"
+          }
+        ]
+      }
+    }
+  ],
+  "billionaires": [
+    {
+      "id": "rothschild",
+      "name": "Rothschild & Cie (Banque)",
+      "type": "billionaire",
+      "fortune": "Actifs sous gestion: 100+ Mds€",
+      "company": "Rothschild & Co",
+      "connections": ["macron"],
+      "details": {
+        "politicalLeanings": "Centre, libéral économique",
+        "mediaOwnership": "Aucun (banque d'affaires)",
+        "influence": "Conseil M&A grandes entreprises et États",
+        "controversies": [
+          "Porte tournante finance-politique",
+          "Conflits d'intérêts anciens employés devenus ministres"
+        ],
+        "directLinks": [
+          {
+            "entity": "macron",
+            "type": "employment",
+            "description": "EMPLOYEUR de Macron 2008-2012 (banquier associé), rémunération 2.9M€",
+            "amount": "2.9 millions €",
+            "year": "2008-2012",
+            "source": "Registre entreprises, déclaration HATVP"
+          }
+        ]
+      }
+    },
+    {
+      "id": "arnault",
+      "name": "Bernard Arnault",
+      "type": "billionaire",
+      "fortune": "211 milliards $ (2023)",
+      "company": "LVMH",
+      "connections": ["les-echos-group"],
+      "details": {
+        "politicalLeanings": "Centre-droit, pragmatique",
+        "mediaOwnership": "PROPRIÉTAIRE Les Échos, Le Parisien, Radio Classique (via Groupe Les Échos)",
+        "influence": "Premier fortune française",
+        "controversies": [
+          "Tentative nationalité belge (2012) pendant présidence Hollande",
+          "Optimisation fiscale via holding néerlandaise"
+        ],
+        "directLinks": [
+          {
+            "entity": "les-echos-group",
+            "type": "ownership",
+            "description": "PROPRIÉTAIRE à 100% du Groupe Les Échos (Les Échos, Le Parisien, Radio Classique) via LVMH",
+            "amount": "Acquisition 2007: 240M€",
+            "year": "2007-présent",
+            "source": "Registre commerce, ARCOM"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bollore",
+      "name": "Vincent Bolloré",
+      "type": "billionaire",
+      "fortune": "8.6 milliards € (2023)",
+      "company": "Bolloré Group / Vivendi",
+      "connections": ["canal-plus-group", "csa"],
+      "details": {
+        "politicalLeanings": "Droite conservatrice, soutien Zemmour 2022",
+        "mediaOwnership": "PROPRIÉTAIRE CNews, Canal+, Europe 1 via Vivendi (29%) + Institut sondage CSA via Havas",
+        "influence": "CONFLIT D'INTÉRÊT MASSIF : possède les médias (CNews) ET l'institut de sondage (CSA) → peut fabriquer et diffuser ses propres sondages",
+        "controversies": [
+          "PROPRIÉTÉ CSA + MÉDIAS = manipulation opinion publique",
+          "Écoutes journalistes Mediapart (condamné 2023)",
+          "CNews: 6 mises en demeure ARCOM pour désinformation",
+          "Sondages CSA sur CNews systématiquement favorables Zemmour/RN"
+        ],
+        "directLinks": [
+          {
+            "entity": "canal-plus-group",
+            "type": "ownership",
+            "description": "ACTIONNAIRE MAJORITAIRE Vivendi (29.5%) qui possède Canal+, CNews, Europe 1. Contrôle de fait.",
+            "amount": "Vivendi: 10 milliards € capitalisation",
+            "year": "2015-présent",
+            "source": "AMF (Autorité Marchés Financiers)"
+          },
+          {
+            "entity": "csa",
+            "type": "ownership",
+            "description": "PROPRIÉTAIRE institut de sondage CSA via Havas Group (filiale Vivendi). CONFLIT D'INTÉRÊT : possède les médias ET l'institut de sondage.",
+            "amount": "CSA intégré dans Havas (propriété Vivendi/Bolloré)",
+            "year": "2017-présent",
+            "source": "Registre commerce, rapports Vivendi"
+          }
+        ]
+      }
+    },
+    {
+      "id": "niel",
+      "name": "Xavier Niel",
+      "type": "billionaire",
+      "fortune": "9.8 milliards € (2023)",
+      "company": "Free (Iliad)",
+      "connections": ["macron", "le-monde"],
+      "details": {
+        "politicalLeanings": "Centre, pro-Macron assumé",
+        "mediaOwnership": "ACTIONNAIRE Le Monde (via holding Czech Media Invest), L'Obs via Le Monde",
+        "influence": "Financement campagne Macron 2017",
+        "controversies": [
+          "Passé Minitel rose (proxénétisme, relaxé)",
+          "Influence ligne éditoriale Le Monde pro-Macron questionnée"
+        ],
+        "directLinks": [
+          {
+            "entity": "macron",
+            "type": "financing",
+            "description": "DON campagne En Marche 2017: 50k€. Station F (campus startups) mise à disposition gratuitement",
+            "amount": "50 000€ + locaux gratuits",
+            "year": "2016-2017",
+            "source": "CNCCFP"
+          },
+          {
+            "entity": "le-monde",
+            "type": "ownership",
+            "description": "ACTIONNAIRE Groupe Le Monde via Czech Media Invest (détention indirecte ~10%)",
+            "amount": "Participation estimée 50M€",
+            "year": "2010-présent",
+            "source": "Registre commerce"
+          }
+        ]
+      }
+    },
+    {
+      "id": "saade",
+      "name": "Rodolphe Saadé",
+      "type": "billionaire",
+      "fortune": "15 milliards € (2024)",
+      "company": "CMA CGM (transport maritime)",
+      "connections": ["bfmtv"],
+      "details": {
+        "politicalLeanings": "Pro-Macron (relation personnelle)",
+        "mediaOwnership": "PROPRIÉTAIRE BFM TV, L'Express, Libération via CMA Medias",
+        "influence": "Nouveau empire médiatique (rachat 2024)",
+        "controversies": [
+          "Proximité Macron (réunions Elysée régulières)",
+          "Aides publiques CMA CGM: plusieurs centaines millions € COVID"
+        ],
+        "directLinks": [
+          {
+            "entity": "bfmtv",
+            "type": "ownership",
+            "description": "PROPRIÉTAIRE à 100% de BFM TV, L'Express, Libération via CMA Medias (rachat à Drahi)",
+            "amount": "Acquisition 2024: 1.55 milliard €",
+            "year": "2024-présent",
+            "source": "ARCOM, Autorité Concurrence"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bouygues",
+      "name": "Martin Bouygues",
+      "type": "billionaire",
+      "fortune": "1.8 milliards € (2023)",
+      "company": "Bouygues Group",
+      "connections": ["sarkozy", "pecresse", "tf1"],
+      "details": {
+        "politicalLeanings": "Centre-droit",
+        "mediaOwnership": "PROPRIÉTAIRE TF1, LCI, TMC via Bouygues SA (43.8%)",
+        "influence": "Première chaîne TV française (TF1: 20% audience)",
+        "controversies": [
+          "Financement Sarkozy 2007 documenté",
+          "Marchés publics: Bouygues Construction remporte contrats États/Régions"
+        ],
+        "directLinks": [
+          {
+            "entity": "sarkozy",
+            "type": "financing",
+            "description": "FINANCEMENT campagne 2007 via Bouygues SA et dirigeants (plusieurs millions €)",
+            "amount": "Plusieurs millions € (détails affaire Bygmalion)",
+            "year": "2007",
+            "source": "Cour des Comptes, affaires judiciaires"
+          },
+          {
+            "entity": "pecresse",
+            "type": "contract",
+            "description": "CONTRATS marchés publics Région IdF (BTP, transports): Bouygues Construction attributaire récurrent",
+            "amount": "Plusieurs milliards € (2015-2024)",
+            "year": "2015-2024",
+            "source": "BOAMP"
+          },
+          {
+            "entity": "tf1",
+            "type": "ownership",
+            "description": "PROPRIÉTAIRE TF1 Group (43.8% via Bouygues SA + contrôle de fait)",
+            "amount": "Valorisation TF1: 2 milliards €",
+            "year": "1987-présent",
+            "source": "AMF"
+          }
+        ]
+      }
+    }
+  ],
+  "pollsters": [
+    {
+      "id": "ifop",
+      "name": "IFOP",
+      "type": "pollster",
+      "founded": "1938",
+      "ownership": "Groupe Fiducial (Lucien Douroux)",
+      "connections": ["ifop-owner", "fillon"],
+      "details": {
+        "mainClients": "Paris Match (famille Arnault), JDD, médias droite",
+        "politicalBias": "Propriétaire militant droite conservatrice",
+        "revenue": "50 millions € (2022)",
+        "controversies": [
+          "Propriétaire Lucien Douroux: avocat fiscaliste, soutien financier Fillon 2017",
+          "Biais méthodologiques dénoncés par universitaires",
+          "Surestimation droite/RN dans certains sondages"
+        ],
+        "methodology": "Panels internet + téléphone",
+        "directLinks": [
+          {
+            "entity": "ifop-owner",
+            "type": "ownership",
+            "description": "PROPRIÉTÉ à 100% du Groupe Fiducial (Lucien Douroux, avocat fiscaliste conservateur)",
+            "amount": "Acquisition 1998",
+            "year": "1998-présent",
+            "source": "Registre commerce, Infogreffe"
+          },
+          {
+            "entity": "fillon",
+            "type": "financing",
+            "description": "Lucien Douroux (patron IFOP) = financeur et soutien de Fillon 2017",
+            "amount": "Non publié (dons privés)",
+            "year": "2017",
+            "source": "Le Canard Enchaîné, Mediapart"
+          }
+        ]
+      }
+    },
+    {
+      "id": "elabe",
+      "name": "Elabe",
+      "type": "pollster",
+      "founded": "2011",
+      "ownership": "Bernard Sananès (fondateur)",
+      "connections": ["bfmtv"],
+      "details": {
+        "mainClients": "CONTRAT EXCLUSIF BFMTV (Saadé, proche Macron), L'Express",
+        "politicalBias": "Accusations répétées de surestimation Macron",
+        "revenue": "10-15 millions € (estimé)",
+        "controversies": [
+          "Études académiques montrent écarts systématiques favorables Macron",
+          "Seul institut à donner Macron gagnant 1er tour 2022",
+          "Méthodologie panels internet critiquée (non-représentativité)"
+        ],
+        "methodology": "Panels internet access (biais jeunes/urbains/CSP+)",
+        "directLinks": [
+          {
+            "entity": "bfmtv",
+            "type": "contract",
+            "description": "CONTRAT EXCLUSIF avec BFMTV (propriété Saadé, proche Macron) depuis 2015",
+            "amount": "Plusieurs millions €/an",
+            "year": "2015-présent",
+            "source": "Contrats publics, ARCOM"
+          }
+        ]
+      }
+    },
+    {
+      "id": "csa",
+      "name": "CSA (Consumer Science & Analytics)",
+      "type": "pollster",
+      "founded": "1973",
+      "ownership": "Groupe Bolloré via Havas",
+      "connections": ["bollore"],
+      "details": {
+        "mainClients": "CNews, Europe 1, médias Bolloré, clients externes",
+        "politicalBias": "Propriété Bolloré → Biais droite conservatrice suspecté",
+        "revenue": "~30 millions € (estimé)",
+        "controversies": [
+          "CONFLIT D'INTÉRÊT MAJEUR : Bolloré possède CSA ET les médias (CNews, Europe 1) qui diffusent les sondages CSA",
+          "Manipulation potentielle : peut fabriquer des sondages favorables à la droite/RN diffusés sur CNews",
+          "Opacité méthodologique dénoncée par chercheurs",
+          "Sondages CSA sur CNews systématiquement favorables à Zemmour/RN 2022"
+        ],
+        "methodology": "Panels téléphone + internet",
+        "directLinks": [
+          {
+            "entity": "bollore",
+            "type": "ownership",
+            "description": "PROPRIÉTÉ via Havas Group (filiale Vivendi/Bolloré). Havas a acquis CSA → Bolloré POSSÈDE l'institut ET les médias diffuseurs",
+            "amount": "Acquisition Havas de CSA: non public (intégration groupe)",
+            "year": "2017-présent (intégration Havas)",
+            "source": "Registre commerce, rapports Vivendi"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ipsos",
+      "name": "Ipsos",
+      "type": "pollster",
+      "founded": "1975",
+      "ownership": "Côté en bourse (Euronext Paris), fondateur Didier Truchot",
+      "connections": [],
+      "details": {
+        "mainClients": "Gouvernements, grands médias (France, international)",
+        "politicalBias": "Considéré mainstream/establishment",
+        "revenue": "2.3 milliards € mondial (2023)",
+        "controversies": [
+          "Erreurs majeures: Brexit, Trump 2016",
+          "Proximité avec pouvoirs en place",
+          "Leader mondial → influence massive opinion publique"
+        ],
+        "methodology": "Panels quotas, téléphone, face-à-face",
+        "directLinks": []
+      }
+    },
+    {
+      "id": "opinionway",
+      "name": "OpinionWay",
+      "type": "pollster",
+      "founded": "2000",
+      "ownership": "Groupe international (diversifié)",
+      "connections": [],
+      "details": {
+        "mainClients": "LCI (TF1/Bouygues), Le Figaro, divers partis",
+        "politicalBias": "Variable selon clients",
+        "revenue": "~25 millions €",
+        "controversies": [
+          "Affaire des sondages de l'Élysée (Sarkozy) : sous-traitant de Pierre Giacometti/Publifact",
+          "Sondages commandés illégalement par Élysée 2007-2012"
+        ],
+        "methodology": "Panels internet principalement",
+        "directLinks": []
+      }
+    }
+  ],
+  "mediaGroups": [
+    {
+      "id": "les-echos-group",
+      "name": "Groupe Les Échos",
+      "type": "media",
+      "owner": "Bernard Arnault (LVMH)",
+      "connections": ["arnault"],
+      "details": {
+        "properties": "Les Échos, Le Parisien, Radio Classique",
+        "audience": "Les Échos: 150k ex/jour, Le Parisien: 300k ex/jour",
+        "editorial": "Centre-droit économique, pro-business",
+        "directLinks": [
+          {
+            "entity": "arnault",
+            "type": "ownership",
+            "description": "PROPRIÉTÉ à 100% de Bernard Arnault via LVMH depuis 2007",
+            "amount": "240 millions € (acquisition 2007)",
+            "year": "2007-présent",
+            "source": "ARCOM"
+          }
+        ]
+      }
+    },
+    {
+      "id": "canal-plus-group",
+      "name": "Canal+ / CNews / Europe 1 + CSA",
+      "type": "media",
+      "owner": "Vincent Bolloré (Vivendi)",
+      "connections": ["bollore", "csa"],
+      "details": {
+        "properties": "Canal+, CNews, Europe 1, C8 + Institut de sondage CSA (via Havas)",
+        "audience": "CNews: 3-4% part audience (4e chaîne info)",
+        "editorial": "CNews: droite conservatrice, pro-RN. Canal+: moins marqué",
+        "controversies": [
+          "🚨 CONFLIT D'INTÉRÊT : Bolloré possède CNews/Europe 1 ET l'institut CSA qui produit les sondages diffusés sur ces médias",
+          "Manipulation potentielle de l'opinion : peut fabriquer des sondages pro-droite/RN et les diffuser sur ses chaînes",
+          "CNews: 6 mises en demeure ARCOM 2020-2024",
+          "Sondages CSA sur CNews favorables Zemmour/RN 2022"
+        ],
+        "directLinks": [
+          {
+            "entity": "bollore",
+            "type": "ownership",
+            "description": "CONTRÔLE via Vivendi (29.5% capital + contrôle effectif conseil administration) des MÉDIAS + INSTITUT SONDAGE CSA",
+            "amount": "Vivendi valorisation 10 Mds €",
+            "year": "2015-présent",
+            "source": "AMF"
+          },
+          {
+            "entity": "csa",
+            "type": "ownership",
+            "description": "PROPRIÉTAIRE CSA via Havas Group (filiale Vivendi) → CIRCUIT FERMÉ : produit les sondages + les diffuse sur ses médias",
+            "amount": "CSA intégré Havas",
+            "year": "2017-présent",
+            "source": "Registre commerce"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tf1",
+      "name": "TF1 Group",
+      "type": "media",
+      "owner": "Martin Bouygues",
+      "connections": ["bouygues"],
+      "details": {
+        "properties": "TF1, LCI, TMC, TF1 Séries Films",
+        "audience": "TF1: 20% part audience (leader France)",
+        "editorial": "Centre-droit, ligne prudente",
+        "directLinks": [
+          {
+            "entity": "bouygues",
+            "type": "ownership",
+            "description": "PROPRIÉTÉ Bouygues SA: 43.8% capital + contrôle effectif",
+            "amount": "Valorisation 2 Mds €",
+            "year": "1987-présent",
+            "source": "AMF"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bfmtv",
+      "name": "BFM TV / L'Express / Libération",
+      "type": "media",
+      "owner": "Rodolphe Saadé (CMA CGM)",
+      "connections": ["saade"],
+      "details": {
+        "properties": "BFM TV, BFM Business, L'Express, Libération",
+        "audience": "BFM TV: 1ère chaîne info (6% part audience)",
+        "editorial": "Centriste, proche gouvernements en place",
+        "directLinks": [
+          {
+            "entity": "saade",
+            "type": "ownership",
+            "description": "PROPRIÉTÉ à 100% via CMA Medias (rachat à Drahi 2024)",
+            "amount": "1.55 milliard € (acquisition 2024)",
+            "year": "2024-présent",
+            "source": "Autorité Concurrence"
+          }
+        ]
+      }
+    },
+    {
+      "id": "le-monde",
+      "name": "Le Monde / L'Obs",
+      "type": "media",
+      "owner": "Actionnariat multiple (dont Niel)",
+      "connections": ["niel"],
+      "details": {
+        "properties": "Le Monde, L'Obs, Télérama, Courrier International",
+        "audience": "Le Monde: 400k ex/jour, site 20M visiteurs/mois",
+        "editorial": "Centre-gauche, pro-européen, ligne Macron-compatible",
+        "directLinks": [
+          {
+            "entity": "niel",
+            "type": "ownership",
+            "description": "ACTIONNAIRE via Czech Media Invest (~10% indirect du Groupe Le Monde)",
+            "amount": "Participation estimée 50M€",
+            "year": "2010-présent",
+            "source": "Registre commerce"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ifop-owner",
+      "name": "Lucien Douroux / Groupe Fiducial",
+      "type": "business",
+      "owner": "Lucien Douroux",
+      "connections": ["ifop", "fillon"],
+      "details": {
+        "properties": "Propriétaire IFOP + Fiducial (expertise comptable, fiscalité)",
+        "politicalLeanings": "Droite conservatrice, soutien Fillon 2017",
+        "controversies": [
+          "Conflit d'intérêt: possède institut sondage + finance politique",
+          "Fiducial = clients grandes entreprises → intérêt fiscal conservateur"
+        ],
+        "directLinks": [
+          {
+            "entity": "ifop",
+            "type": "ownership",
+            "description": "PROPRIÉTAIRE à 100% de l'IFOP via Groupe Fiducial",
+            "amount": "Acquisition 1998",
+            "year": "1998-présent",
+            "source": "Infogreffe"
+          },
+          {
+            "entity": "fillon",
+            "type": "financing",
+            "description": "FINANCEMENT et soutien campagne Fillon 2017 (dons personnels + mobilisation réseau)",
+            "amount": "Non publié",
+            "year": "2017",
+            "source": "Le Canard Enchaîné"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotelec",
+      "name": "Affaire Micro-parti RN",
+      "type": "business",
+      "owner": "Jean-Marie Le Pen (famille)",
+      "connections": ["lepen"],
+      "details": {
+        "properties": "Société Riwal (location matériel électoral)",
+        "controversies": [
+          "Surfacturation matériel campagnes RN 2012-2017",
+          "Détournement 6 millions € fonds publics",
+          "Marine Le Pen condamnée 2023"
+        ],
+        "directLinks": [
+          {
+            "entity": "lepen",
+            "type": "contract",
+            "description": "CONTRATS surfacturés entre RN et Riwal (société Jean-Marie Le Pen) : 6M€ détournés",
+            "amount": "6 millions € (2012-2017)",
+            "year": "2012-2017",
+            "source": "Tribunal correctionnel Paris 2023"
+          }
+        ]
+      }
+    },
+    {
+      "id": "havas-csa",
+      "name": "Havas Group + CSA Research",
+      "type": "business",
+      "owner": "Vincent Bolloré (via Vivendi)",
+      "connections": ["bollore", "csa"],
+      "details": {
+        "properties": "Havas (communication) + CSA Research (institut sondage)",
+        "controversies": [
+          "🚨 CIRCUIT FERMÉ D'INFLUENCE : Bolloré contrôle TOUTE la chaîne",
+          "1. HAVAS (communication/conseil politique) conseille des candidats",
+          "2. CSA (sondages) produit des études pour ces mêmes candidats",
+          "3. CNEWS/EUROPE 1 diffusent ces sondages CSA",
+          "→ Contrôle total : conseil politique + fabrication sondages + diffusion médiatique"
+        ],
+        "directLinks": [
+          {
+            "entity": "bollore",
+            "type": "ownership",
+            "description": "PROPRIÉTÉ Havas Group via Vivendi (Bolloré 29.5%). Havas possède CSA Research.",
+            "amount": "Havas: 2.5 milliards € CA annuel",
+            "year": "2017-présent",
+            "source": "AMF, rapports Vivendi"
+          },
+          {
+            "entity": "csa",
+            "type": "ownership",
+            "description": "CSA Research intégré dans Havas Group → permet à Bolloré de contrôler production de sondages",
+            "amount": "CSA: ~30M€ CA",
+            "year": "2017-présent",
+            "source": "Registre commerce"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -16,7 +16,7 @@ app.use(express.json());
 
 // Charger les données JSON
 const loadJSON = (filename) => {
-  const filePath = join(__dirname, '../frontend/src/data', filename);
+  const filePath = join(__dirname, 'data', filename);
   return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 };
 

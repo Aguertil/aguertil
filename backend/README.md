@@ -1,421 +1,132 @@
-# 📊 API Observatoire Citoyen
+# API Observatoire Citoyen - Backend
 
-API REST pour accéder aux données de la dette publique française, des présidents et du réseau d'influence.
+API REST pour l'Observatoire Citoyen - Dette publique française en temps réel.
 
-## 🚀 Démarrage rapide
+## 🚀 Déploiement sur Render.com
 
-### Installation
+### Prérequis
+- Compte GitHub avec le repository `aguertil/aguertil`
+- Compte Render.com (gratuit)
+
+### Étapes de déploiement
+
+1. **Connectez-vous à Render.com**
+   - Allez sur [https://render.com](https://render.com)
+   - Connectez-vous avec votre compte GitHub
+
+2. **Créer un nouveau Web Service**
+   - Cliquez sur "New +" → "Web Service"
+   - Sélectionnez le repository `aguertil/aguertil`
+   - Autorisez l'accès si demandé
+
+3. **Configuration du service**
+   - **Name**: `observatoire-citoyen-api` (ou un nom de votre choix)
+   - **Region**: Europe (Frankfurt) ou autre
+   - **Branch**: `main`
+   - **Root Directory**: `backend`
+   - **Environment**: `Node`
+   - **Build Command**: `npm install`
+   - **Start Command**: `npm start`
+   - **Plan**: Free
+
+4. **Variables d'environnement** (optionnel)
+   - `NODE_ENV`: `production`
+
+5. **Déployer**
+   - Cliquez sur "Create Web Service"
+   - Le déploiement prendra 2-3 minutes
+   - Vous obtiendrez une URL du type: `https://observatoire-citoyen-api.onrender.com`
+
+### 🔍 Test de l'API
+
+Une fois déployée, testez l'endpoint principal:
 
 ```bash
-cd backend
-npm install
+curl https://votre-url.onrender.com/api/debt/current
 ```
 
-### Lancement
-
-```bash
-# Mode production
-npm start
-
-# Mode développement (auto-reload)
-npm run dev
-```
-
-L'API sera accessible sur `http://localhost:3001`
-
-## 📚 Documentation des endpoints
-
-### 🏠 Base
-
-#### `GET /`
-Informations sur l'API et liste de tous les endpoints disponibles.
-
-**Réponse :**
+Réponse attendue:
 ```json
 {
-  "message": "Bienvenue sur l'API Observatoire Citoyen",
-  "version": "1.0.0",
-  "endpoints": { ... }
-}
-```
-
----
-
-## 💰 Dette Publique
-
-### `GET /api/debt/current`
-Récupère la dette publique actuelle en temps réel.
-
-**Réponse :**
-```json
-{
-  "debt": 3342567891234,
-  "debtFormatted": "3 342 567 891 234",
+  "debt": 3234567890123,
+  "debtFormatted": "3 234 567 890 123",
   "debtPerSecond": 2733,
-  "timestamp": "2026-10-19T15:30:00.000Z",
+  "timestamp": "2024-01-15T10:30:00.000Z",
   "referenceDate": "2024-01-01T00:00:00.000Z",
   "referenceDebt": 3100000000000
 }
 ```
 
-### `GET /api/debt/stats`
-Statistiques complètes sur la dette publique.
+### 📡 Endpoints disponibles
 
-**Réponse :**
-```json
-{
-  "currentDebt": 3342567891234,
-  "population": 67800000,
-  "activePopulation": 30500000,
-  "gdp": 2950000000000,
-  "annualInterest": 52000000000,
-  "calculations": {
-    "debtPerCapita": 49301,
-    "debtPerActive": 109592,
-    "debtToGdpPercent": "113.31",
-    "debtPerMinute": 163980,
-    "debtPerHour": 9838800,
-    "debtPerDay": 236131200,
-    "debtPerYear": 86217888000
-  }
-}
+- `GET /` - Documentation de l'API
+- `GET /api/debt/current` - Dette actuelle en temps réel
+- `GET /api/debt/stats` - Statistiques détaillées
+- `GET /api/debt/historical` - Données historiques
+- `GET /api/debt/projections` - Projections futures
+
+Et bien d'autres (présidents, promesses, réseau d'influence, blog...)
+
+### ⚠️ Limitations du plan gratuit
+
+- **750 heures/mois** de fonctionnement
+- **Mise en veille** après 15 minutes d'inactivité
+- **Premier appel après veille**: ~30 secondes (temps de redémarrage)
+- **Appels suivants**: <100ms
+
+### 🔄 Redéploiement automatique
+
+Render redéploie automatiquement à chaque push sur la branche `main` du repository GitHub.
+
+Pour forcer un redéploiement manuel:
+1. Allez dans le dashboard Render
+2. Sélectionnez votre service
+3. Cliquez sur "Manual Deploy" → "Deploy latest commit"
+
+### 📊 Monitoring
+
+Dashboard Render vous donne accès à:
+- Logs en temps réel
+- Métriques de performance
+- Historique des déploiements
+- Statut du service
+
+### 🛠️ Développement local
+
+```bash
+# Installation
+npm install
+
+# Démarrage
+npm start
+
+# Développement avec auto-reload
+npm run dev
 ```
 
-### `GET /api/debt/historical`
-Données historiques de la dette de 2014 à 2023.
+L'API sera disponible sur `http://localhost:3001`
 
-**Réponse :**
-```json
-{
-  "data": [
-    {
-      "year": 2014,
-      "debt": 2037000000000,
-      "gdpRatio": 94.9
-    },
-    ...
-  ],
-  "summary": {
-    "startYear": 2014,
-    "endYear": 2023,
-    "startDebt": 2037000000000,
-    "endDebt": 3100000000000,
-    "totalIncrease": 1063000000000,
-    "percentIncrease": "52.18"
-  }
-}
-```
+### 🔗 Utilisation dans le bot
 
-### `GET /api/debt/projections?years=5`
-Projections de la dette pour les années futures.
-
-**Paramètres :**
-- `years` (optionnel, défaut: 5) - Nombre d'années à projeter
-
-**Réponse :**
-```json
-{
-  "baseDebt": 3342567891234,
-  "baseYear": 2026,
-  "projections": [
-    {
-      "year": 2027,
-      "projectedDebt": 3428785779234,
-      "projectedGdpRatio": "116.23"
-    },
-    ...
-  ]
-}
-```
-
----
-
-## 👑 Présidents
-
-### `GET /api/presidents?sortBy=debtIncrease&order=desc&adjusted=true`
-Liste de tous les présidents depuis 1947.
-
-**Paramètres :**
-- `sortBy` (optionnel) - Critère de tri : `startYear`, `debtIncrease`, `debtPerYear`, `years`
-- `order` (optionnel) - Ordre : `asc` ou `desc`
-- `adjusted` (optionnel) - `true` pour utiliser les valeurs ajustées à l'inflation (euros constants 2024), `false` par défaut
-
-**Réponse :**
-```json
-{
-  "count": 10,
-  "adjusted": false,
-  "presidents": [
-    {
-      "id": 10,
-      "name": "Emmanuel Macron",
-      "party": "LREM puis RE (Centre)",
-      "period": "2017-2026 (en cours)",
-      "years": 9.4,
-      "debtStart": 2260000000000,
-      "debtEnd": 3342000000000,
-      "debtIncrease": 1082000000000,
-      "debtPerYear": 115106382979,
-      "inflationCoefficient": 1.02,
-      "debtIncreaseAdjusted": 1103640000000,
-      "debtPerYearAdjusted": 117408510638,
-      "gdpRatioStart": 98,
-      "gdpRatioEnd": 116,
-      "context": "COVID-19, crise énergétique, inflation",
-      "image": "⚡"
-    },
-    ...
-  ],
-  "summary": {
-    "totalDebtAccumulated": 3082000000000,
-    "averageDebtPerYear": 44571428571,
-    "periodCovered": "1947-2026"
-  },
-  "note": "Dette ajustée à l'inflation en euros constants 2024..."
-}
-```
-
-### `GET /api/presidents/:id`
-Détails d'un président spécifique.
-
-**Exemple :** `/api/presidents/10`
-
-**Réponse :**
-```json
-{
-  "id": 10,
-  "name": "Emmanuel Macron",
-  "party": "LREM puis RE (Centre)",
-  "period": "2017-2026 (en cours)",
-  "years": 9.4,
-  "debtStart": 2260000000000,
-  "debtEnd": 3342000000000,
-  "debtIncrease": 1082000000000,
-  "debtPerYear": 115106382979,
-  "gdpRatioStart": 98,
-  "gdpRatioEnd": 116,
-  "context": "COVID-19, crise énergétique, inflation",
-  "image": "⚡"
-}
-```
-
-### `GET /api/presidents/ranking/:field?adjusted=true`
-Classement des présidents selon un critère.
-
-**Critères valides :**
-- `debtIncrease` - Dette totale accumulée
-- `debtPerYear` - Dette par an
-- `gdpRatioEnd` - Ratio dette/PIB final
-- `years` - Durée du mandat
-
-**Paramètres :**
-- `adjusted` (optionnel) - `true` pour utiliser les valeurs ajustées à l'inflation
-
-**Exemple :** `/api/presidents/ranking/debtIncrease?adjusted=true`
-
-**Réponse :**
-```json
-{
-  "field": "debtIncrease",
-  "ranking": [
-    {
-      "rank": 1,
-      "name": "Emmanuel Macron",
-      "period": "2017-2026 (en cours)",
-      "value": 1082000000000,
-      "party": "LREM puis RE (Centre)"
-    },
-    ...
-  ]
-}
-```
-
----
-
-## 🔗 Réseau d'Influence
-
-### `GET /api/network`
-Toutes les données du réseau d'influence (think tanks, milliardaires, médias).
-
-**Réponse :**
-```json
-{
-  "thinktanks": [...],
-  "billionaires": [...],
-  "media": [...],
-  "summary": {
-    "totalThinktanks": 9,
-    "totalBillionaires": 11,
-    "totalMedia": 11
-  }
-}
-```
-
-### `GET /api/network/thinktanks`
-Liste des think tanks.
-
-**Réponse :**
-```json
-{
-  "count": 9,
-  "thinktanks": [
-    {
-      "id": "montaigne",
-      "name": "Institut Montaigne",
-      "type": "thinktank",
-      "orientation": "Centre-droit, libéral",
-      "budget": "5.5 millions €",
-      ...
-    },
-    ...
-  ]
-}
-```
-
-### `GET /api/network/billionaires`
-Liste des milliardaires influents.
-
-**Réponse :**
-```json
-{
-  "count": 11,
-  "billionaires": [
-    {
-      "id": "arnault",
-      "name": "Bernard Arnault",
-      "type": "billionaire",
-      "fortune": "211 milliards $ (2023)",
-      "company": "LVMH",
-      ...
-    },
-    ...
-  ]
-}
-```
-
-### `GET /api/network/media`
-Liste des médias.
-
-**Réponse :**
-```json
-{
-  "count": 11,
-  "media": [
-    {
-      "id": "les-echos",
-      "name": "Les Échos / Le Parisien",
-      "type": "media",
-      "mediaType": "Presse écrite, numérique",
-      "owner": "Bernard Arnault (LVMH)",
-      ...
-    },
-    ...
-  ]
-}
-```
-
-### `GET /api/network/entity/:id`
-Détails d'une entité spécifique (think tank, milliardaire ou média).
-
-**Exemple :** `/api/network/entity/montaigne`
-
-**Réponse :**
-```json
-{
-  "type": "thinktank",
-  "entity": {
-    "id": "montaigne",
-    "name": "Institut Montaigne",
-    "type": "thinktank",
-    "orientation": "Centre-droit, libéral",
-    ...
-  }
-}
-```
-
----
-
-## 🔧 Configuration
-
-### Variables d'environnement
-
-Créez un fichier `.env` à la racine du dossier `backend` :
-
-```env
-PORT=3001
-```
-
-### CORS
-
-L'API est configurée pour accepter les requêtes de toutes les origines. Pour restreindre l'accès :
+Une fois déployé, remplacez l'URL locale dans votre bot par l'URL Render:
 
 ```javascript
-app.use(cors({
-  origin: 'https://observatoire-citoyen.netlify.app'
-}));
+// Avant
+const API_URL = "http://localhost:3001";
+
+// Après
+const API_URL = "https://observatoire-citoyen-api.onrender.com";
 ```
 
----
+### 💡 Alternatives
 
-## 📦 Déploiement
+Si Render ne convient pas:
+- **Railway.app**: 500h/mois, pas de mise en veille, nécessite CB
+- **Fly.io**: 3 machines gratuites, plus complexe à configurer
+- **Netlify Functions**: Serverless, nécessite refactoring
 
-### Avec Node.js
+## 📞 Support
 
-```bash
-npm install
-npm start
-```
-
-### Avec Docker
-
-```dockerfile
-FROM node:20-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm install --production
-COPY . .
-EXPOSE 3001
-CMD ["npm", "start"]
-```
-
-```bash
-docker build -t observatoire-api .
-docker run -p 3001:3001 observatoire-api
-```
-
-### Sur des plateformes cloud
-
-- **Heroku** : Créer un `Procfile` avec `web: node server.js`
-- **Railway** : Push directement depuis GitHub
-- **Render** : Sélectionner le dossier `backend` et définir `npm start`
-- **Vercel/Netlify** : Configurer comme fonction serverless
-
----
-
-## 🧪 Tests
-
-### Tester avec curl
-
-```bash
-# Dette actuelle
-curl http://localhost:3001/api/debt/current
-
-# Liste des présidents
-curl http://localhost:3001/api/presidents
-
-# Classement par dette
-curl http://localhost:3001/api/presidents/ranking/debtIncrease
-
-# Réseau d'influence
-curl http://localhost:3001/api/network
-```
-
-### Tester avec un navigateur
-
-Ouvrez simplement : `http://localhost:3001/api/debt/current`
-
----
-
-## 📝 Licence
-
-MIT
+En cas de problème, consultez:
+- [Documentation Render](https://render.com/docs)
+- [Logs du service](https://dashboard.render.com)
