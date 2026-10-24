@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, Clock } from 'lucide-react';
 import blogData from '../data/blogData.json';
+import DebtChart from '../components/DebtChart';
 
 const BlogPage = () => {
   const [articles, setArticles] = useState([]);
@@ -94,6 +95,17 @@ const BlogPage = () => {
             {/* Content */}
             <div className="prose prose-lg max-w-none">
               {selectedArticle.content.split('\n').map((line, idx) => {
+                // Insérer le graphique après "## Les chiffres qui parlent"
+                if (selectedArticle.slug === 'graphique-evolution-dette-francaise' && 
+                    line.includes('## Les chiffres qui parlent')) {
+                  return (
+                    <React.Fragment key={idx}>
+                      <h2 className="text-2xl font-bold mt-10 mb-4 text-gray-900">{line.replace('## ', '')}</h2>
+                      <DebtChart />
+                    </React.Fragment>
+                  );
+                }
+                
                 if (line.startsWith('# ')) {
                   return <h1 key={idx} className="text-3xl font-bold mt-12 mb-6 text-gray-900">{line.replace('# ', '')}</h1>;
                 } else if (line.startsWith('## ')) {
