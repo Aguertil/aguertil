@@ -1,13 +1,54 @@
 import { Link, useLocation } from 'react-router-dom';
-import { TrendingDown, Network, Crown, Target, Users, BookOpen } from 'lucide-react';
+import { TrendingDown, Network, Crown, Target, Users, BookOpen, TrendingUp } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 export default function Navigation() {
   const location = useLocation();
+  const [currentDebt, setCurrentDebt] = useState(0);
   
   const isActive = (path) => location.pathname === path;
   
+  // Calcul de la dette en temps réel
+  useEffect(() => {
+    const REFERENCE_DATE = new Date('2024-01-01T00:00:00Z');
+    const REFERENCE_DEBT = 3100000000000; // 3 100 milliards €
+    const DEBT_PER_SECOND = 2733; // +2 733€/seconde
+    
+    const calculateDebt = () => {
+      const now = new Date();
+      const secondsElapsed = Math.floor((now - REFERENCE_DATE) / 1000);
+      return REFERENCE_DEBT + (secondsElapsed * DEBT_PER_SECOND);
+    };
+    
+    setCurrentDebt(calculateDebt());
+    
+    const interval = setInterval(() => {
+      setCurrentDebt(calculateDebt());
+    }, 1000);
+    
+    return () => clearInterval(interval);
+  }, []);
+  
+  const formatDebt = (debt) => {
+    return new Intl.NumberFormat('fr-FR').format(Math.floor(debt));
+  };
+  
   return (
     <nav className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-xl shadow-2xl border-b border-blue-500/30">
+      {/* Compteur de dette */}
+      <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white">
+        <div className="max-w-7xl mx-auto px-4 py-2">
+          <div className="flex items-center justify-center gap-3 text-sm md:text-base">
+            <TrendingUp className="w-5 h-5 animate-pulse" />
+            <span className="font-semibold">Dette publique française :</span>
+            <span className="text-xl md:text-2xl font-bold tabular-nums">
+              {formatDebt(currentDebt)} €
+            </span>
+            <span className="text-xs md:text-sm opacity-90">(+2 733€/s)</span>
+          </div>
+        </div>
+      </div>
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center">
