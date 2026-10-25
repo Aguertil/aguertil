@@ -1,6 +1,6 @@
 {
-  "currentDebt": 3100000000000,
-  "debtPerSecond": 2733,
+  "currentDebt": 3228400000000,
+  "debtPerSecond": 2665,
   "population": 67970000,
   "activePopulation": 29900000,
   "gdp": 2782000000000,
@@ -16,6 +16,7 @@
     { "year": 2020, "debt": 2650000000000, "gdpPercent": 115.0 },
     { "year": 2021, "debt": 2813000000000, "gdpPercent": 112.9 },
     { "year": 2022, "debt": 2950000000000, "gdpPercent": 111.8 },
-    { "year": 2023, "debt": 3100000000000, "gdpPercent": 111.4 }
+    { "year": 2023, "debt": 3100000000000, "gdpPercent": 111.4 },
+    { "year": 2024, "debt": 3228400000000, "gdpPercent": 112.2 }
   ]
 }

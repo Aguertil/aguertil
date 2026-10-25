@@ -10,9 +10,10 @@ export default function Navigation() {
   
   // Calcul de la dette en temps réel
   useEffect(() => {
-    const REFERENCE_DATE = new Date('2024-01-01T00:00:00Z');
-    const REFERENCE_DEBT = 3100000000000; // 3 100 milliards €
-    const DEBT_PER_SECOND = 2733; // +2 733€/seconde
+    // Données officielles INSEE T2 2024 : 3 228,4 milliards €
+    const REFERENCE_DATE = new Date('2024-06-30T00:00:00Z'); // Fin T2 2024
+    const REFERENCE_DEBT = 3228400000000; // 3 228,4 milliards € (données INSEE T2 2024)
+    const DEBT_PER_SECOND = 2665; // +2 665€/seconde (déficit ~84 Mds€/an)
     
     const calculateDebt = () => {
       const now = new Date();

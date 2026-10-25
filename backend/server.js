@@ -27,10 +27,10 @@ const promisesData = loadJSON('promisesData.json');
 const politicalLinksData = loadJSON('politicalLinksData.json');
 const blogData = loadJSON('blogData.json');
 
-// Configuration de la dette en temps réel
-const REFERENCE_DATE = new Date('2024-01-01T00:00:00Z');
-const REFERENCE_DEBT = 3100000000000;
-const DEBT_PER_SECOND = 2733;
+// Configuration de la dette en temps réel (données officielles INSEE T2 2024)
+const REFERENCE_DATE = new Date('2024-06-30T00:00:00Z'); // Fin T2 2024
+const REFERENCE_DEBT = 3228400000000; // 3 228,4 milliards € (INSEE T2 2024)
+const DEBT_PER_SECOND = 2665; // +2 665€/seconde (déficit annuel ~84 Mds€)
 
 // Fonction pour calculer la dette actuelle
 const calculateCurrentDebt = () => {
