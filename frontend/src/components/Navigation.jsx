@@ -45,7 +45,7 @@ export default function Navigation() {
             <span className="text-xl md:text-2xl font-bold tabular-nums">
               {formatDebt(currentDebt)} €
             </span>
-            <span className="text-xs md:text-sm opacity-90">(+5 629€/s)</span>
+            <span className="text-xs md:text-sm opacity-90 font-bold">(+5 629€/s)</span>
           </div>
         </div>
       </div>
