@@ -51,58 +51,64 @@ export default function DebtPage() {
              style={{ bottom: '10%', left: '40%', animationDelay: '4s' }} />
       </div>
 
-      {/* Hero Section */}
+      {/* Hero Counter Section - Full Screen */}
       <div className="relative min-h-screen flex items-center justify-center px-4">
         <div 
-          className="text-center transform transition-all duration-1000"
+          className="text-center w-full max-w-6xl transform transition-all duration-1000"
           style={{ 
-            transform: `translateY(${scrollY * 0.5}px)`,
-            opacity: 1 - scrollY / 500 
+            transform: `translateY(${scrollY * 0.3}px)`,
+            opacity: 1 - scrollY / 800 
           }}
         >
+          {/* Title */}
           <div className="mb-8 animate-fade-in-down">
             <div className="inline-flex items-center gap-2 px-6 py-3 bg-red-500/20 backdrop-blur-sm border border-red-500/30 rounded-full mb-6 animate-pulse-glow">
               <AlertTriangle className="w-5 h-5 text-red-400" />
-              <span className="text-red-300 font-semibold">Alerte Dette Publique</span>
+              <span className="text-red-300 font-semibold text-sm md:text-base">EN DIRECT - 25 octobre 2026</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-black text-white mb-4 tracking-tight">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 animate-gradient">
-                Dette Publique
-              </span>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-3 tracking-tight">
+              <span className="text-red-400">Dette de la France :</span>
               <br />
-              <span className="text-white">Française en Direct</span>
+              <span className="text-white">dette publique en direct</span>
             </h1>
-            
-            <p className="text-xl md:text-2xl text-blue-200 max-w-3xl mx-auto mb-12 animate-fade-in">
-              Suivez l'évolution en temps réel de la dette de la France
-              <br />
-              <span className="text-red-400 font-bold">+2 733 € par seconde</span>
-            </p>
           </div>
 
-          <div className="animate-bounce-slow mt-12">
-            <ArrowDown className="w-12 h-12 text-blue-400 mx-auto" />
+          {/* MAIN COUNTER - HUGE */}
+          <DebtCounter 
+            initialDebt={debtData.currentDebt} 
+            debtPerSecond={debtData.debtPerSecond}
+            heroMode={true}
+          />
+
+          {/* Quick Stats Below Counter */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-4xl mx-auto animate-fade-in">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all">
+              <div className="text-2xl md:text-3xl font-bold text-yellow-400">{debtToGdpPercent}%</div>
+              <div className="text-xs md:text-sm text-blue-200 mt-1">Dette / PIB</div>
+            </div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all">
+              <div className="text-2xl md:text-3xl font-bold text-yellow-400">{formatLargeNumber(debtData.population / 1000000)}M</div>
+              <div className="text-xs md:text-sm text-blue-200 mt-1">Habitants</div>
+            </div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all">
+              <div className="text-2xl md:text-3xl font-bold text-yellow-400">{formatLargeNumber(debtPerCapita)}€</div>
+              <div className="text-xs md:text-sm text-blue-200 mt-1">Par habitant</div>
+            </div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all">
+              <div className="text-2xl md:text-3xl font-bold text-yellow-400">{(debtData.annualInterest / 1000000000).toFixed(0)}Md€</div>
+              <div className="text-xs md:text-sm text-blue-200 mt-1">Intérêts/an</div>
+            </div>
+          </div>
+
+          <div className="animate-bounce-slow mt-16">
+            <ArrowDown className="w-10 h-10 text-blue-400 mx-auto opacity-50" />
           </div>
         </div>
       </div>
 
       {/* Main Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        {/* Main Counter */}
-        <div 
-          id="counter-section"
-          className="mb-16 animate-on-scroll transform transition-all duration-1000"
-          style={{
-            opacity: isVisible['counter-section'] ? 1 : 0,
-            transform: isVisible['counter-section'] ? 'translateY(0)' : 'translateY(50px)'
-          }}
-        >
-          <DebtCounter 
-            initialDebt={debtData.currentDebt} 
-            debtPerSecond={debtData.debtPerSecond}
-          />
-        </div>
         
         {/* Stats Grid */}
         <div 
