@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { TrendingUp } from 'lucide-react';
 
 export default function DebtCounter({ initialDebt, debtPerSecond }) {
-  // Données officielles INSEE T2 2024
-  const REFERENCE_DATE = new Date('2024-06-30T00:00:00Z');
-  const REFERENCE_DEBT = 3228400000000; // 3 228,4 milliards € (T2 2024)
+  // Référence actualisée octobre 2026
+  const REFERENCE_DATE = new Date('2024-01-01T00:00:00Z');
+  const REFERENCE_DEBT = 3100000000000; // 3 100 milliards € (janvier 2024)
   
   const calculateCurrentDebt = () => {
     const now = new Date();
@@ -108,7 +108,7 @@ export default function DebtCounter({ initialDebt, debtPerSecond }) {
           </div>
 
           <div className="mt-6 text-sm text-blue-300 italic opacity-75">
-            💡 Compteur en temps réel - Données INSEE T2 2024
+            💡 Compteur en temps réel - Déficit : ~178 Mds€/an
           </div>
         </div>
       </div>
