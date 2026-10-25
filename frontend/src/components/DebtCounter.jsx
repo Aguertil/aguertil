@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { TrendingUp } from 'lucide-react';
 
-export default function DebtCounter({ initialDebt, debtPerSecond }) {
+export default function DebtCounter({ initialDebt, debtPerSecond, heroMode = false }) {
   // Référence actualisée octobre 2026
   const REFERENCE_DATE = new Date('2024-01-01T00:00:00Z');
   const REFERENCE_DEBT = 3100000000000; // 3 100 milliards € (janvier 2024)
@@ -30,7 +30,52 @@ export default function DebtCounter({ initialDebt, debtPerSecond }) {
   };
   
   const debtString = formatNumber(debt);
-  
+
+  // Hero mode - Big yellow numbers like dettedelalfrance.fr
+  if (heroMode) {
+    return (
+      <div className="relative">
+        {/* Main gigantic counter */}
+        <div className="relative mb-8">
+          <div className={`text-6xl md:text-8xl lg:text-9xl font-black font-mono tracking-tighter transition-all duration-200 ${
+            flash ? 'scale-[1.02]' : 'scale-100'
+          }`}>
+            {debtString.split('').map((char, idx) => (
+              <span 
+                key={idx}
+                className="inline-block"
+                style={{ 
+                  color: '#FFD700',
+                  textShadow: '0 0 30px rgba(255, 215, 0, 0.5), 0 0 60px rgba(255, 215, 0, 0.3), 0 2px 4px rgba(0,0,0,0.8)',
+                  animationDelay: `${idx * 0.02}s`
+                }}
+              >
+                {char}
+              </span>
+            ))}
+            <span className="text-5xl md:text-7xl lg:text-8xl ml-2 md:ml-4" style={{ color: '#FFD700' }}>€</span>
+          </div>
+          
+          {/* Per second indicator - centered below */}
+          <div className="mt-6 flex items-center justify-center gap-3 px-8 py-4 bg-red-600/30 backdrop-blur-sm border-2 border-red-500/50 rounded-2xl mx-auto max-w-fit">
+            <div className="w-3 h-3 bg-red-400 rounded-full animate-pulse shadow-lg shadow-red-500/50"></div>
+            <span className="text-xl md:text-3xl text-white font-bold tracking-wide">
+              +{formatNumber(debtPerSecond)} € / seconde
+            </span>
+          </div>
+        </div>
+
+        <style jsx>{`
+          @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+          }
+        `}</style>
+      </div>
+    );
+  }
+
+  // Normal mode - Card style
   return (
     <div className="relative group">
       {/* Glow effect */}
@@ -108,7 +153,7 @@ export default function DebtCounter({ initialDebt, debtPerSecond }) {
           </div>
 
           <div className="mt-6 text-sm text-blue-300 italic opacity-75">
-            💡 Compteur en temps réel - Déficit : ~178 Mds€/an
+            💡 Compteur en temps réel - Déficit : ~183 Mds€/an
           </div>
         </div>
       </div>

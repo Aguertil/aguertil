@@ -27,10 +27,10 @@ const promisesData = loadJSON('promisesData.json');
 const politicalLinksData = loadJSON('politicalLinksData.json');
 const blogData = loadJSON('blogData.json');
 
-// Configuration de la dette en temps réel (actualisé octobre 2026)
+// Configuration de la dette en temps réel (actualisé 25 octobre 2026)
 const REFERENCE_DATE = new Date('2024-01-01T00:00:00Z');
 const REFERENCE_DEBT = 3100000000000; // 3 100 milliards € (janvier 2024)
-const DEBT_PER_SECOND = 5629; // +5 629€/seconde (déficit annuel ~178 Mds€)
+const DEBT_PER_SECOND = 5804; // +5 804€/seconde (déficit annuel ~183 Mds€)
 
 // Fonction pour calculer la dette actuelle
 const calculateCurrentDebt = () => {
