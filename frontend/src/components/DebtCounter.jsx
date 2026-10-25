@@ -108,7 +108,7 @@ export default function DebtCounter({ initialDebt, debtPerSecond }) {
           </div>
 
           <div className="mt-6 text-sm text-blue-300 italic opacity-75">
-            💡 Compteur en temps réel - Déficit : ~178 Mds€/an
+            💡 Compteur en temps réel - Déficit : ~183 Mds€/an
           </div>
         </div>
       </div>

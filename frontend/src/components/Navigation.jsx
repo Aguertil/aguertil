@@ -13,7 +13,7 @@ export default function Navigation() {
     // Référence actualisée octobre 2026
     const REFERENCE_DATE = new Date('2024-01-01T00:00:00Z');
     const REFERENCE_DEBT = 3100000000000; // 3 100 milliards € (janvier 2024)
-    const DEBT_PER_SECOND = 5629; // +5 629€/seconde (déficit ~178 Mds€/an)
+    const DEBT_PER_SECOND = 5804; // +5 804€/seconde (déficit ~183 Mds€/an)
     
     const calculateDebt = () => {
       const now = new Date();
@@ -45,7 +45,7 @@ export default function Navigation() {
             <span className="text-xl md:text-2xl font-bold tabular-nums">
               {formatDebt(currentDebt)} €
             </span>
-            <span className="text-xs md:text-sm opacity-90 font-bold">(+5 629€/s)</span>
+            <span className="text-xs md:text-sm opacity-90 font-bold">(+5 804€/s)</span>
           </div>
         </div>
       </div>
