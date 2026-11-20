@@ -1,3 +1,4 @@
+import { usePageMeta, SITE_URL, BRAND } from '../seo/usePageMeta';
 import { useCallback, useMemo, useState } from 'react';
 import data from '../data/networkData.json';
 import Panneau from '../components/Panneau';
@@ -19,6 +20,12 @@ function Liste({ titre, items }) {
 }
 
 export default function NetworkPage() {
+  usePageMeta({
+    title: 'Think tanks, médias et grandes fortunes : qui influence le débat',
+    description: "Institut Montaigne, iFRAP, Terra Nova et autres think tanks : qui les finance, qui les dirige, quels médias relaient leurs analyses sur la dette et les finances publiques.",
+    path: '/network',
+  });
+
   const index = useMemo(() => {
     const m = {};
     categories.forEach((c) => data[c.cle].forEach((e) => { m[e.id] = { ...e, categorie: c.type }; }));

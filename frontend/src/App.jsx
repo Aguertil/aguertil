@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Masthead from './components/Masthead';
 import Footer from './components/Footer';
@@ -9,6 +9,7 @@ import PromisesPage from './pages/PromisesPage';
 import PoliticalLinksPage from './pages/PoliticalLinksPage';
 import BlogPage from './pages/BlogPage';
 import ArticlePage from './pages/ArticlePage';
+import NotFoundPage from './pages/NotFoundPage';
 
 function RetourEnHaut() {
   const { pathname } = useLocation();
@@ -18,7 +19,7 @@ function RetourEnHaut() {
 
 function App() {
   return (
-    <Router basename={import.meta.env.BASE_URL}>
+    <>
       <RetourEnHaut />
       <Masthead />
       <main id="contenu" className="page">
@@ -30,10 +31,11 @@ function App() {
           <Route path="/political-links" element={<PoliticalLinksPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<ArticlePage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
       <Footer />
-    </Router>
+    </>
   );
 }
 

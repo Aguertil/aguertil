@@ -1,3 +1,4 @@
+import { usePageMeta, SITE_URL, BRAND } from '../seo/usePageMeta';
 import { Fragment, useState } from 'react';
 import presidentsData from '../data/presidentsData.json';
 import { milliards } from '../data/format';
@@ -10,6 +11,12 @@ const tris = [
 ];
 
 export default function PresidentsPage() {
+  usePageMeta({
+    title: 'Dette publique par président, de Vincent Auriol à Emmanuel Macron',
+    description: "Combien chaque président a-t-il ajouté à la dette publique ? Chirac +576 Md€, Sarkozy +645 Md€, Hollande +359 Md€, Macron +1 314 Md€ (Insee). En euros, en euros constants et en points de PIB.",
+    path: '/presidents',
+  });
+
   const [tri, setTri] = useState('debtIncrease');
   const [ordre, setOrdre] = useState('desc');
   const [constants, setConstants] = useState(false);

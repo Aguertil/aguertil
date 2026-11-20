@@ -26,3 +26,4 @@ dist-ssr
 # Builds et état local Netlify
 *.zip
 .netlify/
+dist-ssr

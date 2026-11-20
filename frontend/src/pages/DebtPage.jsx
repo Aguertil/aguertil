@@ -1,9 +1,11 @@
+import { lazy, Suspense } from 'react';
+const HistoricalChart = lazy(() => import('../components/HistoricalChart'));
+import { usePageMeta, SITE_URL, BRAND } from '../seo/usePageMeta';
 import debtData from '../data/debtData.json';
 import { useLiveDebt } from '../hooks/useLiveDebt';
 import { euros, milliards, nombre } from '../data/format';
 import { articlesPublies } from '../data/articles';
 import { ArticleCarte, ArticleCourt } from '../components/ArticleTeaser';
-import HistoricalChart from '../components/HistoricalChart';
 import Calculator from '../components/Calculator';
 
 // Le chiffre est découpé en groupes de trois : les deux derniers bougent chaque seconde
@@ -22,6 +24,16 @@ function Compteur({ valeur }) {
 }
 
 export default function DebtPage() {
+  usePageMeta({
+    title: 'Dette publique de la France en direct',
+    description: `Compteur de la dette publique française : ${(debtData.currentDebt / 1e9).toLocaleString('fr-FR', { maximumFractionDigits: 1 })} milliards d'euros fin juin 2026, soit ${debtData.debtToGdpPercent.toLocaleString('fr-FR')} % du PIB (Insee). Dette par habitant, par président, charge des intérêts.`,
+    path: '/',
+    jsonLd: [
+      { '@context': 'https://schema.org', '@type': 'WebSite', name: BRAND, url: `${SITE_URL}/`, inLanguage: 'fr-FR' },
+      { '@context': 'https://schema.org', '@type': 'Organization', name: BRAND, url: `${SITE_URL}/`, logo: `${SITE_URL}/favicon.svg` },
+    ],
+  });
+
   const dette = useLiveDebt();
   const articles = articlesPublies();
   const [principal, ...autres] = articles;
@@ -65,7 +77,7 @@ export default function DebtPage() {
       <section className="section deux-colonnes" aria-label="Évolution et calcul">
         <div>
           <h2 className="section__titre">Douze ans de dette</h2>
-          <HistoricalChart data={debtData.historicalData} />
+          <Suspense fallback={<div className="graphique-attente" style={{ minHeight: 320 }} />}><HistoricalChart data={debtData.historicalData} /></Suspense>
         </div>
         <div>
           <h2 className="section__titre">Votre part des intérêts</h2>

@@ -1,3 +1,4 @@
+import { usePageMeta, SITE_URL, BRAND } from '../seo/usePageMeta';
 import { useState } from 'react';
 import promisesData from '../data/promisesData.json';
 
@@ -25,6 +26,12 @@ function Verdict({ sujet, donnee }) {
 }
 
 export default function PromisesPage() {
+  usePageMeta({
+    title: 'Promesses budgétaires des présidents : tenues ou non ?',
+    description: "Déficit à 3 %, réduction de la dette, baisse des dépenses : les engagements budgétaires des présidents comparés aux résultats publiés par l'Insee.",
+    path: '/promises',
+  });
+
   const presidents = [...promisesData.presidents].sort((a, b) => b.campaignYear - a.campaignYear);
   const [choisi, setChoisi] = useState(presidents.find((p) => p.name.includes('Macron')) || presidents[0]);
   const s = promisesData.statistics;
