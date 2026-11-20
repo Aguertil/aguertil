@@ -1,89 +1,38 @@
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, AreaChart } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { milliards, nombre } from '../data/format';
+
+function Infobulle({ active, payload, label }) {
+  if (!active || !payload?.length) return null;
+  const d = payload[0].payload;
+  return (
+    <div style={{ background: '#fff', border: '2px solid #000', padding: '8px 10px', fontFamily: 'var(--titre)' }}>
+      <strong>Fin {label}</strong>
+      <div>{milliards(d.debt)}</div>
+      <div style={{ color: '#5c5c5c' }}>{String(d.gdpPercent).replace('.', ',')} % du PIB</div>
+    </div>
+  );
+}
 
 export default function HistoricalChart({ data }) {
-  const formatYAxis = (value) => {
-    return `${new Intl.NumberFormat('fr-FR').format(Math.round(value / 1e9))} Md€`;
-  };
-
-  const CustomTooltip = ({ active, payload, label }) => {
-    if (active && payload && payload.length) {
-      return (
-        <div className="bg-slate-800/95 backdrop-blur-xl border border-blue-400/30 rounded-lg p-4 shadow-2xl">
-          <p className="text-blue-300 font-bold mb-2">Année {label}</p>
-          <p className="text-white text-lg font-semibold">
-            {(payload[0].value / 1000000000000).toFixed(2)} billions €
-          </p>
-        </div>
-      );
-    }
-    return null;
-  };
-  
+  const premier = data[0];
+  const dernier = data[data.length - 1];
+  const hausse = dernier.debt - premier.debt;
   return (
-    <div className="card bg-gradient-to-br from-slate-800/90 to-blue-900/90 backdrop-blur-xl border-2 border-blue-400/30 hover:border-blue-400/50 transition-all duration-500">
-      <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-        <span className="text-2xl">📈</span>
-        Évolution de la dette publique ({data[0].year}-{data[data.length - 1].year})
-      </h3>
-      
-      <ResponsiveContainer width="100%" height={320}>
-        <AreaChart data={data}>
-          <defs>
-            <linearGradient id="colorDebt" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#ef4444" stopOpacity={0.8}/>
-              <stop offset="95%" stopColor="#ef4444" stopOpacity={0.1}/>
-            </linearGradient>
-          </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
-          <XAxis 
-            dataKey="year" 
-            stroke="#94a3b8"
-            style={{ fontSize: '14px', fontWeight: 'bold' }}
-          />
-          <YAxis 
-            tickFormatter={formatYAxis} 
-            stroke="#94a3b8"
-            style={{ fontSize: '14px', fontWeight: 'bold' }}
-          />
-          <Tooltip content={<CustomTooltip />} />
-          <Area 
-            type="monotone" 
-            dataKey="debt" 
-            stroke="#ef4444" 
-            strokeWidth={3}
-            fill="url(#colorDebt)"
-            dot={{ fill: '#ef4444', r: 6, strokeWidth: 2, stroke: '#fff' }}
-            activeDot={{ r: 8, fill: '#fca5a5', stroke: '#fff', strokeWidth: 2 }}
-          />
-        </AreaChart>
-      </ResponsiveContainer>
-      
-      <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="group p-5 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 backdrop-blur-sm rounded-xl border border-blue-400/30 hover:border-blue-400/60 transition-all duration-300 hover:scale-105">
-          <div className="text-sm font-semibold text-blue-300 mb-2 uppercase tracking-wide">Augmentation {data[0].year}-{data[data.length - 1].year}</div>
-          <div className="text-3xl font-black text-white mb-1">
-            +{new Intl.NumberFormat('fr-FR').format(Math.round((data[data.length - 1].debt - data[0].debt) / 1e9))} Md€
-          </div>
-          <div className="text-sm text-blue-200">
-            soit +{(((data[data.length - 1].debt - data[0].debt) / data[0].debt) * 100).toFixed(1)}%
-          </div>
-        </div>
-        
-        <div className="group p-5 bg-gradient-to-br from-orange-500/20 to-red-500/20 backdrop-blur-sm rounded-xl border border-orange-400/30 hover:border-orange-400/60 transition-all duration-300 hover:scale-105">
-          <div className="text-sm font-semibold text-orange-300 mb-2 uppercase tracking-wide">Pic COVID-19 (2020)</div>
-          <div className="text-3xl font-black text-white mb-1">+270 Mds €</div>
-          <div className="text-sm text-orange-200">
-            La plus forte hausse annuelle
-          </div>
-        </div>
+    <figure style={{ margin: 0 }}>
+      <div style={{ width: '100%', height: 320 }}>
+        <ResponsiveContainer>
+          <BarChart data={data} margin={{ top: 8, right: 0, left: 0, bottom: 0 }}>
+            <CartesianGrid vertical={false} stroke="#e3e3e3" />
+            <XAxis dataKey="year" tickLine={false} axisLine={{ stroke: '#000' }} tick={{ fill: '#000', fontSize: 13, fontFamily: 'Archivo' }} />
+            <YAxis tickFormatter={(v) => nombre(v / 1e9)} width={52} tickLine={false} axisLine={false} tick={{ fill: '#5c5c5c', fontSize: 13, fontFamily: 'Archivo' }} />
+            <Tooltip content={<Infobulle />} cursor={{ fill: '#f2f2f2' }} />
+            <Bar dataKey="debt" fill="#000" maxBarSize={38} />
+          </BarChart>
+        </ResponsiveContainer>
       </div>
-      
-      <div className="mt-4 p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
-        <p className="text-sm text-blue-200">
-          <span className="font-semibold text-blue-300">Sources :</span> INSEE, Banque de France, Ministère de l'Économie. 
-          Données consolidées de la dette publique au sens de Maastricht.
-        </p>
-      </div>
-    </div>
+      <figcaption className="source" style={{ marginTop: 8 }}>
+        Dette publique en fin d'année, en milliards d'euros. Entre {premier.year} et {dernier.year}, elle a augmenté de {milliards(hausse)} (+{nombre(((hausse / premier.debt) * 100))} %). Source : Insee.
+      </figcaption>
+    </figure>
   );
 }
