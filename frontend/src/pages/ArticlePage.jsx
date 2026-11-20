@@ -10,8 +10,8 @@ export default function ArticlePage() {
   const article = articleParSlug(slug);
 
   useEffect(() => {
-    document.title = article ? `${article.title} · dettefrance.fr` : 'Article introuvable · dettefrance.fr';
-    return () => { document.title = 'dettefrance.fr · La dette publique française en direct'; };
+    document.title = article ? `${article.title} · dettefrancaise.fr` : 'Article introuvable · dettefrancaise.fr';
+    return () => { document.title = 'dettefrancaise.fr · La dette publique française en direct'; };
   }, [article]);
 
   if (!article) {

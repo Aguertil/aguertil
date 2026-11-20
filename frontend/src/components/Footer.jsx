@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="pied">
       <div className="conteneur pied__grille">
         <div>
-          <h2>dettefrance.fr</h2>
+          <h2>dettefrancaise.fr</h2>
           <p>Un site indépendant pour suivre la dette publique française et les liens entre responsables politiques, grandes fortunes, médias et instituts de sondage.</p>
         </div>
         <div>
