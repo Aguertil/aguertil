@@ -5,6 +5,7 @@ import {
   LinearScale,
   PointElement,
   LineElement,
+  LineController,
   Title,
   Tooltip,
   Legend,
@@ -17,6 +18,7 @@ ChartJS.register(
   LinearScale,
   PointElement,
   LineElement,
+  LineController,
   Title,
   Tooltip,
   Legend,
@@ -29,19 +31,8 @@ const DebtChart = () => {
   const chartInstance = useRef(null);
 
   useEffect(() => {
-    const debtData = [
-      { year: 1995, debt: 58.0 }, { year: 1996, debt: 59.2 }, { year: 1997, debt: 61.3 },
-      { year: 1998, debt: 61.2 }, { year: 1999, debt: 60.9 }, { year: 2000, debt: 59.4 },
-      { year: 2001, debt: 59.2 }, { year: 2002, debt: 60.3 }, { year: 2003, debt: 64.4 },
-      { year: 2004, debt: 65.9 }, { year: 2005, debt: 67.4 }, { year: 2006, debt: 64.6 },
-      { year: 2007, debt: 65.8 }, { year: 2008, debt: 68.8 }, { year: 2009, debt: 83.0 },
-      { year: 2010, debt: 85.3 }, { year: 2011, debt: 87.8 }, { year: 2012, debt: 90.6 },
-      { year: 2013, debt: 93.4 }, { year: 2014, debt: 94.9 }, { year: 2015, debt: 95.6 },
-      { year: 2016, debt: 96.6 }, { year: 2017, debt: 98.1 }, { year: 2018, debt: 98.1 },
-      { year: 2019, debt: 97.4 }, { year: 2020, debt: 115.0 }, { year: 2021, debt: 112.9 },
-      { year: 2022, debt: 111.8 }, { year: 2023, debt: 110.6 }, { year: 2024, debt: 112.2 },
-      { year: 2025, debt: 112.8 }
-    ];
+    // Dette publique en fin d'année, % du PIB (Insee, séries trimestrielles base 2020)
+    const debtData = [{ year: 1995, debt: 57.8 }, { year: 1996, debt: 60.6 }, { year: 1997, debt: 62.0 }, { year: 1998, debt: 62.1 }, { year: 1999, debt: 61.4 }, { year: 2000, debt: 59.7 }, { year: 2001, debt: 59.3 }, { year: 2002, debt: 61.3 }, { year: 2003, debt: 65.4 }, { year: 2004, debt: 66.9 }, { year: 2005, debt: 68.2 }, { year: 2006, debt: 65.4 }, { year: 2007, debt: 65.5 }, { year: 2008, debt: 69.8 }, { year: 2009, debt: 84.1 }, { year: 2010, debt: 86.3 }, { year: 2011, debt: 88.7 }, { year: 2012, debt: 91.7 }, { year: 2013, debt: 94.6 }, { year: 2014, debt: 96.2 }, { year: 2015, debt: 97.0 }, { year: 2016, debt: 98.2 }, { year: 2017, debt: 98.8 }, { year: 2018, debt: 98.6 }, { year: 2019, debt: 98.2 }, { year: 2020, debt: 114.9 }, { year: 2021, debt: 112.8 }, { year: 2022, debt: 111.4 }, { year: 2023, debt: 109.5 }, { year: 2024, debt: 112.6 }, { year: 2025, debt: 115.7 }];
 
     const labels = debtData.map(d => d.year);
     const values = debtData.map(d => d.debt);
@@ -168,7 +159,7 @@ const DebtChart = () => {
                 borderWidth: 0,
                 label: {
                   display: true,
-                  content: ['E. Macron', '(2017-2025)'],
+                  content: ['E. Macron', '(depuis 2017)'],
                   position: { x: 'center', y: 'start' },
                   font: { size: 11 }
                 }
