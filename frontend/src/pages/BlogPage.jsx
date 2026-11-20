@@ -1,8 +1,15 @@
+import { usePageMeta, SITE_URL, BRAND } from '../seo/usePageMeta';
 import { useState } from 'react';
 import { articlesPublies, rubriques } from '../data/articles';
 import { ArticleCarte } from '../components/ArticleTeaser';
 
 export default function BlogPage() {
+  usePageMeta({
+    title: 'Articles sur la dette publique française',
+    description: "Analyses et décryptages sourcés sur la dette publique française : évolution depuis 1995, comparaison des présidents, déficit et charge des intérêts.",
+    path: '/blog',
+  });
+
   const [rubrique, setRubrique] = useState('toutes');
   const articles = articlesPublies().filter((a) => rubrique === 'toutes' || a.category === rubrique);
 

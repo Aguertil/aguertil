@@ -1,3 +1,4 @@
+import { usePageMeta, SITE_URL, BRAND } from '../seo/usePageMeta';
 import { useCallback, useMemo, useState } from 'react';
 import data from '../data/politicalLinksData.json';
 import Panneau from '../components/Panneau';
@@ -27,6 +28,12 @@ function resume(e) {
 }
 
 export default function PoliticalLinksPage() {
+  usePageMeta({
+    title: "Liens d'intérêts : médias, instituts de sondage et responsables politiques",
+    description: "Qui possède les instituts de sondage et les grands médias, et quels liens avec les responsables politiques ? Fiches sourcées : IFOP, Elabe, CSA, Bolloré, Arnault, Niel, Saadé.",
+    path: '/political-links',
+  });
+
   const tous = useMemo(() => [...data.politicians, ...data.billionaires, ...data.pollsters, ...(data.mediaGroups || [])], []);
   const [type, setType] = useState('tous');
   const [recherche, setRecherche] = useState('');
