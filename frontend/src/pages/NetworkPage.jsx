@@ -1,120 +1,97 @@
-import { useState } from 'react';
-import { Info, AlertTriangle, ExternalLink } from 'lucide-react';
-import ModernNetworkViz from '../components/ModernNetworkViz';
-import ModernEntityDetails from '../components/ModernEntityDetails';
-import networkData from '../data/networkData.json';
+import { useCallback, useMemo, useState } from 'react';
+import data from '../data/networkData.json';
+import Panneau from '../components/Panneau';
+
+const categories = [
+  { cle: 'thinkTanks', libelle: 'Think tanks', type: 'Think tank' },
+  { cle: 'billionaires', libelle: 'Grandes fortunes', type: 'Grande fortune' },
+  { cle: 'media', libelle: 'Médias', type: 'Média' },
+];
+
+function Liste({ titre, items }) {
+  if (!items?.length) return null;
+  return (
+    <>
+      <h3>{titre}</h3>
+      <ul>{items.map((x, i) => <li key={i}>{x}</li>)}</ul>
+    </>
+  );
+}
 
 export default function NetworkPage() {
-  const [selectedEntity, setSelectedEntity] = useState(null);
-  
+  const index = useMemo(() => {
+    const m = {};
+    categories.forEach((c) => data[c.cle].forEach((e) => { m[e.id] = { ...e, categorie: c.type }; }));
+    return m;
+  }, []);
+  const [categorie, setCategorie] = useState('toutes');
+  const [choisi, setChoisi] = useState(null);
+  const fermer = useCallback(() => setChoisi(null), []);
+
+  const noms = (ids) => (ids || []).map((id) => index[id]).filter(Boolean);
+  const Relies = ({ titre, ids }) => {
+    const liste = noms(ids);
+    if (!liste.length) return null;
+    return (
+      <>
+        <h3>{titre}</h3>
+        <ul>{liste.map((e) => <li key={e.id}><button type="button" className="bouton-texte" onClick={() => setChoisi(e)}>{e.name}</button></li>)}</ul>
+      </>
+    );
+  };
+
+  const visibles = categories.filter((c) => categorie === 'toutes' || c.cle === categorie);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50 py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-8 text-center">
-          <h1 className="text-5xl font-bold text-gray-900 mb-3 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Cartographie des Influences en France
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explorez les liens entre Think Tanks, Milliardaires et Médias : 
-            qui finance, qui possède, qui influence le débat public ?
-          </p>
-        </div>
+    <div className="conteneur">
+      <h1 className="titre-page">Qui finance, qui possède, qui influence</h1>
+      <p className="chapo">Les think tanks qui pèsent sur le débat public, les grandes fortunes qui les financent et les médias qu'elles possèdent.</p>
 
-        {/* Key Facts Banner */}
-        <div className="card bg-gradient-to-r from-red-50 via-orange-50 to-yellow-50 border-2 border-orange-300 mb-6">
-          <div className="flex items-start gap-3">
-            <AlertTriangle className="text-orange-600 flex-shrink-0 mt-1" size={24} />
-            <div>
-              <h3 className="font-bold text-gray-900 mb-2 text-lg">💡 Le saviez-vous ?</h3>
-              <ul className="space-y-2 text-gray-700">
-                <li className="flex items-start gap-2">
-                  <span className="text-orange-500 font-bold">🔥</span>
-                  <span><strong>Marie-Pierre de Bailliencourt</strong>, Directrice générale de l'Institut Montaigne depuis 2022, est l'<strong>épouse d'Emmanuel de Bailliencourt</strong>, Vice-président et Directeur Financier du groupe Bolloré (CNews, Europe 1, Canal+)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-orange-500 font-bold">🔥</span>
-                  <span><strong>Emmanuelle Mignon</strong>, Vice-présidente du même Institut Montaigne, est mariée à <strong>Yannick Bolloré</strong>, neveu de Vincent Bolloré</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-orange-500 font-bold">•</span>
-                  <span>Résultat : <strong>L'Institut Montaigne</strong> (think tank le plus influent de France) est dirigé par <strong>deux femmes mariées à des cadres dirigeants de Bolloré</strong></span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-orange-500 font-bold">•</span>
-                  <span><strong>Nicolas Bazire</strong>, ex-directeur général de LVMH et bras droit de Bernard Arnault, préside le conseil de surveillance de Fondapol</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-orange-500 font-bold">•</span>
-                  <span><strong>11 milliardaires</strong> contrôlent directement ou indirectement la quasi-totalité des grands médias français et financent les principaux think tanks</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        {/* Main Visualization */}
-        <ModernNetworkViz 
-          data={networkData} 
-          onEntitySelect={setSelectedEntity}
-        />
-        
-        {/* Méthodologie */}
-        <div className="mt-8 card bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-300">
-          <div className="flex items-start space-x-3">
-            <Info className="text-blue-600 flex-shrink-0 mt-1" size={24} />
-            <div className="text-sm text-gray-700">
-              <p className="font-semibold text-gray-900 mb-2 text-lg">
-                📚 Méthodologie & Sources
-              </p>
-              <p className="mb-3">
-                Cette cartographie compile des <strong>informations publiques vérifiables</strong> issues de :
-              </p>
-              <ul className="space-y-1 mb-3">
-                <li>• Rapports annuels des think tanks et entreprises</li>
-                <li>• Registre de la Haute Autorité pour la Transparence de la Vie Publique (HATVP)</li>
-                <li>• Base de données de l'Autorité des Marchés Financiers (AMF)</li>
-                <li>• Registre de l'Arcom (ex-CSA) pour les médias audiovisuels</li>
-                <li>• Enquêtes de presse vérifiées (Le Monde, Mediapart, Les Échos, etc.)</li>
-              </ul>
-              <p className="text-xs italic">
-                ⚠️ Les liens affichés sont <strong>factuels et documentés</strong>, mais ne préjugent pas de l'indépendance 
-                réelle des acteurs ni de la qualité de leurs travaux. Cette visualisation vise à <strong>informer le débat démocratique</strong>, 
-                pas à stigmatiser.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="mt-6 card bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-300">
-          <div className="text-center">
-            <h3 className="font-bold text-gray-900 mb-2 text-lg">🔍 Pour aller plus loin</h3>
-            <p className="text-gray-700 mb-4">
-              Consultez les rapports d'Acrimed, de Reporters sans Frontières, et les registres publics pour vérifier par vous-même.
-            </p>
-            <div className="flex flex-wrap gap-3 justify-center">
-              <a href="https://www.acrimed.org/" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-purple-600 text-white rounded-lg font-medium hover:bg-purple-700 transition-colors flex items-center gap-2">
-                Acrimed <ExternalLink size={16} />
-              </a>
-              <a href="https://www.hatvp.fr/" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center gap-2">
-                HATVP <ExternalLink size={16} />
-              </a>
-              <a href="https://rsf.org/fr" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition-colors flex items-center gap-2">
-                RSF <ExternalLink size={16} />
-              </a>
-            </div>
-          </div>
-        </div>
+      <div className="filtres" role="group" aria-label="Filtrer par catégorie">
+        <button type="button" className="filtre" aria-pressed={categorie === 'toutes'} onClick={() => setCategorie('toutes')}>Tout</button>
+        {categories.map((c) => (
+          <button key={c.cle} type="button" className="filtre" aria-pressed={categorie === c.cle} onClick={() => setCategorie(c.cle)}>
+            {c.libelle} ({data[c.cle].length})
+          </button>
+        ))}
       </div>
-      
-      {/* Entity Details Modal */}
-      {selectedEntity && (
-        <ModernEntityDetails
-          entity={selectedEntity}
-          data={networkData}
-          onClose={() => setSelectedEntity(null)}
-        />
+
+      {visibles.map((c) => (
+        <section key={c.cle} className="section" style={{ marginTop: 32 }}>
+          <h2 className="section__titre">{c.libelle}</h2>
+          <div className="fiches">
+            {data[c.cle].map((e) => (
+              <div key={e.id} className="fiche">
+                <button type="button" className="fiche__bouton" onClick={() => setChoisi(index[e.id])}>
+                  <span className="fiche__type">{e.orientation || e.sector || e.category}</span>
+                  <span className="fiche__nom" style={{ display: 'block' }}>{e.name}</span>
+                  <span className="fiche__info" style={{ display: 'block' }}>{e.budget || e.fortune || e.audience}</span>
+                </button>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+
+      {choisi && (
+        <Panneau titre={choisi.name} surtitre={choisi.categorie} onFermer={fermer}>
+          <p className="lien-detail__texte" style={{ fontSize: 18 }}>{choisi.description}</p>
+          <dl>
+            {[['Orientation', choisi.orientation], ['Budget', choisi.budget], ['Fortune', choisi.fortune], ['Secteur', choisi.sector],
+              ['Catégorie', choisi.category], ['Audience', choisi.audience], ['Ligne éditoriale', choisi.editorialLine]]
+              .filter(([, v]) => v).map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}
+          </dl>
+          <Liste titre="Figures clés" items={choisi.keyFigures} />
+          <Relies titre="Financé par" ids={choisi.fundedBy} />
+          <Relies titre="Présence dans les médias" ids={choisi.mediaPresence} />
+          <Relies titre="Médias détenus" ids={choisi.mediaOwned} />
+          <Relies titre="Propriétaire" ids={choisi.ownedBy} />
+          <Liste titre="Entreprises" items={choisi.companies} />
+          <Liste titre="Liens politiques" items={choisi.politicalLinks} />
+          <Liste titre="Liens avec des think tanks" items={choisi.thinkTankLinks} />
+          <Liste titre="Liens familiaux" items={choisi.familyLinks} />
+          <Liste titre="Controverses" items={choisi.controversies} />
+        </Panneau>
       )}
     </div>
   );

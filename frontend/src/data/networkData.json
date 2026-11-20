@@ -13,16 +13,27 @@
         "Emmanuelle Mignon (Vice-présidente, ex-conseillère Sarkozy)",
         "Laurent Bigorgne (ancien Directeur général jusqu'en 2022)"
       ],
-      "fundedBy": ["b1", "b2", "b3", "b5", "b6"],
-      "mediaPresence": ["m1", "m2", "m3", "m7", "m9"],
+      "fundedBy": [
+        "b1",
+        "b2",
+        "b3",
+        "b5",
+        "b6"
+      ],
+      "mediaPresence": [
+        "m1",
+        "m2",
+        "m3",
+        "m7",
+        "m9"
+      ],
       "politicalLinks": [
         "Ancien cabinet de Nicolas Sarkozy (Emmanuelle Mignon)",
         "Proches d'Emmanuel Macron (plusieurs conseillers issus de l'Institut)",
         "Bernard Mourad (ex-associé-gérant de la Banque Rothschild, cofondateur)"
       ],
       "familyLinks": [
-        "Marie-Pierre de Bailliencourt (DG) = épouse d'Emmanuel de Bailliencourt, Vice-président et Directeur Financier du groupe Bolloré",
-        "Emmanuelle Mignon (VP) = épouse de Yannick Bolloré, neveu de Vincent Bolloré"
+        "Marie-Pierre de Bailliencourt (DG) = épouse d'Emmanuel de Bailliencourt, Vice-président et Directeur Financier du groupe Bolloré"
       ],
       "controversies": [
         "Opacité du financement (entreprises non détaillées publiquement)",
@@ -44,8 +55,16 @@
         "Claudine Ripert-Landler (Présidente)",
         "Manuel Valls (Président d'honneur)"
       ],
-      "fundedBy": ["b7", "b8"],
-      "mediaPresence": ["m2", "m4", "m5", "m8"],
+      "fundedBy": [
+        "b7",
+        "b8"
+      ],
+      "mediaPresence": [
+        "m2",
+        "m4",
+        "m5",
+        "m8"
+      ],
       "politicalLinks": [
         "Parti Socialiste (lien historique)",
         "Proches de Manuel Valls, François Hollande"
@@ -66,8 +85,16 @@
         "Dominique Reynié (Directeur général)",
         "Nicolas Bazire (Président du conseil de surveillance, ex-DG LVMH)"
       ],
-      "fundedBy": ["b1", "b3"],
-      "mediaPresence": ["m1", "m2", "m3", "m6"],
+      "fundedBy": [
+        "b1",
+        "b3"
+      ],
+      "mediaPresence": [
+        "m1",
+        "m2",
+        "m3",
+        "m6"
+      ],
       "politicalLinks": [
         "Nicolas Bazire (ancien directeur de cabinet de Balladur, bras droit de Bernard Arnault)",
         "Proche de Nicolas Sarkozy, François Fillon"
@@ -88,8 +115,17 @@
         "Thierry Pech (Directeur général)",
         "Olivier Ferrand (Fondateur, décédé 2012)"
       ],
-      "fundedBy": ["b5", "b6", "b9"],
-      "mediaPresence": ["m2", "m4", "m7", "m8"],
+      "fundedBy": [
+        "b5",
+        "b6",
+        "b9"
+      ],
+      "mediaPresence": [
+        "m2",
+        "m4",
+        "m7",
+        "m8"
+      ],
       "politicalLinks": [
         "Proche d'Emmanuel Macron (plusieurs membres dans son premier gouvernement)",
         "Ex-PS rénovateurs (Valls, Royal)"
@@ -110,8 +146,16 @@
         "Cécile Philippe (Présidente, économiste)",
         "Nicolas Lecaussin (Directeur du développement)"
       ],
-      "fundedBy": ["b2", "b10"],
-      "mediaPresence": ["m1", "m6", "m9", "m11"],
+      "fundedBy": [
+        "b2",
+        "b10"
+      ],
+      "mediaPresence": [
+        "m1",
+        "m6",
+        "m9",
+        "m11"
+      ],
       "politicalLinks": [
         "Très influent dans la droite économique",
         "Références fréquentes par Éric Zemmour, Marion Maréchal"
@@ -132,8 +176,19 @@
         "Frédéric Monlouis-Félicité (Délégué général)",
         "Sophie Bellon (Présidente, PDG Sodexo)"
       ],
-      "fundedBy": ["b1", "b2", "b3", "b4", "b5"],
-      "mediaPresence": ["m1", "m3", "m7", "m9"],
+      "fundedBy": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5"
+      ],
+      "mediaPresence": [
+        "m1",
+        "m3",
+        "m7",
+        "m9"
+      ],
       "politicalLinks": [
         "Lien organique avec le MEDEF",
         "Influence directe sur les réformes économiques"
@@ -154,8 +209,17 @@
         "Agnès Verdier-Molinié (Directrice)",
         "Bernard Zimmern (Fondateur, décédé 2020)"
       ],
-      "fundedBy": ["b2", "b10"],
-      "mediaPresence": ["m1", "m3", "m6", "m9", "m11"],
+      "fundedBy": [
+        "b2",
+        "b10"
+      ],
+      "mediaPresence": [
+        "m1",
+        "m3",
+        "m6",
+        "m9",
+        "m11"
+      ],
       "politicalLinks": [
         "Très présente dans les médias conservateurs",
         "Influence sur la droite et l'extrême-droite"
@@ -176,8 +240,16 @@
         "Gaspard Koenig (Fondateur, essayiste)",
         "Marc Simoncini (Mécène, fondateur de Meetic)"
       ],
-      "fundedBy": ["b5", "b9"],
-      "mediaPresence": ["m2", "m7", "m6", "m9"],
+      "fundedBy": [
+        "b5",
+        "b9"
+      ],
+      "mediaPresence": [
+        "m2",
+        "m7",
+        "m6",
+        "m9"
+      ],
       "politicalLinks": [
         "Influence intellectuelle sur le macronisme",
         "Proches de députés LREM"
@@ -199,8 +271,14 @@
         "Philippe Murer (Économiste)",
         "Sophie de Menthon (Entrepreneure)"
       ],
-      "fundedBy": ["b3"],
-      "mediaPresence": ["m6", "m8", "m11"],
+      "fundedBy": [
+        "b3"
+      ],
+      "mediaPresence": [
+        "m6",
+        "m8",
+        "m11"
+      ],
       "politicalLinks": [
         "Liens avec le RN (Marine Le Pen, Marion Maréchal)",
         "Opposants à l'euro"
@@ -218,8 +296,15 @@
       "type": "billionaire",
       "fortune": "~211 milliards USD (1ère fortune mondiale)",
       "sector": "Luxe (LVMH)",
-      "mediaOwned": ["m1", "m7"],
-      "companies": ["LVMH", "Christian Dior", "Financière Agache"],
+      "mediaOwned": [
+        "m1",
+        "m7"
+      ],
+      "companies": [
+        "LVMH",
+        "Christian Dior",
+        "Financière Agache"
+      ],
       "description": "Homme le plus riche du monde. Empire du luxe (Louis Vuitton, Dior, Hennessy). Propriétaire des Échos et du Parisien. Influence politique majeure.",
       "politicalLinks": [
         "Soutien historique à la droite (Sarkozy, Fillon)",
@@ -238,8 +323,14 @@
       "type": "billionaire",
       "fortune": "~40 milliards USD",
       "sector": "Luxe (Kering) et Médias",
-      "mediaOwned": ["m3"],
-      "companies": ["Kering", "Groupe Artémis", "Christie's"],
+      "mediaOwned": [
+        "m3"
+      ],
+      "companies": [
+        "Kering",
+        "Groupe Artémis",
+        "Christie's"
+      ],
       "description": "Fondateur de Kering (Gucci, YSL, Balenciaga). Contrôle le groupe Artémis, actionnaire du Point.",
       "politicalLinks": [
         "Ancien socialiste, devenu libéral",
@@ -257,8 +348,15 @@
       "type": "billionaire",
       "fortune": "~8 milliards USD",
       "sector": "Médias, Transport, Énergie",
-      "mediaOwned": ["m8", "m6"],
-      "companies": ["Vivendi", "Bolloré SE", "Havas"],
+      "mediaOwned": [
+        "m8",
+        "m6"
+      ],
+      "companies": [
+        "Vivendi",
+        "Bolloré SE",
+        "Havas"
+      ],
       "description": "Industriel controversé. Contrôle Vivendi (CNews, Canal+, Europe 1). Ligne éditoriale ultra-conservatrice.",
       "politicalLinks": [
         "Soutien affiché de l'extrême-droite (Éric Zemmour)",
@@ -271,7 +369,6 @@
         "Institut Montaigne (ancien mécène)"
       ],
       "familyLinks": [
-        "Emmanuelle Mignon (Vice-présidente Institut Montaigne) = épouse de Yannick Bolloré (neveu)",
         "Marie-Pierre de Bailliencourt (Directrice générale Institut Montaigne depuis 2022) = épouse d'Emmanuel de Bailliencourt (VP et Dir. Financier du groupe Bolloré)",
         "L'Institut Montaigne est ainsi dirigé par deux femmes mariées à des cadres du groupe Bolloré"
       ]
@@ -282,8 +379,18 @@
       "type": "billionaire",
       "fortune": "~41 milliards USD",
       "sector": "Transport maritime (CMA CGM)",
-      "mediaOwned": ["m5", "m4"],
-      "companies": ["CMA CGM", "La Provence", "La Tribune", "Libération", "L'Express", "BFM TV"],
+      "mediaOwned": [
+        "m5",
+        "m4"
+      ],
+      "companies": [
+        "CMA CGM",
+        "La Provence",
+        "La Tribune",
+        "Libération",
+        "L'Express",
+        "BFM TV"
+      ],
       "description": "PDG de CMA CGM, 4ème armateur mondial. A racheté La Provence et La Tribune en 2020, puis Libération, L'Express et BFM TV à Patrick Drahi en 2024. Devient un poids lourd des médias français.",
       "politicalLinks": [
         "Montée en puissance médiatique depuis 2020",
@@ -301,8 +408,14 @@
       "type": "billionaire",
       "fortune": "~10 milliards USD",
       "sector": "Télécoms (Free), Tech",
-      "mediaOwned": ["m2"],
-      "companies": ["Iliad/Free", "Kima Ventures", "Station F"],
+      "mediaOwned": [
+        "m2"
+      ],
+      "companies": [
+        "Iliad/Free",
+        "Kima Ventures",
+        "Station F"
+      ],
       "description": "Fondateur de Free. Actionnaire du Monde via NJJ. Investisseur dans la tech. Image de 'disruption'.",
       "politicalLinks": [
         "Proche d'Emmanuel Macron",
@@ -322,7 +435,10 @@
       "fortune": "~6 milliards USD (en baisse)",
       "sector": "Télécoms (Altice)",
       "mediaOwned": [],
-      "companies": ["Altice", "SFR"],
+      "companies": [
+        "Altice",
+        "SFR"
+      ],
       "description": "Fondateur d'Altice. A vendu Libération, L'Express et BFM TV à Rodolphe Saadé en 2024 pour réduire sa dette colossale. Se recentre sur les télécoms.",
       "politicalLinks": [
         "Perte d'influence médiatique majeure après la vente",
@@ -344,7 +460,10 @@
       "fortune": "~500 millions € (décédé 2017, héritage et fondations)",
       "sector": "Mode, Culture, Presse",
       "mediaOwned": [],
-      "companies": ["Yves Saint Laurent (historique)", "Fondations culturelles"],
+      "companies": [
+        "Yves Saint Laurent (historique)",
+        "Fondations culturelles"
+      ],
       "description": "Cofondateur YSL, mécène culturel de gauche. Actionnaire historique du Monde (via NJJ). Soutien financier du PS.",
       "politicalLinks": [
         "Ami de François Mitterrand",
@@ -360,8 +479,14 @@
       "type": "billionaire",
       "fortune": "~2 milliards USD",
       "sector": "BTP, Télécoms, Médias",
-      "mediaOwned": ["m10"],
-      "companies": ["Bouygues", "TF1", "Bouygues Telecom"],
+      "mediaOwned": [
+        "m10"
+      ],
+      "companies": [
+        "Bouygues",
+        "TF1",
+        "Bouygues Telecom"
+      ],
       "description": "Héritier et PDG du groupe Bouygues. Propriétaire de TF1 (1ère chaîne française).",
       "politicalLinks": [
         "Proche de tous les gouvernements",
@@ -379,7 +504,11 @@
       "fortune": "~1 milliard USD",
       "sector": "Tech (Meetic, startups)",
       "mediaOwned": [],
-      "companies": ["Meetic (vendu)", "Jaïna Capital", "Investments divers"],
+      "companies": [
+        "Meetic (vendu)",
+        "Jaïna Capital",
+        "Investments divers"
+      ],
       "description": "Fondateur de Meetic. Investisseur tech. Mécène de Génération Libre et Terra Nova.",
       "politicalLinks": [
         "Proche du macronisme",
@@ -397,7 +526,10 @@
       "fortune": "~500 millions € (estimation)",
       "sector": "Finance (Gavekal)",
       "mediaOwned": [],
-      "companies": ["Gavekal Research", "Institut des Libertés"],
+      "companies": [
+        "Gavekal Research",
+        "Institut des Libertés"
+      ],
       "description": "Financier ultralibéral. Fondateur de l'Institut des Libertés. Figure de la droite souverainiste.",
       "politicalLinks": [
         "Opposant virulent à l'euro et à l'UE",
@@ -414,8 +546,14 @@
       "type": "billionaire",
       "fortune": "~100 millions € (estimation)",
       "sector": "Édition, Presse conservatrice",
-      "mediaOwned": ["m11"],
-      "companies": ["Causeur", "Éléments (anciennement)", "Éditions de la Table Ronde"],
+      "mediaOwned": [
+        "m11"
+      ],
+      "companies": [
+        "Causeur",
+        "Éléments (anciennement)",
+        "Éditions de la Table Ronde"
+      ],
       "description": "Éditeur et fondateur du magazine Causeur en 2007. Figure de la droite intellectuelle conservatrice. Ancien directeur de Franc-Tireur.",
       "politicalLinks": [
         "Proche des intellectuels de droite et conservateurs",
@@ -441,7 +579,9 @@
       "type": "media",
       "category": "Presse économique et généraliste",
       "audience": "Les Échos: 1M lecteurs, Le Parisien: 2M",
-      "ownedBy": ["b1"],
+      "ownedBy": [
+        "b1"
+      ],
       "description": "Les Échos (quotidien économique de référence) et Le Parisien (populaire). Propriété LVMH depuis 2007.",
       "editorialLine": "Centre-droit, pro-business"
     },
@@ -451,7 +591,10 @@
       "type": "media",
       "category": "Presse quotidienne nationale",
       "audience": "~2,5M lecteurs",
-      "ownedBy": ["b5", "b7"],
+      "ownedBy": [
+        "b5",
+        "b7"
+      ],
       "description": "Quotidien de référence. Actionnariat: Xavier Niel, Matthieu Pigasse, Pierre Bergé (†). Statut de 'journal de référence'.",
       "editorialLine": "Centre-gauche, européiste, libéral culturel"
     },
@@ -461,7 +604,9 @@
       "type": "media",
       "category": "Hebdomadaire d'actualité",
       "audience": "~1,5M lecteurs",
-      "ownedBy": ["b2"],
+      "ownedBy": [
+        "b2"
+      ],
       "description": "Magazine hebdomadaire. Contrôlé par la famille Pinault via Artémis. Ligne éditoriale droite classique.",
       "editorialLine": "Centre-droit, conservateur"
     },
@@ -471,7 +616,9 @@
       "type": "media",
       "category": "Presse et TV d'information",
       "audience": "BFM TV: 1ère chaîne d'info en continu",
-      "ownedBy": ["b4"],
+      "ownedBy": [
+        "b4"
+      ],
       "description": "Groupe de médias racheté par Rodolphe Saadé (CMA CGM) en 2024 à Patrick Drahi. BFM TV = 1ère chaîne d'info en continu. Libération (gauche historique, virage centre). L'Express (centre-droit).",
       "editorialLine": "BFM: pro-business, Libé: centre-gauche"
     },
@@ -481,7 +628,9 @@
       "type": "media",
       "category": "Presse économique et régionale",
       "audience": "La Tribune: 500k, La Provence: 1,2M",
-      "ownedBy": ["b4"],
+      "ownedBy": [
+        "b4"
+      ],
       "description": "La Tribune (économique) et La Provence (régional). Rachetés par Rodolphe Saadé en 2020.",
       "editorialLine": "Pro-business, régionaliste"
     },
@@ -491,7 +640,9 @@
       "type": "media",
       "category": "Radio généraliste",
       "audience": "~4M auditeurs",
-      "ownedBy": ["b3"],
+      "ownedBy": [
+        "b3"
+      ],
       "description": "Radio historique. Propriété Vivendi/Bolloré. Virage ultra-conservateur depuis 2020.",
       "editorialLine": "Droite conservatrice, plateforme RN/Zemmour"
     },
@@ -501,7 +652,9 @@
       "type": "media",
       "category": "Radio culturelle",
       "audience": "~1,2M auditeurs",
-      "ownedBy": ["b1"],
+      "ownedBy": [
+        "b1"
+      ],
       "description": "Radio musicale et culturelle. Propriété LVMH. Ligne éditoriale soft, chroniques économiques pro-business.",
       "editorialLine": "Centre-droit soft, culturel"
     },
@@ -511,7 +664,9 @@
       "type": "media",
       "category": "Chaînes de télévision",
       "audience": "CNews: 3ème chaîne d'info, Canal+: 9M abonnés",
-      "ownedBy": ["b3"],
+      "ownedBy": [
+        "b3"
+      ],
       "description": "CNews = Fox News française. Plateforme de l'extrême-droite. Canal+ (cinéma/séries) plus neutre.",
       "editorialLine": "CNews: Extrême-droite, Canal+: Divertissement"
     },
@@ -531,7 +686,9 @@
       "type": "media",
       "category": "Télévision généraliste et info",
       "audience": "TF1: 1ère chaîne (20% PdA), LCI: 3M téléspectateurs",
-      "ownedBy": ["b8"],
+      "ownedBy": [
+        "b8"
+      ],
       "description": "TF1 = 1ère chaîne française. LCI = chaîne d'info en continu. Groupe Bouygues.",
       "editorialLine": "Généraliste, consensuel, pro-pouvoir en place"
     },
@@ -541,7 +698,9 @@
       "type": "media",
       "category": "Magazine mensuel d'opinion",
       "audience": "~50k exemplaires/mois, audience web 500k visiteurs/mois",
-      "ownedBy": ["b11"],
+      "ownedBy": [
+        "b11"
+      ],
       "description": "Magazine mensuel fondé en 2007 par Élisabeth Lévy et Pierre-Édouard Stérin. Ligne éditoriale conservatrice, critique du politiquement correct et du progressisme. Tribune régulière d'intellectuels de droite.",
       "editorialLine": "Droite conservatrice, souverainiste, anti-woke, critique de l'immigration"
     }

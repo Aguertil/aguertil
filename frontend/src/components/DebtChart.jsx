@@ -59,12 +59,12 @@ const DebtChart = () => {
         datasets: [{
           label: 'Dette publique (% du PIB)',
           data: values,
-          borderColor: '#1e3c72',
-          backgroundColor: 'rgba(30, 60, 114, 0.1)',
+          borderColor: '#000000',
+          backgroundColor: 'rgba(0, 0, 0, 0.06)',
           borderWidth: 3,
           pointRadius: 4,
           pointHoverRadius: 6,
-          pointBackgroundColor: '#1e3c72',
+          pointBackgroundColor: '#000000',
           tension: 0.2,
           fill: true
         }]
@@ -78,7 +78,7 @@ const DebtChart = () => {
             text: 'Évolution de la dette publique française (1995-2025)',
             font: { size: 18, weight: 'bold' },
             padding: 20,
-            color: '#1e3c72'
+            color: '#000000'
           },
           subtitle: {
             display: true,
@@ -109,14 +109,14 @@ const DebtChart = () => {
                 type: 'line',
                 yMin: 60,
                 yMax: 60,
-                borderColor: 'rgb(255, 0, 0)',
+                borderColor: '#d4211b',
                 borderWidth: 2,
                 borderDash: [10, 5],
                 label: {
                   display: true,
                   content: 'Critère de Maastricht (60%)',
                   position: 'end',
-                  backgroundColor: 'rgba(255, 0, 0, 0.8)',
+                  backgroundColor: '#d4211b',
                   color: 'white',
                   font: { size: 11, weight: 'bold' }
                 }
@@ -237,7 +237,7 @@ const DebtChart = () => {
   }, []);
 
   return (
-    <div className="my-8 bg-gray-50 p-6 rounded-lg">
+    <div style={{ margin: "1.5em 0 2em", borderTop: "1px solid #000", paddingTop: 12 }}>
       <div style={{ position: 'relative', height: '500px' }}>
         <canvas ref={chartRef}></canvas>
       </div>
