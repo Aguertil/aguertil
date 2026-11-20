@@ -1,23 +1,19 @@
 import { useState, useEffect } from 'react';
 import { TrendingUp } from 'lucide-react';
+import { estimateDebt } from '../data/debt';
+import debtData from '../data/debtData.json';
+
+const formatMd = (n) => new Intl.NumberFormat('fr-FR', { maximumFractionDigits: 1 }).format(n / 1e9);
 
 export default function DebtCounter({ initialDebt, debtPerSecond }) {
-  // Référence actualisée octobre 2026
-  const REFERENCE_DATE = new Date('2024-01-01T00:00:00Z');
-  const REFERENCE_DEBT = 3100000000000; // 3 100 milliards € (janvier 2024)
-  
-  const calculateCurrentDebt = () => {
-    const now = new Date();
-    const secondsElapsed = Math.floor((now - REFERENCE_DATE) / 1000);
-    return REFERENCE_DEBT + (secondsElapsed * debtPerSecond);
-  };
+  const calculateCurrentDebt = () => estimateDebt();
   
   const [debt, setDebt] = useState(calculateCurrentDebt());
   const [flash, setFlash] = useState(false);
   
   useEffect(() => {
     const interval = setInterval(() => {
-      setDebt(prevDebt => prevDebt + debtPerSecond);
+      setDebt(calculateCurrentDebt());
       setFlash(true);
       setTimeout(() => setFlash(false), 200);
     }, 1000);
@@ -108,7 +104,7 @@ export default function DebtCounter({ initialDebt, debtPerSecond }) {
           </div>
 
           <div className="mt-6 text-sm text-blue-300 italic opacity-75">
-            💡 Compteur en temps réel - Déficit : ~178 Mds€/an
+            💡 Estimation : dette Insee {debtData.referenceLabel} ({formatMd(debtData.currentDebt)} Md€) + rythme moyen observé sur un an
           </div>
         </div>
       </div>
