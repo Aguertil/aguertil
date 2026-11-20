@@ -10,8 +10,8 @@ export default function ArticlePage() {
   const article = articleParSlug(slug);
 
   useEffect(() => {
-    document.title = article ? `${article.title} · Observatoire citoyen` : 'Article introuvable · Observatoire citoyen';
-    return () => { document.title = 'Observatoire Citoyen · Dette publique française en direct'; };
+    document.title = article ? `${article.title} · dettefrance.fr` : 'Article introuvable · dettefrance.fr';
+    return () => { document.title = 'dettefrance.fr · La dette publique française en direct'; };
   }, [article]);
 
   if (!article) {

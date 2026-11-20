@@ -18,7 +18,7 @@ export default function Masthead() {
       <a className="lien-evitement" href="#contenu">Aller au contenu</a>
       <div className="conteneur entete__haut">
         <Link to="/" className="marque">
-          <span className="marque__nom">Observatoire citoyen</span>
+          <span className="marque__nom">dettefrance.fr</span>
           <span className="marque__domaine">La dette publique, les promesses et ceux qui pèsent sur le débat</span>
         </Link>
         <Link to="/" className="bandeau-compteur" aria-label="Voir le compteur de la dette">
