@@ -2,7 +2,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 
 export default function HistoricalChart({ data }) {
   const formatYAxis = (value) => {
-    return `${(value / 1000000000000).toFixed(1)}T €`;
+    return `${new Intl.NumberFormat('fr-FR').format(Math.round(value / 1e9))} Md€`;
   };
 
   const CustomTooltip = ({ active, payload, label }) => {
@@ -23,7 +23,7 @@ export default function HistoricalChart({ data }) {
     <div className="card bg-gradient-to-br from-slate-800/90 to-blue-900/90 backdrop-blur-xl border-2 border-blue-400/30 hover:border-blue-400/50 transition-all duration-500">
       <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
         <span className="text-2xl">📈</span>
-        Évolution de la dette publique (2014-2023)
+        Évolution de la dette publique ({data[0].year}-{data[data.length - 1].year})
       </h3>
       
       <ResponsiveContainer width="100%" height={320}>
@@ -60,9 +60,9 @@ export default function HistoricalChart({ data }) {
       
       <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="group p-5 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 backdrop-blur-sm rounded-xl border border-blue-400/30 hover:border-blue-400/60 transition-all duration-300 hover:scale-105">
-          <div className="text-sm font-semibold text-blue-300 mb-2 uppercase tracking-wide">Augmentation 2014-2023</div>
+          <div className="text-sm font-semibold text-blue-300 mb-2 uppercase tracking-wide">Augmentation {data[0].year}-{data[data.length - 1].year}</div>
           <div className="text-3xl font-black text-white mb-1">
-            +{((data[data.length - 1].debt - data[0].debt) / 1000000000000).toFixed(1)}T €
+            +{new Intl.NumberFormat('fr-FR').format(Math.round((data[data.length - 1].debt - data[0].debt) / 1e9))} Md€
           </div>
           <div className="text-sm text-blue-200">
             soit +{(((data[data.length - 1].debt - data[0].debt) / data[0].debt) * 100).toFixed(1)}%

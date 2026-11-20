@@ -262,7 +262,7 @@ export default function ModernNetworkViz({ data, onEntitySelect }) {
       </div>
 
       {filteredEntities.length === 0 && (
-        <div className="card text-center py-12">
+        <div className="card bg-white border-gray-200 text-center py-12">
           <AlertCircle size={48} className="mx-auto text-gray-400 mb-4" />
           <p className="text-gray-600">Aucune entité ne correspond à votre recherche</p>
         </div>

@@ -5,6 +5,7 @@ import StatsCard from '../components/StatsCard';
 import Calculator from '../components/Calculator';
 import HistoricalChart from '../components/HistoricalChart';
 import debtData from '../data/debtData.json';
+import { formatFr } from '../data/debt';
 
 export default function DebtPage() {
   const [isVisible, setIsVisible] = useState({});
@@ -37,7 +38,7 @@ export default function DebtPage() {
   
   const debtPerCapita = Math.floor(debtData.currentDebt / debtData.population);
   const debtPerActive = Math.floor(debtData.currentDebt / debtData.activePopulation);
-  const debtToGdpPercent = ((debtData.currentDebt / debtData.gdp) * 100).toFixed(1);
+  const debtToGdpPercent = debtData.debtToGdpPercent.toFixed(1);
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
@@ -77,7 +78,7 @@ export default function DebtPage() {
             <p className="text-xl md:text-2xl text-blue-200 max-w-3xl mx-auto mb-12 animate-fade-in">
               Suivez l'évolution en temps réel de la dette de la France
               <br />
-              <span className="text-red-400 font-bold">+2 733 € par seconde</span>
+              <span className="text-red-400 font-bold">+{formatFr(debtData.debtPerSecond)} € par seconde</span>
             </p>
           </div>
 
@@ -129,7 +130,7 @@ export default function DebtPage() {
             {
               title: "Dette / PIB",
               value: `${debtToGdpPercent}%`,
-              subtitle: "Ratio de Maastricht",
+              subtitle: `Insee, ${debtData.referenceLabel}`,
               icon: TrendingUp,
               color: "purple",
               delay: 200

@@ -132,7 +132,7 @@ export default function ModernEntityDetails({ entity, data, onClose }) {
               )}
 
               {entity.keyFigures && entity.keyFigures.length > 0 && (
-                <div className="card">
+                <div className="card bg-white border-gray-200">
                   <h3 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
                     <Users size={20} />
                     Figures clés
@@ -149,7 +149,7 @@ export default function ModernEntityDetails({ entity, data, onClose }) {
               )}
 
               {related.funders.length > 0 && (
-                <div className="card">
+                <div className="card bg-white border-gray-200">
                   <h3 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
                     <DollarSign size={20} />
                     Financeurs identifiés
@@ -167,7 +167,7 @@ export default function ModernEntityDetails({ entity, data, onClose }) {
               )}
 
               {related.media.length > 0 && (
-                <div className="card">
+                <div className="card bg-white border-gray-200">
                   <h3 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
                     <Radio size={20} />
                     Présence médiatique régulière
@@ -238,7 +238,7 @@ export default function ModernEntityDetails({ entity, data, onClose }) {
               </div>
 
               {entity.companies && entity.companies.length > 0 && (
-                <div className="card">
+                <div className="card bg-white border-gray-200">
                   <h3 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
                     <Building2 size={20} />
                     Entreprises contrôlées
@@ -254,7 +254,7 @@ export default function ModernEntityDetails({ entity, data, onClose }) {
               )}
 
               {related.ownedMedia.length > 0 && (
-                <div className="card">
+                <div className="card bg-white border-gray-200">
                   <h3 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
                     <Newspaper size={20} />
                     Médias possédés ou contrôlés
@@ -274,7 +274,7 @@ export default function ModernEntityDetails({ entity, data, onClose }) {
               )}
 
               {related.thinkTanks.length > 0 && (
-                <div className="card">
+                <div className="card bg-white border-gray-200">
                   <h3 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
                     <DollarSign size={20} />
                     Think Tanks financés
@@ -354,7 +354,7 @@ export default function ModernEntityDetails({ entity, data, onClose }) {
               )}
 
               {related.funders.length > 0 && (
-                <div className="card">
+                <div className="card bg-white border-gray-200">
                   <h3 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
                     <DollarSign size={20} />
                     Propriétaires / Actionnaires
@@ -372,7 +372,7 @@ export default function ModernEntityDetails({ entity, data, onClose }) {
               )}
 
               {related.thinkTanks.length > 0 && (
-                <div className="card">
+                <div className="card bg-white border-gray-200">
                   <h3 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
                     <Radio size={20} />
                     Think Tanks présents régulièrement

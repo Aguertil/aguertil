@@ -10,7 +10,8 @@
 
 @layer components {
   .card {
-    @apply bg-white rounded-lg shadow-lg p-6 border border-gray-200;
+    /* Fond fourni par chaque composant (dégradés sombres translucides) ; ajouter bg-white pour une carte claire */
+    @apply rounded-lg shadow-lg p-6 border;
   }
   
   .btn-primary {

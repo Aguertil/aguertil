@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { TrendingDown, Network, Crown, Target, Users, BookOpen, TrendingUp } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { estimateDebt, DEBT_PER_SECOND, formatFr } from '../data/debt';
 
 export default function Navigation() {
   const location = useLocation();
@@ -10,16 +11,7 @@ export default function Navigation() {
   
   // Calcul de la dette en temps réel
   useEffect(() => {
-    // Référence actualisée octobre 2026
-    const REFERENCE_DATE = new Date('2024-01-01T00:00:00Z');
-    const REFERENCE_DEBT = 3100000000000; // 3 100 milliards € (janvier 2024)
-    const DEBT_PER_SECOND = 5629; // +5 629€/seconde (déficit ~178 Mds€/an)
-    
-    const calculateDebt = () => {
-      const now = new Date();
-      const secondsElapsed = Math.floor((now - REFERENCE_DATE) / 1000);
-      return REFERENCE_DEBT + (secondsElapsed * DEBT_PER_SECOND);
-    };
+    const calculateDebt = () => estimateDebt();
     
     setCurrentDebt(calculateDebt());
     
@@ -45,7 +37,7 @@ export default function Navigation() {
             <span className="text-xl md:text-2xl font-bold tabular-nums">
               {formatDebt(currentDebt)} €
             </span>
-            <span className="text-xs md:text-sm opacity-90 font-bold">(+5 629€/s)</span>
+            <span className="text-xs md:text-sm opacity-90 font-bold">(+{formatFr(DEBT_PER_SECOND)} €/s)</span>
           </div>
         </div>
       </div>
