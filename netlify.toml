@@ -13,6 +13,48 @@
   status = 301
   force = true
 
+# Ancien site dettepublique.fr (fusionné dans dettefrancaise.fr le 21/11/2026).
+# Une seule redirection 301 depuis toutes les variantes (http/https, avec ou
+# sans www). L'ancien site n'avait que l'accueil (+ /index.php) et la page
+# de confidentialité : tout renvoie vers l'accueil du nouveau site.
+# Le fichier de validation Google Search Console reste accessible sur
+# l'ancien domaine pour pouvoir utiliser l'outil « Changement d'adresse ».
+[[redirects]]
+  from = "https://dettepublique.fr/googlebe5956de66f4ae0e.html"
+  to = "/googlebe5956de66f4ae0e.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://www.dettepublique.fr/googlebe5956de66f4ae0e.html"
+  to = "/googlebe5956de66f4ae0e.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://dettepublique.fr/*"
+  to = "https://dettefrancaise.fr/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.dettepublique.fr/*"
+  to = "https://dettefrancaise.fr/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://dettepublique.fr/*"
+  to = "https://dettefrancaise.fr/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.dettepublique.fr/*"
+  to = "https://dettefrancaise.fr/"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/assets/*"
   [headers.values]
